@@ -1,0 +1,133 @@
+10
+
+dir
+2
+http://192.168.254.4/svn/morenaveiculos/trunk/admin/webroot/js/tiny_mce/plugins
+http://192.168.254.4/svn/morenaveiculos
+
+
+
+2010-12-20T16:06:05.051995Z
+2
+lucas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cb91cf4a-7feb-44bb-9ec4-ecae8c5928ae
+
+media
+dir
+
+insertdatetime
+dir
+
+pagebreak
+dir
+
+noneditable
+dir
+
+inlinepopups
+dir
+
+autoresize
+dir
+
+example
+dir
+
+emotions
+dir
+
+iespell
+dir
+
+save
+dir
+
+advhr
+dir
+
+tabfocus
+dir
+
+advlist
+dir
+
+layer
+dir
+
+advimage
+dir
+
+preview
+dir
+
+directionality
+dir
+
+visualchars
+dir
+
+wordcount
+dir
+
+legacyoutput
+dir
+
+autosave
+dir
+
+table
+dir
+
+advlink
+dir
+
+print
+dir
+
+nonbreaking
+dir
+
+fullpage
+dir
+
+style
+dir
+
+searchreplace
+dir
+
+fullscreen
+dir
+
+spellchecker
+dir
+
+contextmenu
+dir
+
+template
+dir
+
+paste
+dir
+
+bbcode
+dir
+
+xhtmlxtras
+dir
+

@@ -1,7 +1,7 @@
 <?php
 class Pf extends AppModel {
 	var $name = 'Pf';
-	var $displayField = 'nome';
+	var $displayField = 'nome_artistico';
 	var $validate = array(
 		'nacionalidade_id' => array(
 			'numeric' => array(
@@ -203,6 +203,16 @@ class Pf extends AppModel {
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
 		),
+		'email' => array(
+			'email' => array(
+				'rule' => array('email'),
+				//'message' => 'Sua mensagem de validação aqui',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Para a validação após esta regra
+				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
+			),
+		),
 	);
 	// As associações abaixo foram criadas com todas as chaves possíveis, então é possível remover as que não são necessárias
 
@@ -224,13 +234,6 @@ class Pf extends AppModel {
 		'ExpedidorRg' => array(
 			'className' => 'ExpedidorRg',
 			'foreignKey' => 'expedidor_rg_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Curriculo' => array(
-			'className' => 'Curriculo',
-			'foreignKey' => 'curriculo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -265,38 +268,33 @@ class Pf extends AppModel {
 		)
 	);
 
-	var $hasAndBelongsToMany = array(
-		'Contato' => array(
-			'className' => 'Contato',
-			'joinTable' => 'contato_pfs',
+	var $hasMany = array(
+		'Curriculo' => array(
+			'className' => 'Curriculo',
 			'foreignKey' => 'pf_id',
-			'associationForeignKey' => 'contato_id',
-			'unique' => true,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
+			'exclusive' => '',
 			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'counterQuery' => ''
 		),
-		'Telefone' => array(
-			'className' => 'Telefone',
-			'joinTable' => 'telefone_pfs',
+		'TelefonePf' => array(
+			'className' => 'TelefonePf',
 			'foreignKey' => 'pf_id',
-			'associationForeignKey' => 'telefone_id',
-			'unique' => true,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
+			'exclusive' => '',
 			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'counterQuery' => ''
 		)
 	);
-
 }
 ?>

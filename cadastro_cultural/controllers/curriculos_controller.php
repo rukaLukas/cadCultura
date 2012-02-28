@@ -26,9 +26,11 @@ class CurriculosController extends AppController {
 				$this->Session->setFlash(sprintf(__('O %s não pode ser salvo. Por favor, tente novamente.', true), 'curriculo'));
 			}
 		}
-		$produtos = $this->Curriculo->Produto->find('list');
 		$funcaoExercidas = $this->Curriculo->FuncaoExercida->find('list');
-		$this->set(compact('produtos', 'funcaoExercidas'));
+		$pfs = $this->Curriculo->Pf->find('list');
+		$produtos = $this->Curriculo->Produto->find('list');
+		$this->layout = 'ajax';
+		$this->set(compact('funcaoExercidas', 'pfs', 'produtos'));
 	}
 
 	function edit($id = null) {
@@ -47,9 +49,10 @@ class CurriculosController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Curriculo->read(null, $id);
 		}
-		$produtos = $this->Curriculo->Produto->find('list');
 		$funcaoExercidas = $this->Curriculo->FuncaoExercida->find('list');
-		$this->set(compact('produtos', 'funcaoExercidas'));
+		$pfs = $this->Curriculo->Pf->find('list');
+		$produtos = $this->Curriculo->Produto->find('list');
+		$this->set(compact('funcaoExercidas', 'pfs', 'produtos'));
 	}
 
 	function delete($id = null) {

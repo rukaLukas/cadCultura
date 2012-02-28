@@ -30,3 +30,300 @@ LINE 1: ...caoExercida" ON ("Curriculo"."funcao_exercida_id" = "FuncaoE...
                                                              ^
 HINT:  Nenhum operador corresponde com o nome e o(s) tipo(s) de argumento(s) informados. Você precisa adicionar conversões de tipo explícitas.</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
 2012-02-01 15:43:21 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\curriculos\index.ctp, line 16]
+2012-02-06 23:39:35 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  banco de dados &quot;cadastrocultural&quot; n�o existe in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-06 23:39:35 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-06 23:40:25 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  banco de dados &quot;cadastrocultural&quot; n�o existe in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-06 23:40:25 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-06 23:41:32 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  banco de dados &quot;cadastrocultural&quot; n�o existe in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-06 23:41:32 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-07 01:08:09 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna TelefonePf.pf_id não existe
+LINE 1: SELECT &quot;TelefonePf&quot;.&quot;pf_id&quot; AS &quot;TelefonePf__pf_id&quot;, &quot;Telefon...
+               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-07 01:08:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna TelefonePf.pf_id não existe
+LINE 1: SELECT "TelefonePf"."pf_id" AS "TelefonePf__pf_id", "Telefon...
+               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-07 01:08:10 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna TelefonePf.pf_id não existe
+LINE 1: SELECT &quot;TelefonePf&quot;.&quot;pf_id&quot; AS &quot;TelefonePf__pf_id&quot;, &quot;Telefon...
+               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-07 01:08:10 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna TelefonePf.pf_id não existe
+LINE 1: SELECT "TelefonePf"."pf_id" AS "TelefonePf__pf_id", "Telefon...
+               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-07 01:08:15 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna TelefonePf.pf_id não existe
+LINE 1: SELECT &quot;TelefonePf&quot;.&quot;pf_id&quot; AS &quot;TelefonePf__pf_id&quot;, &quot;Telefon...
+               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-07 01:08:15 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna TelefonePf.pf_id não existe
+LINE 1: SELECT "TelefonePf"."pf_id" AS "TelefonePf__pf_id", "Telefon...
+               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-07 01:08:18 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna TelefonePf.pf_id não existe
+LINE 1: SELECT &quot;TelefonePf&quot;.&quot;pf_id&quot; AS &quot;TelefonePf__pf_id&quot;, &quot;Telefon...
+               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-07 01:08:18 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna TelefonePf.pf_id não existe
+LINE 1: SELECT "TelefonePf"."pf_id" AS "TelefonePf__pf_id", "Telefon...
+               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-07 03:55:18 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  relação &quot;escolaridades_id_seq&quot; não existe
+LINE 1: SELECT currval('escolaridades_id_seq') as max
+                       ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-07 03:55:18 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  relação "escolaridades_id_seq" não existe
+LINE 1: SELECT currval('escolaridades_id_seq') as max
+                       ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-07 03:55:18 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-07 13:16:56 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host &quot;localhost&quot; and accepting
+	TCP/IP connections on port 5433? in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-07 13:16:56 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-07 13:17:02 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host &quot;localhost&quot; and accepting
+	TCP/IP connections on port 5433? in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-07 13:17:02 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-09 13:31:38 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  relação &quot;funcao_exercidas_id_seq&quot; não existe
+LINE 1: SELECT currval('funcao_exercidas_id_seq') as max
+                       ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-09 13:31:38 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  relação "funcao_exercidas_id_seq" não existe
+LINE 1: SELECT currval('funcao_exercidas_id_seq') as max
+                       ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-09 13:31:38 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-16 15:02:34 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  banco de dados &quot;cadastrocultural&quot; n�o existe in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-16 15:02:34 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-16 15:02:54 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  banco de dados &quot;cadastrocultural&quot; n�o existe in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-16 15:02:54 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-16 15:03:22 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  banco de dados &quot;cadastrocultural&quot; n�o existe in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-16 15:03:22 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-16 15:04:25 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  banco de dados &quot;cadastrocultural&quot; n�o existe in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-16 15:04:25 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-16 15:08:22 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  banco de dados &quot;cadastrocultural&quot; n�o existe in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-02-16 15:08:22 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-02-21 18:51:40 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor é muito longo para tipo character varying(8) in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 18:51:41 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor é muito longo para tipo character varying(8)</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 18:54:50 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;tipologia_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 18:54:50 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "tipologia_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 19:19:54 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  relação &quot;pfs_id_seq&quot; não existe
+LINE 1: SELECT currval('pfs_id_seq') as max
+                       ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 19:19:54 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  relação "pfs_id_seq" não existe
+LINE 1: SELECT currval('pfs_id_seq') as max
+                       ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 19:30:38 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  relação &quot;pfs_id_seq&quot; não existe
+LINE 1: SELECT currval('pfs_id_seq') as max
+                       ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 19:30:38 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  relação "pfs_id_seq" não existe
+LINE 1: SELECT currval('pfs_id_seq') as max
+                       ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 19:30:38 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-21 20:00:24 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;organizacao_responsavel&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 20:00:24 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "organizacao_responsavel" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 20:02:30 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;data&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 20:02:30 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "data" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 21:04:15 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;tipologia_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 21:04:15 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "tipologia_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 21:09:20 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-21 21:14:51 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;Diretor&quot;
+LINE 1: ...&quot;) VALUES ('fdfsfdsf', '2012-02-21', 'Descrição', 'Diretor',...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 21:14:51 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "Diretor"
+LINE 1: ...") VALUES ('fdfsfdsf', '2012-02-21', 'Descrição', 'Diretor',...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 21:14:51 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-21 22:14:13 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;descricao&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 22:14:13 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "descricao" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 22:14:13 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 50]
+2012-02-21 22:14:13 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-21 22:18:00 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 50]
+2012-02-21 22:25:29 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;1,3&quot;
+LINE 1: ..._produtos&quot; (&quot;produto_id&quot;, &quot;curriculo_id&quot;) VALUES ('1,3', '11...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 22:25:29 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "1,3"
+LINE 1: ..._produtos" ("produto_id", "curriculo_id") VALUES ('1,3', '11...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 22:25:29 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 50]
+2012-02-21 22:25:29 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-21 22:26:49 Warning: Warning (2): split() expects parameter 2 to be string, array given in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 25]
+2012-02-21 22:26:49 Warning: Warning (2): split() expects parameter 2 to be string, array given in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 44]
+2012-02-21 22:26:49 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 45]
+2012-02-21 22:26:49 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 53]
+2012-02-21 22:26:49 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-21 22:27:09 Warning: Warning (2): explode() expects parameter 2 to be string, array given in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 25]
+2012-02-21 22:27:09 Warning: Warning (2): split() expects parameter 2 to be string, array given in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 44]
+2012-02-21 22:27:09 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 45]
+2012-02-21 22:27:09 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 53]
+2012-02-21 22:27:09 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-21 22:27:36 Warning: Warning (2): split() expects parameter 2 to be string, array given in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 44]
+2012-02-21 22:27:36 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 45]
+2012-02-21 22:27:36 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 53]
+2012-02-21 22:27:36 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-21 22:28:17 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 50]
+2012-02-21 22:33:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 50]
+2012-02-21 22:39:25 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  relação &quot;telefone_pfs_id_seq&quot; não existe
+LINE 1: SELECT currval('telefone_pfs_id_seq') as max
+                       ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-21 22:39:25 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  relação "telefone_pfs_id_seq" não existe
+LINE 1: SELECT currval('telefone_pfs_id_seq') as max
+                       ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-21 22:39:25 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-21 22:44:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 50]
+2012-02-22 02:27:07 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 02:27:07 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 02:27:07 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 02:27:07 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 02:34:43 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 02:34:43 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 02:34:43 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 02:34:43 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 02:35:09 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 02:35:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 02:35:09 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 02:35:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 02:39:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 02:39:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 02:39:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 02:39:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 02:44:21 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 89]
+2012-02-22 02:44:21 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-22 14:58:38 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...&quot;id&quot;)  WHERE &quot;Tipologia&quot;.&quot;segmentocultural_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 14:58:38 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ..."id")  WHERE "Tipologia"."segmentocultural_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:17:13 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:17:13 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:17:13 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:17:13 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:26:30 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;&quot;
+LINE 1: ...os_produtos&quot; (&quot;produto_id&quot;, &quot;curriculo_id&quot;) VALUES ('2', '')
+                                                                    ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:26:30 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: ...os_produtos" ("produto_id", "curriculo_id") VALUES ('2', '')
+                                                                    ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:26:30 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;&quot;
+LINE 1: ...os_produtos&quot; (&quot;produto_id&quot;, &quot;curriculo_id&quot;) VALUES ('4', '')
+                                                                    ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:26:30 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: ...os_produtos" ("produto_id", "curriculo_id") VALUES ('4', '')
+                                                                    ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:26:31 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-02-22 17:31:00 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:31:00 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:31:00 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:31:00 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:33:59 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:33:59 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:33:59 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:33:59 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:37:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:37:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:37:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:37:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:45:26 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:45:26 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:45:26 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:45:26 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:49:07 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:49:07 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 17:49:07 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...mentocultural_id&quot; = 1 AND &quot;Tipologia&quot;.&quot;cbo_id&quot; =     LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 17:49:07 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ...mentocultural_id" = 1 AND "Tipologia"."cbo_id" =     LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 18:25:07 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;$id&quot;
+LINE 1: ... (&quot;Curriculo&quot;.&quot;pf_id&quot; = &quot;Pf&quot;.&quot;id&quot;)  WHERE &quot;pf_id&quot; = '$id'   
+                                                               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 18:25:07 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "$id"
+LINE 1: ... ("Curriculo"."pf_id" = "Pf"."id")  WHERE "pf_id" = '$id'   
+                                                               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 18:25:08 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;$id&quot;
+LINE 1: ... (&quot;Curriculo&quot;.&quot;pf_id&quot; = &quot;Pf&quot;.&quot;id&quot;)  WHERE &quot;pf_id&quot; = '$id'   
+                                                               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 18:25:08 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "$id"
+LINE 1: ... ("Curriculo"."pf_id" = "Pf"."id")  WHERE "pf_id" = '$id'   
+                                                               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 18:30:28 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna &quot;pf_id&quot; não existe
+LINE 1: ...OM &quot;funcao_exercidas&quot; AS &quot;FuncaoExercida&quot;   WHERE &quot;pf_id&quot; = ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 18:30:28 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna "pf_id" não existe
+LINE 1: ...OM "funcao_exercidas" AS "FuncaoExercida"   WHERE "pf_id" = ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 18:31:30 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna &quot;conditions&quot; não existe
+LINE 1: ... &quot;Pf&quot; ON (&quot;Curriculo&quot;.&quot;pf_id&quot; = &quot;Pf&quot;.&quot;id&quot;)  WHERE conditions...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-02-22 18:31:30 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna "conditions" não existe
+LINE 1: ... "Pf" ON ("Curriculo"."pf_id" = "Pf"."id")  WHERE conditions...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-02-22 20:36:23 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\view.ctp, line 278]
+2012-02-22 21:20:41 Warning: Warning (2): next() expects parameter 1 to be array, string given in [C:\xampp\htdocs\cadastro_cultural\views\pfs\view.ctp, line 294]

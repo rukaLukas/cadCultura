@@ -31,7 +31,7 @@
  * @subpackage    cake.app
  */
 class AppController extends Controller {
-	
-	var $helpers = array('Session','Html', 'Form', 'Javascript');
+		
+	var $helpers = array('Session','Html', 'Form', 'Javascript', 'Formatacao');
 	
 }
