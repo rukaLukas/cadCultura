@@ -17,7 +17,7 @@ $javascript->codeBlock('
 <div class="cnae form">
 <?php echo $this->Form->create('Cnaes');?>
 	<fieldset>
- 		<legend><?php __('Edit Cnaes'); ?></legend>
+ 		<legend><?php printf(__('Editar %s', true), __('Pf', true)); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('nomcnae');

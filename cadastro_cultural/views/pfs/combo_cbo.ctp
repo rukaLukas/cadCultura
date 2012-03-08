@@ -5,21 +5,37 @@
 $javascript->link(array('jquery'), false);
 // Aqui vou definir alguns comandos de jQuery
 $javascript->codeBlock('
-  $(document).ready(function(){		
+  $(document).ready(function(){				
 	
 	//carrega combobox atividade
-	$("#PfAtividadeId").change(function(){											
-		$.get("/cadastro_cultural/pfs/combo_elos/", {		    
-		    }, function(resposta){
-		        //Tratamento dos dados de retorno
-    			$("#divComboElo").html(resposta); 	   
-		   }
-		);
-			        									
+	$("#PfAtividadeId").change(function(){
+		var tipo = $(this).attr("tipo");
+		
+		// se tiver vindo do formulario de cadastro do elo, então tipo ñ eh vazio
+		if(tipo == 1){			
+			$.get("/cadastro_cultural/pfs/combo_elos/PF/"+tipo, {		    
+			    }, function(resposta){
+			        //Tratamento dos dados de retorno
+	    			$("#divComboElo").html(resposta); 	   
+			   }
+			);			        								
+		}	
+		else{			
+			$.get("/cadastro_cultural/pfs/combo_elos/PF", {		    
+			    }, function(resposta){
+			        //Tratamento dos dados de retorno
+	    			$("#divComboElo").html(resposta); 	   
+			   }
+			);
+		}
 	});		
 						
 			
   });', array('inline' => false));
+if(!empty($this->params['pass']['2']))  
+	$tipo = $this->params['pass']['2'];
+else
+	$tipo = "";	
   
 //echo $this->element('tiny_mce');
 ?>
@@ -28,7 +44,7 @@ $javascript->codeBlock('
 <?php echo $this->Form->create('Pf');?>
 	<!--<fieldset>--> 		
 	<?php		
-		//echo $this->Html->div('listaCurriculos', 'conteudo curriculo', array('id' => 'listaCurriculos'));
-		echo $this->Form->input('atividade_id', array('empty' => true));
+		//echo $this->Html->div('listaCurriculos', 'conteudo curriculo', array('id' => 'listaCurriculos'));		
+			echo $this->Form->input('atividade_id', array('empty' => true, 'class' => 'input select required', 'tipo' => $tipo));
 	?>
 <!--</fieldset>-->

@@ -6,8 +6,9 @@ $javascript->codeBlock('
 	
 	$("#CnaesAddForm").validate({		            	            			            		
 			rules: {
-				"data[Cnaes][nomcnae]": { required: true, minlength: 2 },
-				"data[Cnaes][codcnae]": { required: true, minlength: 2 }													        		
+				"data[Cnaes][nomcnae]": { required: true },
+				"data[Cnaes][codcnae]": { required: true },
+				"data[Cbo][segmento_id]": { required: true }													        		
 			}	        				        		
 	});  				
   });', array('inline' => false));
@@ -16,8 +17,9 @@ $javascript->codeBlock('
 <div class="cnae form">
 <?php echo $this->Form->create('Cnaes');?>
 	<fieldset>
- 		<legend><?php __('Add Cnaes'); ?></legend>
+ 		<legend><?php printf(__('Incluir %s', true), __('Cnae', true)); ?></legend>
 	<?php
+		echo $this->Form->input('segmento_id', array('empty' => true));
 		echo $this->Form->input('nomcnae');
 		echo $this->Form->input('codcnae');
 	?>

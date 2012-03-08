@@ -158,7 +158,7 @@ $.extend($.expr[":"], {
 });
 
 
-$.format = function(source, params) {
+$.format = function(source, params) {	
 	if ( arguments.length == 1 ) 
 		return function() {
 			var args = $.makeArray(arguments);

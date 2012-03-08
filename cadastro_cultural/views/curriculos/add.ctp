@@ -1,18 +1,3 @@
-<?php
-// Incluir o jQuery ao projeto
-// Neste exemplo estou importando a jquery.tablesorter tamb�m
-// O segundo par�metro (false) � para indicar que vai no <head> e n�o no local onde est� sendo executado
-$javascript->link(array('jquery'), false);
-// Aqui vou definir alguns comandos de jQuery
-$javascript->codeBlock('
-  $(document).ready(function(){		
-	//$(".listaCurriculos").hide();
-	//$("#btnRemoveTelefone").hide();
-				
-  });', array('inline' => false));
-  
-//echo $this->element('tiny_mce');
-?>
 
 <!--<div class="curriculos form">-->
 

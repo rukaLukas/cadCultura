@@ -18,6 +18,7 @@ class CurriculosController extends AppController {
 
 	function add() {
 		if (!empty($this->data)) {
+			
 			$this->Curriculo->create();
 			if ($this->Curriculo->save($this->data)) {
 				$this->Session->setFlash(sprintf(__('O %s foi salvo.', true), 'curriculo'));

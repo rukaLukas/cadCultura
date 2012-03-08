@@ -556,4 +556,9 @@ div.code-coverage-results span.result-good {
 {
 	background:#ededed;
 }
+#mensagem{
+	background: #c73e14;
+	color:#fff;
+	font-size: 14px;
+}
 /* FORMATAÇÕES ADICIONAIS */

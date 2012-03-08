@@ -39,7 +39,7 @@
 			<h1><?php echo 'SIIC: Cadastro Cultural'; ?></h1>
 		</div>
 		<div id="content">
-
+			
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $content_for_layout; ?>

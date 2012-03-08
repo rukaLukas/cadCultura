@@ -4,6 +4,60 @@ class PfsController extends AppController {
 	var $name = 'Pfs';
 	var $uses = array('Pf','Curriculo','CurriculosProduto','TelefonePf','FuncaoExercida');
 
+	
+	private function upload($arquivo, $w, $id, $tipo)
+	{		
+		//echo "->>>".$tipo."<<<-"; 
+		//echo "->>>".$w."<<<-"; exit;
+		$this->Upload->upload($arquivo);
+		$arqName = date('dmY_His').'_'.$id;
+		$this->Upload->file_new_name_body   = $arqName;
+		$this->Upload->image_resize         = true;
+		$this->Upload->image_x              = $w;
+		$this->Upload->image_ratio_y        = true;
+		$this->Upload->jpeg_quality         = 70;
+		$this->Upload->allowed = array('image/jpeg','image/jpg','image/gif','image/png','application/pdf','application/msword');
+		
+		if($tipo == 1){// se for comprovante		
+			$this->Upload->process("../webroot/files/comprovantes");
+		}
+		if($tipo == 2){// se for curriculo anexo
+			$this->Upload->process("../webroot/files/curriculos");
+		}
+			
+		if ($this->Upload->processed) {			
+			$this->Upload->clean();//libera a memoria
+		} else {
+			$this->erro = $this->Upload->error;
+		}
+		return 'files/comprovantes/'.$arqName.".".$this->Upload->file_src_name_ext;		
+	}		
+	
+	
+	
+	private function varreDir($dir,$id)
+	{				
+		$qtdCaractere = strlen($id);
+		$diraberto = opendir($dir); // Abre o diretorio especificado
+	    chdir($dir); // Muda o diretorio atual p/ o especificado
+	    while($arq = readdir($diraberto)) { // Le o conteudo do arquivo
+	        if($arq == ".." || $arq == ".")continue; // Desconsidera os diretorios	        
+	            if(file_exists($arq)){// se existi arquivo no diretorio apaga arquivo
+	            	$nomeArquivo = explode(".", $arq);
+	            	if(substr($nomeArquivo[0], -$qtdCaractere) == $id)
+	            		unlink($arq);
+	            	if(substr($nomeArquivo[0], -$qtdCaractere) == $id)
+	            		unlink($arq);	  
+	            }          		    	        
+	    }    
+	    chdir(".."); // Volta um diretorio
+	    closedir($diraberto); // Fecha o diretorio atual
+	}
+	
+	
+	
+	
+	
 	function index() {
 		$this->Pf->recursive = 2;
 		$this->set('pfs', $this->paginate());
@@ -27,9 +81,10 @@ class PfsController extends AppController {
 	function add() {
 		if (!empty($this->data)) {
 			$this->Pf->create();
-			
-			print_r($this->data);
-			//exit;
+			$comprovante = $this->data["Pf"]["comprovante"];//guardo o comprovante
+			$curriculoAnexo = $this->data["Pf"]["curriculo_anexo"];//guardo o curriculo anexo 
+			$this->data["Pf"]["comprovante"] = "arquivo";			
+			$this->data["Pf"]["curriculo_anexo"] = "";
 				
 			$existTipologia = false;				
 			//recupera id do grupotipologia se existir
@@ -102,7 +157,26 @@ class PfsController extends AppController {
 					$this->TelefonePf->save($this->data);
 					$this->data['TelefonePf']['id'] = "";				
 				}
-																
+				
+				
+				// faz upload do arquivo do comprovante														
+				$this->data["Pf"]["id"] = $idPf;
+				if(!empty($comprovante["tmp_name"])){
+						//se largura da imagem maior que 300 é redimensionado para 300
+						$larguraImg = getimagesize($comprovante["tmp_name"]);
+						if($larguraImg[0] > 300)				
+							$this->data["Pf"]["comprovante"] = $this->upload($comprovante,300,$idPf,1);
+						else
+							$this->data["Pf"]["comprovante"] = $this->upload($comprovante,$larguraImg[0],$idPf,1);					
+				}
+
+				// faz upload do arquivo do curriculo anexo																		
+				if(!empty($curriculoAnexo["tmp_name"])){																
+						$this->data["Pf"]["curriculo_anexo"] = $this->upload($curriculoAnexo,"",$idPf,2);
+						//echo "aki"; exit;					
+				}
+				
+				$this->Pf->save($this->data);																
 				$this->Session->setFlash(sprintf(__('O %s foi salvo.', true), 'pf'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -152,6 +226,10 @@ class PfsController extends AppController {
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Pf->delete($id, $cascade = true)) {
+			
+			$this->varreDir("../webroot/files/curriculos",$id);
+			$this->varreDir("../webroot/files/comprovantes",$id);			
+			
 			$this->Session->setFlash(sprintf(__('%s excluído.', true), 'Pf'));
 			$this->redirect(array('action'=>'index'));
 		}
@@ -181,12 +259,39 @@ class PfsController extends AppController {
 	
 	
 	function combo_elos($id = null) {										
-			$this->layout = 'ajax';
-			$elos = $this->Pf->Tipologia->Elo->find('list');
+			$this->layout = 'ajax';			
+			$grupoTipologia = $this->params['pass']['0'];
+			$tipoForm = !empty($this->params['pass']['1']) ? $this->params['pass']['1'] : "";
+			//$tipoForm = $this->params['pass']['1'];
+			
+			
+			if(!empty($tipoForm)){
+				$elos = $this->Pf->Tipologia->Elo->find('list');
+			}			
+			else{ 
+				if($grupoTipologia == 'PF'){						
+					$elos = $this->Pf->Tipologia->find('list',array('joins' => array(
+																			                    array(
+																			                        'table' => 'grupotipologias', 
+																			                    	'alias' => 'GP',                       
+																			                        'type' => 'INNER',
+																			                        'conditions' => array('GP.id = Tipologia.grupotipologia_id'),
+																			                    ),
+																			                    array(
+																			                        'table' => 'elos', 
+																			                    	'alias' => 'elo',                       
+																			                        'type' => 'INNER',
+																			                        'conditions' => array('elo.id = Tipologia.elo_id'),
+																			                    )
+		                    																  ),
+		                    																  'conditions' => array('GP.nome' => 'PF'),
+		                    																  'fields' => array('elo.id','elo.nomelo')	                    															                       															   	                      															  	  
+		                    														)                    														
+		                    												);		
+				}				
+			}			
 		    $this->set(compact('elos'));					
 	}
-	
-	
-	
+			
 }
 ?>

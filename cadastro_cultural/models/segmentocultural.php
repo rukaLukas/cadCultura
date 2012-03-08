@@ -42,7 +42,20 @@ class Segmentocultural extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)		
+		),
+		'Atividade' => array(
+			'className' => 'Atividade',
+			'foreignKey' => 'segmentocultural_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)			
 	);
 
 }

@@ -16,13 +16,13 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $cnaes['Cnaes']['id']; ?>&nbsp;</td>
-		<td><?php echo $cnaes['Cnaes']['nomcnae']; ?>&nbsp;</td>
-		<td><?php echo $cnaes['Cnaes']['codcnae']; ?>&nbsp;</td>
+		<td><?php echo $cnaes['Cnae']['id']; ?>&nbsp;</td>
+		<td><?php echo $cnaes['Cnae']['nomcnae']; ?>&nbsp;</td>
+		<td><?php echo $cnaes['Cnae']['codcnae']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $cnaes['Cnaes']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $cnaes['Cnaes']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $cnaes['Cnaes']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $cnaes['Cnaes']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $cnaes['Cnae']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $cnaes['Cnae']['id'])); ?>
+			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $cnaes['Cnae']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $cnaes['Cnae']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -44,6 +44,6 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Cnaes', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(sprintf(__('Novo %s', true), __('Cnae', true)), array('action' => 'add')); ?></li>		
 	</ul>
 </div>
