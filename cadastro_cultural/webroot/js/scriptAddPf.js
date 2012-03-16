@@ -23,7 +23,10 @@
 	$("#btnExcluirCurriculo").hide();	
 	$("#PfCpf").mask("999.999.999-99");
 	$("#PfRg").mask("99999999-99");
-	$("#PfCep").mask("99999-999");	
+	$("#PfCep").mask("99999-999");		
+	$("#PfRepresentanteTelefone").mask("(99)9999-9999");
+	$("#PfRepresentanteCelular").mask("(99)9999-9999");
+	$("#PfFax").mask("(99)9999-9999");
 	var contadorCurriculos = 0;
 	
 	

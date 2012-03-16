@@ -16,6 +16,7 @@ $javascript->link(array('jquery','jquery.validate','jquery.maskedinput','scriptA
 	<?php				
 		//echo "<a href='#' id='teste' class='btnRemoveTelefone'>hjhj</a>";
 		$sexo = array('M' => 'Masculino', 'F' => 'Feminino');
+		$naturalizado = array('S' => 'Sim', 'N' => 'Não');
 		echo $this->Form->input('nacionalidade_id');
 		echo $this->Form->input('naturalidade_id');
 		echo $this->Form->input('expedidor_rg_id');
@@ -41,7 +42,8 @@ $javascript->link(array('jquery','jquery.validate','jquery.maskedinput','scriptA
 		
 		echo $this->Form->input('nome');
 		echo $this->Form->input('nome_artistico');
-		echo $this->Form->input('naturalizado');
+		//echo $this->Form->input('naturalizado');
+		echo $this->Form->input('naturalizado', array('type' => 'select', 'options' => $naturalizado, 'empty' => true));
 		echo $this->Form->input('data_naturalizacao', array('dateFormat' => 'DMY'));
 		echo $this->Form->input('tipo_visto');
 		echo $this->Form->input('data_validade_visto', array('dateFormat' => 'DMY'));

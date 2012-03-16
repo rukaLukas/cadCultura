@@ -45,9 +45,7 @@ class PfsController extends AppController {
 	            if(file_exists($arq)){// se existi arquivo no diretorio apaga arquivo
 	            	$nomeArquivo = explode(".", $arq);
 	            	if(substr($nomeArquivo[0], -$qtdCaractere) == $id)
-	            		unlink($arq);
-	            	if(substr($nomeArquivo[0], -$qtdCaractere) == $id)
-	            		unlink($arq);	  
+	            		unlink($arq);	            		  
 	            }          		    	        
 	    }    
 	    chdir(".."); // Volta um diretorio
@@ -86,21 +84,29 @@ class PfsController extends AppController {
 			$this->data["Pf"]["comprovante"] = "arquivo";			
 			$this->data["Pf"]["curriculo_anexo"] = "";
 				
-			$existTipologia = false;				
+			$existTipologia = false;	
+			$idGrupoTipologia = $this->Pf->Tipologia->Grupotipologia->grupoTipologiaPf();
+			
 			//recupera id do grupotipologia se existir
+			/*
 			$idGrupoTipologia = $this->Pf->Tipologia->Grupotipologia->find('first', array('fields' => array('Grupotipologia.id'),
 																							  'conditions' => array('Grupotipologia.nome' => 'PF')));
-
-			// array com dondições a serem percorridas no loop
+			*/
+			
+			// array com condições a serem percorridas no loop
 			$conditions = array("Tipologia.elo_id = ".$this->data['Pf']['elo']. " AND Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",
 							    "Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",""
 								);
 								
-			for($i=0; $i<3; $i++){									
+			for($i=0; $i<3; $i++){
+
+				$idTipologia = $this->Pf->Tipologia->idTipologia($this->data['Pf']['segmento_id'],$this->data['Pf']['cbo'],$conditions[$i]);
+				/*
 				$idTipologia = $this->Pf->Tipologia->find('first', array('fields' => array('Tipologia.id','Tipologia.elo_id'), 
 																			'conditions' => array("Tipologia.segmentocultural_id = ".$this->data['Pf']['segmento_id']."", 
 																								  "Tipologia.cbo_id = ".$this->data['Pf']['cbo']."",
 																								  $conditions[$i])));
+				*/
 				//se existe tipologia																								  
 				if($idTipologia > 0){					
 					$existTipologia = true;					
@@ -109,7 +115,7 @@ class PfsController extends AppController {
 			}
 			
 			// se ja existe esse padrão de tipologia recuperamos o ID desse padrão									
-			if(!$existTipologia){				
+			if($existTipologia){				
 				$this->data['Pf']['tipologia_id'] = $idTipologia['Tipologia']['id'];
 			}
 			else{
@@ -117,7 +123,8 @@ class PfsController extends AppController {
 				// atualiza tabela tipologias, recupera id da tipologia
 				$this->data['Tipologia']['elo_id'] = $this->data['Pf']['elo'];
 				$this->data['Tipologia']['segmentocultural_id'] = $this->data['Pf']['segmento_id'];
-				$this->data['Tipologia']['grupotipologia_id'] = $idGrupoTipologia['Grupotipologia']['id'];
+				$this->data['Tipologia']['grupotipologia_id'] = $idGrupoTipologia['Grupotipologia']['id'];				
+				$this->data['Tipologia']['identificador'] = 'PF';
 				$this->Pf->Tipologia->save($this->data);
 				$this->data['Pf']['tipologia_id'] = $this->Pf->Tipologia->id;
 			}
@@ -156,8 +163,7 @@ class PfsController extends AppController {
 					$this->data['TelefonePf']['pf_id'] = $idPf;					
 					$this->TelefonePf->save($this->data);
 					$this->data['TelefonePf']['id'] = "";				
-				}
-				
+				}				
 				
 				// faz upload do arquivo do comprovante														
 				$this->data["Pf"]["id"] = $idPf;
