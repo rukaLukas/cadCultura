@@ -15,17 +15,7 @@
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $cidade['Cidade']['descricao']; ?>
 			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $cidade['Cidade']['created']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $cidade['Cidade']['modified']; ?>
-			&nbsp;
-		</dd>
+		</dd>		
 	</dl>
 </div>
 <div class="actions">
@@ -47,14 +37,14 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
-		<th><?php __('Nacionalidade Id'); ?></th>
-		<th><?php __('Naturalidade Id'); ?></th>
-		<th><?php __('Expedidor Rg Id'); ?></th>
-		<th><?php __('Curriculo Id'); ?></th>
-		<th><?php __('Cidade Id'); ?></th>
-		<th><?php __('Escolaridade Id'); ?></th>
-		<th><?php __('Tipologia Id'); ?></th>
-		<th><?php __('Pais Id'); ?></th>
+		<th><?php __('Nacionalidade'); ?></th>
+		<th><?php __('Naturalidade'); ?></th>
+		<th><?php __('Expedidor Rg'); ?></th>
+		<!--<th><?php __('Curriculo Id'); ?></th>-->
+		<th><?php __('Cidade'); ?></th>
+		<th><?php __('Escolaridade'); ?></th>
+		<th><?php __('Tipologia'); ?></th>
+		<th><?php __('Pais'); ?></th>
 		<th><?php __('Nome'); ?></th>
 		<th><?php __('Nome Artistico'); ?></th>
 		<th><?php __('Naturalizado'); ?></th>
@@ -96,18 +86,18 @@
 			$class = null;
 			if ($i++ % 2 == 0) {
 				$class = ' class="altrow"';
-			}
+			}			
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $pf['id'];?></td>
-			<td><?php echo $pf['nacionalidade_id'];?></td>
-			<td><?php echo $pf['naturalidade_id'];?></td>
-			<td><?php echo $pf['expedidor_rg_id'];?></td>
-			<td><?php echo $pf['curriculo_id'];?></td>
-			<td><?php echo $pf['cidade_id'];?></td>
-			<td><?php echo $pf['escolaridade_id'];?></td>
+			<td><?php echo $pf['Nacionalidade']['descricao'];?></td>
+			<td><?php echo $pf['Naturalidade']['descricao'];?></td>
+			<td><?php echo $pf['ExpedidorRg']['descricao'];?></td>
+			<!--<td><?php echo $pf['curriculo_id'];?></td>-->
+			<td><?php echo $pf['Cidade']['descricao'];?></td>
+			<td><?php echo $pf['Escolaridade']['descricao'];?></td>
 			<td><?php echo $pf['tipologia_id'];?></td>
-			<td><?php echo $pf['pais_id'];?></td>
+			<td><?php echo $pf['Pais']['descricao'];?></td>
 			<td><?php echo $pf['nome'];?></td>
 			<td><?php echo $pf['nome_artistico'];?></td>
 			<td><?php echo $pf['naturalizado'];?></td>

@@ -65,24 +65,61 @@ class PfsController extends AppController {
 		if (!$id) {
 			$this->Session->setFlash(sprintf(__('%s inválido.', true), 'Pf'));
 			$this->redirect(array('action' => 'index'));
-		}
-		
-		//$this->set('pf', $this->Pf->read(null, $id));
-		$pf = $this->Pf->read(null, $id);
-		$funcao = $this->Curriculo->find('all', array('conditions' => array('pf_id' => $id)));
-		
-		$this->set(compact('pf', 'funcao'));
+		}		
+		$pf = $this->Pf->read(null, $id);				
+		$tipologia = $this->Pf->Tipologia->find('first',array('joins' => array(
+																  array(
+																  	    'table' => 'pfs', 
+																	    'alias' => 'pf',                       
+																	    'type' => 'INNER',
+																	    'conditions' => array('Tipologia.id = pf.tipologia_id')
+																	    ),
+															      array(
+																  	    'table' => 'cbos', 
+																	    'alias' => 'cbo',                       
+																	    'type' => 'INNER',
+																	    'conditions' => array('cbo.id = Tipologia.cbo_id')
+																	    ),
+															     array(
+																  	    'table' => 'segmentoculturais', 
+																	    'alias' => 'segmento',                       
+																	    'type' => 'INNER',
+																	    'conditions' => array('segmento.id = Tipologia.segmentocultural_id')
+																	    ),	     
+																array(
+																  	    'table' => 'elos', 
+																	    'alias' => 'elo',                       
+																	    'type' => 'INNER',
+																	    'conditions' => array('elo.id = Tipologia.elo_id')
+																	    )	     
+                    											),        
+                    											'conditions' => array('pf.id' => $id),            											
+                    											'fields' => array('segmento.nome','cbo.nomcbo','elo.nomelo')	                      															  	  
+                    							)                    														
+                    				);		
+		$funcao = $this->Curriculo->find('all', array('conditions' => array('pf_id' => $id)));		
+		$this->set(compact('pf', 'funcao', 'tipologia'));
 		//$this->set('funcao', $this->Curriculo->read(array('conditions' => array('pf_id' => '$id'))));
 		//exit;		
 	}
 
 	function add() {
 		if (!empty($this->data)) {
+			exit;
 			$this->Pf->create();
 			$comprovante = $this->data["Pf"]["comprovante"];//guardo o comprovante
 			$curriculoAnexo = $this->data["Pf"]["curriculo_anexo"];//guardo o curriculo anexo 
 			$this->data["Pf"]["comprovante"] = "arquivo";			
 			$this->data["Pf"]["curriculo_anexo"] = "";
+			$elo = empty($this->data['Pf']['elo']) ? 0 : $this->data['Pf']['elo'];			
+			$naturalizado = $this->data['Pf']['naturalizado'];
+						
+			if($naturalizado == "N"){
+				unset($this->data['Pf']['data_naturalizacao']);
+				unset($this->data['Pf']['visto_id']);
+				unset($this->data['Pf']['data_validade_visto']);
+			}
+			
 				
 			$existTipologia = false;	
 			$idGrupoTipologia = $this->Pf->Tipologia->Grupotipologia->grupoTipologiaPf();
@@ -94,13 +131,13 @@ class PfsController extends AppController {
 			*/
 			
 			// array com condições a serem percorridas no loop
-			$conditions = array("Tipologia.elo_id = ".$this->data['Pf']['elo']. " AND Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",
+			$conditions = array("Tipologia.elo_id = ".$elo. " AND Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",
 							    "Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",""
 								);
 								
 			for($i=0; $i<3; $i++){
 
-				$idTipologia = $this->Pf->Tipologia->idTipologia($this->data['Pf']['segmento_id'],$this->data['Pf']['cbo'],$conditions[$i]);
+				$idTipologia = $this->Pf->Tipologia->idTipologia($this->data['Pf']['segmento_id'],$this->data['Pf']['cbo'],$conditions[$i]);			
 				/*
 				$idTipologia = $this->Pf->Tipologia->find('first', array('fields' => array('Tipologia.id','Tipologia.elo_id'), 
 																			'conditions' => array("Tipologia.segmentocultural_id = ".$this->data['Pf']['segmento_id']."", 
@@ -121,6 +158,7 @@ class PfsController extends AppController {
 			else{
 				// se não existe esse padrão de tipologia cadastramos esse padrão e recuperamos o id
 				// atualiza tabela tipologias, recupera id da tipologia
+				$this->data['Tipologia']['cbo_id'] = $this->data['Pf']['cbo'];
 				$this->data['Tipologia']['elo_id'] = $this->data['Pf']['elo'];
 				$this->data['Tipologia']['segmentocultural_id'] = $this->data['Pf']['segmento_id'];
 				$this->data['Tipologia']['grupotipologia_id'] = $idGrupoTipologia['Grupotipologia']['id'];				
@@ -197,7 +235,8 @@ class PfsController extends AppController {
 		$tipologias = $this->Pf->Tipologia->find('list');
 		$paises = $this->Pf->Pais->find('list');
 		$segmentos = $this->Pf->Tipologia->Segmentocultural->find('list');
-		$this->set(compact('nacionalidades', 'naturalidades', 'expedidorRgs', 'cidades', 'escolaridades', 'tipologias', 'paises', 'segmentos'));
+		$vistos = $this->Pf->Visto->find('list');
+		$this->set(compact('nacionalidades', 'naturalidades', 'expedidorRgs', 'cidades', 'escolaridades', 'tipologias', 'paises', 'segmentos', 'vistos'));
 	}
 
 	function edit($id = null) {
@@ -265,7 +304,7 @@ class PfsController extends AppController {
 	
 	
 	function combo_elos($id = null) {										
-			$this->layout = 'ajax';			
+//			$this->layout = 'ajax';			
 			$grupoTipologia = $this->params['pass']['0'];
 			$tipoForm = !empty($this->params['pass']['1']) ? $this->params['pass']['1'] : "";
 			//$tipoForm = $this->params['pass']['1'];
@@ -277,23 +316,23 @@ class PfsController extends AppController {
 			else{ 
 				if($grupoTipologia == 'PF'){						
 					$elos = $this->Pf->Tipologia->find('list',array('joins' => array(
-																			                    array(
-																			                        'table' => 'grupotipologias', 
-																			                    	'alias' => 'GP',                       
-																			                        'type' => 'INNER',
-																			                        'conditions' => array('GP.id = Tipologia.grupotipologia_id'),
-																			                    ),
-																			                    array(
-																			                        'table' => 'elos', 
-																			                    	'alias' => 'elo',                       
-																			                        'type' => 'INNER',
-																			                        'conditions' => array('elo.id = Tipologia.elo_id'),
-																			                    )
-		                    																  ),
-		                    																  'conditions' => array('GP.nome' => 'PF'),
-		                    																  'fields' => array('elo.id','elo.nomelo')	                    															                       															   	                      															  	  
-		                    														)                    														
-		                    												);		
+																	                    array(
+																	                        'table' => 'grupotipologias', 
+																	                    	'alias' => 'GP',                       
+																	                        'type' => 'INNER',
+																	                        'conditions' => array('GP.id = Tipologia.grupotipologia_id'),
+																	                    ),
+																	                    array(
+																	                        'table' => 'elos', 
+																	                    	'alias' => 'elo',                       
+																	                        'type' => 'INNER',
+																	                        'conditions' => array('elo.id = Tipologia.elo_id'),
+																	                    )
+                    																  ),
+                    																  'conditions' => array('GP.nome' => 'PF'),
+                    																  'fields' => array('elo.id','elo.nomelo')	                    															                       															   	                      															  	  
+                    														)                    														
+                    												);		
 				}				
 			}			
 		    $this->set(compact('elos'));					

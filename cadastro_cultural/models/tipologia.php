@@ -149,6 +149,10 @@ class Tipologia extends AppModel {
 
 	// recupera id da tipologia que tenha o padrão(segmentocultural,cbo,elo,grupotipologia) corrente
 	function idTipologia($segmentoCultural,$cbo,$condicao){
+		$segmentoCultural = empty($segmentoCultural) ? 0 : $segmentoCultural;
+		$cbo = empty($cbo) ? 0 : $cbo;						
+		$condicao = empty($condicao) ? 0 : $condicao;
+		return false;
 		$idTipologia = $this->find('first', array('fields' => array('Tipologia.id','Tipologia.elo_id'), 
 									'conditions' => array("Tipologia.segmentocultural_id = ".$segmentoCultural."", 
 														  "Tipologia.cbo_id = ".$cbo."",
@@ -158,7 +162,6 @@ class Tipologia extends AppModel {
 				    );
 	
 		return $idTipologia;	
-	}
-	
+	}	
 }
 ?>

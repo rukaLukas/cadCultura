@@ -691,3 +691,323 @@ LINE 1: ..."id")  WHERE "Tipologia"."segmentocultural_id" =  AND "Tipol...
 2012-03-14 16:33:34 Warning: Warning (2): readdir() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 43]
 2012-03-14 16:33:34 Warning: Warning (2): closedir() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 54]
 2012-03-14 16:33:34 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-03-16 21:25:39 Warning: Warning (2): pg_connect() [<a href='http://php.net/function.pg-connect'>function.pg-connect</a>]: Unable to connect to PostgreSQL server: FATAL:  banco de dados &quot;cadastrocultural&quot; n�o existe in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 119]
+2012-03-16 21:25:39 Warning: Warning (2): pg_set_client_encoding() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 866]
+2012-03-20 15:09:15 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...&quot;id&quot;)  WHERE &quot;Tipologia&quot;.&quot;segmentocultural_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:09:15 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ..."id")  WHERE "Tipologia"."segmentocultural_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:09:16 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;segmentocultural_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:09:16 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "segmentocultural_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:20:34 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...&quot;id&quot;)  WHERE &quot;Tipologia&quot;.&quot;segmentocultural_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:20:34 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ..."id")  WHERE "Tipologia"."segmentocultural_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:21:25 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...ologia&quot;.&quot;cbo_id&quot; = '' AND &quot;Tipologia&quot;.&quot;elo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:21:25 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...ologia"."cbo_id" = '' AND "Tipologia"."elo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:22:04 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;&quot;
+LINE 1: ....&quot;id&quot;)  WHERE &quot;Tipologia&quot;.&quot;segmentocultural_id&quot; = '' AND &quot;Ti...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:22:04 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: ...."id")  WHERE "Tipologia"."segmentocultural_id" = '' AND "Ti...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:22:18 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;&quot;
+LINE 1: ....&quot;id&quot;)  WHERE &quot;Tipologia&quot;.&quot;segmentocultural_id&quot; = '' AND &quot;Ti...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:22:18 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: ...."id")  WHERE "Tipologia"."segmentocultural_id" = '' AND "Ti...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:22:45 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...ologia&quot;.&quot;cbo_id&quot; = '' AND &quot;Tipologia&quot;.&quot;elo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:22:45 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...ologia"."cbo_id" = '' AND "Tipologia"."elo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:22:56 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...&quot;id&quot;)  WHERE &quot;Tipologia&quot;.&quot;segmentocultural_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:22:56 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ..."id")  WHERE "Tipologia"."segmentocultural_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:25:51 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...&quot;id&quot;)  WHERE &quot;Tipologia&quot;.&quot;segmentocultural_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:25:51 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ..."id")  WHERE "Tipologia"."segmentocultural_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:34:23 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...pologia&quot;.&quot;cbo_id&quot; = 0 AND &quot;Tipologia&quot;.&quot;elo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:34:23 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...pologia"."cbo_id" = 0 AND "Tipologia"."elo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:35:05 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...pologia&quot;.&quot;cbo_id&quot; = 0 AND &quot;Tipologia&quot;.&quot;elo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:35:05 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...pologia"."cbo_id" = 0 AND "Tipologia"."elo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:35:05 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;segmentocultural_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:35:05 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "segmentocultural_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:36:38 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;AND&quot;
+LINE 1: ...pologia&quot;.&quot;cbo_id&quot; = 0 AND &quot;Tipologia&quot;.&quot;elo_id&quot; =  AND &quot;Tipol...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:36:38 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "AND"
+LINE 1: ...pologia"."cbo_id" = 0 AND "Tipologia"."elo_id" =  AND "Tipol...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:36:38 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;segmentocultural_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:36:38 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "segmentocultural_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:38:33 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;segmentocultural_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:38:33 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "segmentocultural_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:41:01 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;segmentocultural_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:41:01 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "segmentocultural_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:41:15 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;segmentocultural_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:41:15 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "segmentocultural_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 15:41:39 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;segmentocultural_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 15:41:39 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "segmentocultural_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 16:56:45 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;Tipologia&quot; na cláusula FROM
+LINE 1: ... AS &quot;Pf&quot; INNER JOIN tipologias AS &quot;tipologia&quot; ON (&quot;Tipologia...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 16:56:45 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "Tipologia" na cláusula FROM
+LINE 1: ... AS "Pf" INNER JOIN tipologias AS "tipologia" ON ("Tipologia...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 16:56:45 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;Tipologia&quot; na cláusula FROM
+LINE 1: ... AS &quot;Pf&quot; INNER JOIN tipologias AS &quot;tipologia&quot; ON (&quot;Tipologia...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 16:56:45 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "Tipologia" na cláusula FROM
+LINE 1: ... AS "Pf" INNER JOIN tipologias AS "tipologia" ON ("Tipologia...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 17:00:02 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;elo&quot; na cláusula FROM
+LINE 1: ...nto__descricao&quot;, &quot;cbo&quot;.&quot;nomcbo&quot; AS &quot;cbo__nomcbo&quot;, &quot;elo&quot;.&quot;nom...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 17:00:02 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "elo" na cláusula FROM
+LINE 1: ...nto__descricao", "cbo"."nomcbo" AS "cbo__nomcbo", "elo"."nom...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 17:00:03 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;elo&quot; na cláusula FROM
+LINE 1: ...nto__descricao&quot;, &quot;cbo&quot;.&quot;nomcbo&quot; AS &quot;cbo__nomcbo&quot;, &quot;elo&quot;.&quot;nom...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 17:00:03 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "elo" na cláusula FROM
+LINE 1: ...nto__descricao", "cbo"."nomcbo" AS "cbo__nomcbo", "elo"."nom...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 17:00:44 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;elo&quot; na cláusula FROM
+LINE 1: ...nto__descricao&quot;, &quot;cbo&quot;.&quot;nomcbo&quot; AS &quot;cbo__nomcbo&quot;, &quot;elo&quot;.&quot;nom...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 17:00:44 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "elo" na cláusula FROM
+LINE 1: ...nto__descricao", "cbo"."nomcbo" AS "cbo__nomcbo", "elo"."nom...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-20 17:00:45 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;elo&quot; na cláusula FROM
+LINE 1: ...nto__descricao&quot;, &quot;cbo&quot;.&quot;nomcbo&quot; AS &quot;cbo__nomcbo&quot;, &quot;elo&quot;.&quot;nom...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-20 17:00:45 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "elo" na cláusula FROM
+LINE 1: ...nto__descricao", "cbo"."nomcbo" AS "cbo__nomcbo", "elo"."nom...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:12:23 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;Pf&quot; na cláusula FROM
+LINE 1: ... tipologias AS &quot;tipologia&quot; ON (&quot;tipologia&quot;.&quot;id&quot; = &quot;Pf&quot;.&quot;tipo...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:12:23 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "Pf" na cláusula FROM
+LINE 1: ... tipologias AS "tipologia" ON ("tipologia"."id" = "Pf"."tipo...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:12:24 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;Pf&quot; na cláusula FROM
+LINE 1: ... tipologias AS &quot;tipologia&quot; ON (&quot;tipologia&quot;.&quot;id&quot; = &quot;Pf&quot;.&quot;tipo...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:12:24 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "Pf" na cláusula FROM
+LINE 1: ... tipologias AS "tipologia" ON ("tipologia"."id" = "Pf"."tipo...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:12:55 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;Pf&quot; na cláusula FROM
+LINE 1: ... tipologias AS &quot;tipologia&quot; ON (&quot;tipologia&quot;.&quot;id&quot; = &quot;Pf&quot;.&quot;tipo...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:12:55 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "Pf" na cláusula FROM
+LINE 1: ... tipologias AS "tipologia" ON ("tipologia"."id" = "Pf"."tipo...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:12:56 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;Pf&quot; na cláusula FROM
+LINE 1: ... tipologias AS &quot;tipologia&quot; ON (&quot;tipologia&quot;.&quot;id&quot; = &quot;Pf&quot;.&quot;tipo...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:12:56 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "Pf" na cláusula FROM
+LINE 1: ... tipologias AS "tipologia" ON ("tipologia"."id" = "Pf"."tipo...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:15:26 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;tipologia&quot; na cláusula FROM
+LINE 1: ...gia&quot; INNER JOIN cnaes AS &quot;cnae&quot; ON (&quot;cnae&quot;.&quot;id&quot; = &quot;tipologia...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:15:26 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "tipologia" na cláusula FROM
+LINE 1: ...gia" INNER JOIN cnaes AS "cnae" ON ("cnae"."id" = "tipologia...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:15:27 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;tipologia&quot; na cláusula FROM
+LINE 1: ...gia&quot; INNER JOIN cnaes AS &quot;cnae&quot; ON (&quot;cnae&quot;.&quot;id&quot; = &quot;tipologia...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:15:27 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "tipologia" na cláusula FROM
+LINE 1: ...gia" INNER JOIN cnaes AS "cnae" ON ("cnae"."id" = "tipologia...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:23:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;tipologia&quot; na cláusula FROM
+LINE 1: ...gia&quot; INNER JOIN cnaes AS &quot;cnae&quot; ON (&quot;cnae&quot;.&quot;id&quot; = &quot;tipologia...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:23:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "tipologia" na cláusula FROM
+LINE 1: ...gia" INNER JOIN cnaes AS "cnae" ON ("cnae"."id" = "tipologia...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:34:33 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;tipologia&quot; na cláusula FROM
+LINE 1: ...logias&quot; AS &quot;Tipologia&quot; INNER JOIN pfs AS &quot;pf&quot; ON (&quot;tipologia...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:34:33 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "tipologia" na cláusula FROM
+LINE 1: ...logias" AS "Tipologia" INNER JOIN pfs AS "pf" ON ("tipologia...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:34:34 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;tipologia&quot; na cláusula FROM
+LINE 1: ...logias&quot; AS &quot;Tipologia&quot; INNER JOIN pfs AS &quot;pf&quot; ON (&quot;tipologia...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:34:34 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "tipologia" na cláusula FROM
+LINE 1: ...logias" AS "Tipologia" INNER JOIN pfs AS "pf" ON ("tipologia...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:35:04 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna segmento.descricao não existe
+LINE 1: SELECT &quot;segmento&quot;.&quot;descricao&quot; AS &quot;segmento__descricao&quot;, &quot;cbo...
+               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:35:04 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna segmento.descricao não existe
+LINE 1: SELECT "segmento"."descricao" AS "segmento__descricao", "cbo...
+               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:35:05 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna segmento.descricao não existe
+LINE 1: SELECT &quot;segmento&quot;.&quot;descricao&quot; AS &quot;segmento__descricao&quot;, &quot;cbo...
+               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:35:05 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna segmento.descricao não existe
+LINE 1: SELECT "segmento"."descricao" AS "segmento__descricao", "cbo...
+               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:35:52 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna segmento.descricao não existe
+LINE 1: SELECT &quot;segmento&quot;.&quot;descricao&quot; AS &quot;segmento__descricao&quot;, &quot;cbo...
+               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:35:52 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna segmento.descricao não existe
+LINE 1: SELECT "segmento"."descricao" AS "segmento__descricao", "cbo...
+               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:35:53 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  coluna segmento.descricao não existe
+LINE 1: SELECT &quot;segmento&quot;.&quot;descricao&quot; AS &quot;segmento__descricao&quot;, &quot;cbo...
+               ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:35:53 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  coluna segmento.descricao não existe
+LINE 1: SELECT "segmento"."descricao" AS "segmento__descricao", "cbo...
+               ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:36:27 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;Pf&quot; na cláusula FROM
+LINE 1: ...lo&quot; ON (&quot;Tipologia&quot;.&quot;elo_id&quot; = &quot;Elo&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:36:27 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "Pf" na cláusula FROM
+LINE 1: ...lo" ON ("Tipologia"."elo_id" = "Elo"."id")  WHERE "Pf"."id" ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 03:36:28 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  faltando entrada para tabela &quot;Pf&quot; na cláusula FROM
+LINE 1: ...lo&quot; ON (&quot;Tipologia&quot;.&quot;elo_id&quot; = &quot;Elo&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 03:36:28 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  faltando entrada para tabela "Pf" na cláusula FROM
+LINE 1: ...lo" ON ("Tipologia"."elo_id" = "Elo"."id")  WHERE "Pf"."id" ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:29:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;files&quot;
+LINE 1: ...(&quot;Pf&quot;.&quot;pais_id&quot; = &quot;Pais&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'files'   ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:29:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "files"
+LINE 1: ...("Pf"."pais_id" = "Pais"."id")  WHERE "Pf"."id" = 'files'   ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:29:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;files&quot;
+LINE 1: ...ologia&quot;.&quot;elo_id&quot; = &quot;Elo&quot;.&quot;id&quot;)  WHERE &quot;pf&quot;.&quot;id&quot; = 'files'   ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:29:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "files"
+LINE 1: ...ologia"."elo_id" = "Elo"."id")  WHERE "pf"."id" = 'files'   ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:29:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;files&quot;
+LINE 1: ...&quot;Curriculo&quot;.&quot;pf_id&quot; = &quot;Pf&quot;.&quot;id&quot;)  WHERE &quot;pf_id&quot; = 'files'   
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:29:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "files"
+LINE 1: ..."Curriculo"."pf_id" = "Pf"."id")  WHERE "pf_id" = 'files'   
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:29:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;files&quot;
+LINE 1: ...(&quot;Pf&quot;.&quot;pais_id&quot; = &quot;Pais&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'files'   ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:29:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "files"
+LINE 1: ...("Pf"."pais_id" = "Pais"."id")  WHERE "Pf"."id" = 'files'   ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:29:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;files&quot;
+LINE 1: ...ologia&quot;.&quot;elo_id&quot; = &quot;Elo&quot;.&quot;id&quot;)  WHERE &quot;pf&quot;.&quot;id&quot; = 'files'   ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:29:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "files"
+LINE 1: ...ologia"."elo_id" = "Elo"."id")  WHERE "pf"."id" = 'files'   ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:29:35 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;files&quot;
+LINE 1: ...&quot;Curriculo&quot;.&quot;pf_id&quot; = &quot;Pf&quot;.&quot;id&quot;)  WHERE &quot;pf_id&quot; = 'files'   
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:29:35 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "files"
+LINE 1: ..."Curriculo"."pf_id" = "Pf"."id")  WHERE "pf_id" = 'files'   
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:31:09 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...(&quot;Pf&quot;.&quot;pais_id&quot; = &quot;Pais&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:31:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ...("Pf"."pais_id" = "Pais"."id")  WHERE "Pf"."id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:31:09 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...ologia&quot;.&quot;elo_id&quot; = &quot;Elo&quot;.&quot;id&quot;)  WHERE &quot;pf&quot;.&quot;id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:31:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ...ologia"."elo_id" = "Elo"."id")  WHERE "pf"."id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:31:09 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...&quot;Curriculo&quot;.&quot;pf_id&quot; = &quot;Pf&quot;.&quot;id&quot;)  WHERE &quot;pf_id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:31:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ..."Curriculo"."pf_id" = "Pf"."id")  WHERE "pf_id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:31:10 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...(&quot;Pf&quot;.&quot;pais_id&quot; = &quot;Pais&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:31:10 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ...("Pf"."pais_id" = "Pais"."id")  WHERE "Pf"."id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:31:10 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...ologia&quot;.&quot;elo_id&quot; = &quot;Elo&quot;.&quot;id&quot;)  WHERE &quot;pf&quot;.&quot;id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:31:10 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ...ologia"."elo_id" = "Elo"."id")  WHERE "pf"."id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:31:10 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...&quot;Curriculo&quot;.&quot;pf_id&quot; = &quot;Pf&quot;.&quot;id&quot;)  WHERE &quot;pf_id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:31:10 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ..."Curriculo"."pf_id" = "Pf"."id")  WHERE "pf_id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:35:38 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...(&quot;Pf&quot;.&quot;pais_id&quot; = &quot;Pais&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:35:38 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ...("Pf"."pais_id" = "Pais"."id")  WHERE "Pf"."id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:35:38 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...ologia&quot;.&quot;elo_id&quot; = &quot;Elo&quot;.&quot;id&quot;)  WHERE &quot;pf&quot;.&quot;id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:35:38 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ...ologia"."elo_id" = "Elo"."id")  WHERE "pf"."id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:35:38 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...&quot;Curriculo&quot;.&quot;pf_id&quot; = &quot;Pf&quot;.&quot;id&quot;)  WHERE &quot;pf_id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:35:38 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ..."Curriculo"."pf_id" = "Pf"."id")  WHERE "pf_id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:35:39 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...(&quot;Pf&quot;.&quot;pais_id&quot; = &quot;Pais&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:35:39 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ...("Pf"."pais_id" = "Pais"."id")  WHERE "Pf"."id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:35:39 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...ologia&quot;.&quot;elo_id&quot; = &quot;Elo&quot;.&quot;id&quot;)  WHERE &quot;pf&quot;.&quot;id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:35:39 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ...ologia"."elo_id" = "Elo"."id")  WHERE "pf"."id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:35:39 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;webroot&quot;
+LINE 1: ...&quot;Curriculo&quot;.&quot;pf_id&quot; = &quot;Pf&quot;.&quot;id&quot;)  WHERE &quot;pf_id&quot; = 'webroot' ...
+                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:35:39 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "webroot"
+LINE 1: ..."Curriculo"."pf_id" = "Pf"."id")  WHERE "pf_id" = 'webroot' ...
+                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 04:59:26 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;descricao&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 04:59:26 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "descricao" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-21 05:00:48 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;descricao&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-21 05:00:48 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "descricao" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]

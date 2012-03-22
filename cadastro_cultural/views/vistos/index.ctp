@@ -1,5 +1,5 @@
-<div class="ufs index">
-	<h2><?php __('Ufs');?></h2>
+<div class="vistos index">
+	<h2><?php __('Vistos');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
@@ -8,21 +8,21 @@
 	</tr>
 	<?php
 	$i = 0;
-	foreach ($ufs as $uf):
+	foreach ($vistos as $uf):
 		$class = null;
 		if ($i++ % 2 == 0) {
 			$class = ' class="altrow"';
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $uf['Uf']['id']; ?>&nbsp;</td>
-		<td><?php echo $uf['Uf']['descricao']; ?>&nbsp;</td>
-		<td><?php echo $uf['Uf']['created']; ?>&nbsp;</td>
-		<td><?php echo $uf['Uf']['modified']; ?>&nbsp;</td>
+		<td><?php echo $uf['Visto']['id']; ?>&nbsp;</td>
+		<td><?php echo $uf['Visto']['descricao']; ?>&nbsp;</td>
+		<td><?php echo $uf['Visto']['created']; ?>&nbsp;</td>
+		<td><?php echo $uf['Visto']['modified']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $uf['Uf']['id'])); ?>
-			<?php echo $this->Html->link(__('Editar', true), array('action' => 'edit', $uf['Uf']['id'])); ?>
-			<?php echo $this->Html->link(__('Excluir', true), array('action' => 'delete', $uf['Uf']['id']), null, sprintf(__('Você tem certeza que deseja excluir o id #%s?', true), $uf['Uf']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $uf['Visto']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar', true), array('action' => 'edit', $uf['Visto']['id'])); ?>
+			<?php echo $this->Html->link(__('Excluir', true), array('action' => 'delete', $uf['Visto']['id']), null, sprintf(__('Você tem certeza que deseja excluir o id #%s?', true), $uf['Visto']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -44,7 +44,7 @@
 <div class="actions">
 	<h3><?php __('Ações'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(sprintf(__('Novo %s', true), __('Uf', true)), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(sprintf(__('Novo %s', true), __('Visto', true)), array('action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(sprintf(__('Listar %s', true), __('Cidades', true)), array('controller' => 'cidades', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(sprintf(__('Novo %s', true), __('Cidade', true)), array('controller' => 'cidades', 'action' => 'add')); ?> </li>
 	</ul>

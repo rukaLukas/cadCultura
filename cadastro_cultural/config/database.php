@@ -5,6 +5,7 @@ class DATABASE_CONFIG {
 		'driver' => 'postgres',
 		'persistent' => false,		
 		'host' => 'localhost',		
+		'port' => 5433,
 		'login' => 'postgres',
 		'password' => 'rootruka',
 		'database' => 'cadastrocultural',

@@ -9,6 +9,7 @@ class CidadesController extends AppController {
 	}
 
 	function view($id = null) {
+		$this->Cidade->recursive = 2;
 		if (!$id) {
 			$this->Session->setFlash(sprintf(__('%s inválido.', true), 'Cidade'));
 			$this->redirect(array('action' => 'index'));

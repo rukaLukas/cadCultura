@@ -23,7 +23,7 @@ $javascript->link(array('jquery','jquery.validate','jquery.maskedinput','scriptA
 		echo $this->Form->input('cidade_id');
 		echo $this->Form->input('escolaridade_id');
 		//echo $this->Form->input('tipologia_id');
-		echo $this->Form->input('pais_id');
+		echo $this->Form->input('pais_id', array('label' => 'País'));
 		
 		$opcoesAtividade = array('0'=>'Selecione um Segmento');
 		$opcoesElo = array('0'=>'Selecione uma Atividade');
@@ -37,26 +37,30 @@ $javascript->link(array('jquery','jquery.validate','jquery.maskedinput','scriptA
 													'options' => $opcoesElo
 													));																								
 		echo $this->Html->div('', $atividade, array('id' => 'divComboCBO'));
-		echo $this->Html->div('', $elo, array('id' => 'divComboElo'));
+		//echo $this->Html->div('', $elo, array('id' => 'divComboElo'));		
 				
 		
 		echo $this->Form->input('nome');
 		echo $this->Form->input('nome_artistico');
 		//echo $this->Form->input('naturalizado');
 		echo $this->Form->input('naturalizado', array('type' => 'select', 'options' => $naturalizado, 'empty' => true));
-		echo $this->Form->input('data_naturalizacao', array('dateFormat' => 'DMY'));
-		echo $this->Form->input('tipo_visto');
-		echo $this->Form->input('data_validade_visto', array('dateFormat' => 'DMY'));
+		
+		$camposNaturalizacao = $this->Form->input('data_naturalizacao', array('dateFormat' => 'DMY'));
+		$camposNaturalizacao .= $this->Form->input('visto_id');
+		$camposNaturalizacao .= $this->Form->input('data_validade_visto', array('dateFormat' => 'DMY'));
+		
+		echo $this->Html->div('', $camposNaturalizacao, array('id' => 'divNaturalizacao'));		
 		echo $this->Form->input('data_nascimento', array('dateFormat' => 'DMY'));
 		echo $this->Form->input('sexo', array('type' => 'select', 'options' => $sexo, 'empty' => true));
+		echo $this->Form->input('passaporte');
 		echo $this->Form->input('cpf');
 		echo $this->Form->input('rg');
 		echo $this->Form->input('data_rg', array('dateFormat' => 'DMY'));
-		echo $this->Form->input('ano_graduacao');
-		echo $this->Form->input('curso');
-		echo $this->Form->input('profissao');
+		echo $this->Form->input('ano_graduacao', array('label' => 'Ano Gradução'));
+		echo $this->Form->input('curso', array('maxlength' => '100'));
+		echo $this->Form->input('profissao', array('label' => 'Profissão'));
 		echo $this->Form->input('logradouro');
-		echo $this->Form->input('numero');
+		echo $this->Form->input('numero', array('label' => 'Número'));
 		echo $this->Form->input('complemento');
 		echo $this->Form->input('bairro');
 		echo $this->Form->input('cep');
@@ -69,6 +73,7 @@ $javascript->link(array('jquery','jquery.validate','jquery.maskedinput','scriptA
 		$divFormCurriculo = $this->Html->div('', '', array('id' => 'divFormCurriculo'));		
 		$btnAddCurriculo = $form->button('Adicionar currículo', array('id' => 'btnAddCurriculo', 'style'=>'margin:0 0 10px 0', 'type'=>'button'));
 		$btnSalvarCurriculo = $this->Form->button('Salvar Curriculo', array('type'=>'button', 'id'=>'btnSalvarCurriculo'));		
+		$btnCancelarCurriculo = $this->Form->button('Cancelar', array('type'=>'button', 'id'=>'btnCancelarCurriculo'));
 		$focusCurriculo = $this->Form->input('focusCurriculo', array('type' => 'hidden', 'id' => 'focusCurriculo'));
 		$listaCurriculos = $this->Html->div('listaCurriculos', $focusCurriculo, array('id' => 'listaCurriculos'));		
 		$btnExcluirCurriculo = $this->Form->button('Excluir Curriculos', array('type'=>'button', 'id'=>'btnExcluirCurriculo'));				
@@ -76,21 +81,21 @@ $javascript->link(array('jquery','jquery.validate','jquery.maskedinput','scriptA
 		echo $this->Html->tag('fieldset', '<legend>Telefones</legend>' . $btnAddTel . $btnRemoveTel . '<br>', array('class' => 'telefones'));			
 		echo $this->Html->tag('br', '');
 		
-		echo $this->Html->tag('fieldset', '<legend>Currículo</legend>' . $this->Html->div('', 'Aguarde carregando...', array('id' => 'loading')) . $listaCurriculos . '<br>' . $btnAddCurriculo . $btnExcluirCurriculo . $divFormCurriculo . $btnSalvarCurriculo, array('class' => 'curriculos'));		
+		echo $this->Html->tag('fieldset', '<legend>Currículo</legend>' . $this->Html->div('', 'Aguarde carregando...', array('id' => 'loading')) . $listaCurriculos . '<br>' . $btnAddCurriculo . $btnExcluirCurriculo . $divFormCurriculo . $btnSalvarCurriculo . $btnCancelarCurriculo, array('class' => 'curriculos'));		
 		
 										
 		
-		echo $this->Form->input('representante_oficial');
-		echo $this->Form->input('representante_nome');
+		//echo $this->Form->input('representante_oficial');
+		echo $this->Form->input('representante_nome', array('maxlength' => '100'));
 		echo $this->Form->input('representante_cpf');
 		echo $this->Form->input('representante_rg');
-		echo $this->Form->input('representante_dataexpedicao_rg');
-		echo $this->Form->input('representante_expedidor_rg');
+		echo $this->Form->input('representante_dataexpedicao_rg', array('label' => 'Representante - Data Expedição'));
+		echo $this->Form->input('representante_expedidor_rg', array('label' => 'Representante - Expedidor Rg'));
 		echo $this->Form->input('representante_telefone');
 		echo $this->Form->input('representante_celular');
 		echo $this->Form->input('representante_email');
-		echo $this->Form->input('representante_delegacao');
-		echo $this->Form->input('deletado');
+		echo $this->Form->input('representante_delegacao', array('label' => 'Representante Delegação'));
+		//echo $this->Form->input('deletado');
 		echo $this->Form->input('email');
 		echo $this->Form->input('site');
 		echo $this->Form->input('fax');

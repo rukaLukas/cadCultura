@@ -1,5 +1,5 @@
 <div class="paises view">
-<h2><?php  __('Pais');?></h2>
+<h2><?php  __('País');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
@@ -10,17 +10,7 @@
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $pais['Pais']['descricao']; ?>
 			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $pais['Pais']['created']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $pais['Pais']['modified']; ?>
-			&nbsp;
-		</dd>
+		</dd>		
 	</dl>
 </div>
 <div class="actions">
@@ -47,7 +37,7 @@
 		<th><?php __('Cidade Id'); ?></th>
 		<th><?php __('Escolaridade Id'); ?></th>
 		<th><?php __('Tipologia Id'); ?></th>
-		<th><?php __('Pais Id'); ?></th>
+		<th><?php __('País Id'); ?></th>
 		<th><?php __('Nome'); ?></th>
 		<th><?php __('Nome Artistico'); ?></th>
 		<th><?php __('Naturalizado'); ?></th>

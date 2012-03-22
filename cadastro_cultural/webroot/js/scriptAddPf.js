@@ -20,18 +20,54 @@
 	$("#loading").hide();
 	$("#btnRemoveTelefone").hide();
 	$("#btnSalvarCurriculo").hide();
-	$("#btnExcluirCurriculo").hide();	
+	$("#btnCancelarCurriculo").hide();
+	$("#btnExcluirCurriculo").hide();
+	$("#divNaturalizacao").hide();
 	$("#PfCpf").mask("999.999.999-99");
+	$("#PfRepresentanteCpf").mask("999.999.999-99");
+	$("#PfRepresentanteRg").mask("9999999999");	
+	$("#PfRepresentanteTelefone").mask("(99)9999-9999");
+	$("#PfRepresentanteCelular").mask("(99)9999-9999");
 	$("#PfRg").mask("99999999-99");
 	$("#PfCep").mask("99999-999");		
 	$("#PfRepresentanteTelefone").mask("(99)9999-9999");
 	$("#PfRepresentanteCelular").mask("(99)9999-9999");
-	$("#PfFax").mask("(99)9999-9999");
+	$("#PfFax").mask("(99)9999-9999");	
+	$("#PfAnoGraduacao").mask("9999");
+	$("#PfPassaporte").mask("999999999");
 	var contadorCurriculos = 0;
 	
 	
+	$("#PfNaturalizado").change(function(){
+		if($(this).val() == "S")
+			$("#divNaturalizacao").show();		
+		else
+			$("#divNaturalizacao").hide();
+	});
+	
+	// verifica se tem mais de 9 elos por ocupação
+	function validaElo(){
+		checkElo = 0;		
+		$("#PfEloId").find("option").each(function(){															
+			if(this.selected){				
+				checkElo++;
+			}																		
+		});		
+		if(checkElo > 1){
+			alert("Cada ocupação só pode ter até 9 elos");
+			$("#PfEloId").focus();
+			return false;
+		}
+		return true;
+	}
+	
 	function validaSubmit(){
-		okTel = 0;		
+		okTel = 0;				
+		ve = validaElo();				
+		if(ve != true){
+			return false;
+		}
+		
 		$("#PfAtividade").val($("#divComboCBO #PfAtividadeId").val());
 		$("#PfElo").val($("#divComboElo #PfEloId").val());		
 		
@@ -209,13 +245,34 @@
 	
 	//carrega combobox atividade
 	$("#PfSegmentoId").change(function(){		
-		var segmento = $(this).val();					
-		$.get("/cadastro_cultural/pfs/combo_cbo/"+segmento+"", {		    
-		    }, function(resposta){
-		        //Tratamento dos dados de retorno
-    			$("#divComboCBO").html(resposta); 	   
-		   }
-		);	        									
+		var segmento = $(this).val();
+		if(segmento != ""){
+			$.get("/cadastro_cultural/pfs/combo_cbo/"+segmento+"", {		    
+			    }, function(resposta){
+			        //Tratamento dos dados de retorno
+	    			$("#divComboCBO").html(resposta); 	   
+			   }
+			);	        									
+		}
+		else{
+			respostaCbo = "";
+			respostaCbo += "<label for=\"PfAtividade\">Atividade</label>";
+			respostaCbo += "<select id=\"PfAtividade\" name=\"data[Pf][atividade]\">";
+			respostaCbo += "<option value=\"0\">Selecione um Segmento</option>";
+			respostaCbo += "</select>";			
+			
+			respostaElo = "";
+			respostaElo += "<label for=\"PfElo\">Elo</label>";
+			respostaElo += "<select id=\"PfElo\" name=\"data[Pf][elo]\">";
+			respostaElo += "<option value=\"0\">Selecione uma Atividade</option>";
+			respostaElo += "</select>";
+			
+			$("#divComboCBO").html(respostaCbo);
+			$("#divComboElo").html(respostaElo);
+			
+			$("#PfAtividade").val("");
+			$("#PfElo").val("");			
+		}
 	});		
 	
 	
@@ -234,6 +291,28 @@
 		$(".telefones input:checkbox:last").attr("value",qtdTel);
 		
 	});
+	
+	
+	
+	
+	function limpaCurriculo(){
+		// limpa formulário do curriculo		
+		 $(".curriculos #CurriculoAddForm").find(":input").each(function() {
+		        switch(this.type) {
+		            case "password":
+		            case "select-multiple":
+		            case "select-one":
+		            case "text":
+		            case "textarea":
+		                $(this).val("");
+		                break;
+		            case "checkbox":
+		            case "radio":
+		                this.checked = false;
+		        }
+		 });			
+	}
+	
 	
 	// eventos ao clicar em salvar currículo
 	$("#btnSalvarCurriculo").click(function(){		
@@ -289,22 +368,8 @@
 		tabelaListaCurriculos += "</table>";		
 		
 		
-		// limpa formulário do curriculo		
-		 $(".curriculos #CurriculoAddForm").find(":input").each(function() {
-		        switch(this.type) {
-		            case "password":
-		            case "select-multiple":
-		            case "select-one":
-		            case "text":
-		            case "textarea":
-		                $(this).val("");
-		                break;
-		            case "checkbox":
-		            case "radio":
-		                this.checked = false;
-		        }
-		 });		
-		
+		// limpa formulário do curriculo
+		limpaCurriculo();		
 		
 		$(".curriculos #divFormCurriculo").hide();
 		$(".curriculos #listaCurriculos").append(tabelaListaCurriculos);
@@ -312,6 +377,12 @@
 		$("#btnAddCurriculo").show();		
 		$("#btnExcluirCurriculo").show();		
 		$("input:checkbox").focus();
+	});
+	
+	
+	$("#btnCancelarCurriculo").click(function(){
+		limpaCurriculo();
+		$(".curriculos #divFormCurriculo").hide();
 	});
 	
 		
@@ -337,7 +408,8 @@
 				linha = $(this).attr("value");
 				$(".txtExcluir").remove();
 				//$(this).remove();
-				$("#tel"+linha).remove();				
+				$("#tel"+linha).remove();
+				$(this).remove();
 			}																
 		});
 	});
@@ -357,5 +429,6 @@
        		   }
        	);	       	
        	$("#btnSalvarCurriculo").show();
+       	$("#btnCancelarCurriculo").show();
 	});		
   });

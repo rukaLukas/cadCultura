@@ -1,11 +1,9 @@
 <div class="paises index">
-	<h2><?php __('Paises');?></h2>
+	<h2><?php __('Países');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('descricao');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
+			<th><?php echo $this->Paginator->sort('descricao');?></th>			
 			<th class="actions"><?php __('Ações');?></th>
 	</tr>
 	<?php
@@ -18,9 +16,7 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $pais['Pais']['id']; ?>&nbsp;</td>
-		<td><?php echo $pais['Pais']['descricao']; ?>&nbsp;</td>
-		<td><?php echo $pais['Pais']['created']; ?>&nbsp;</td>
-		<td><?php echo $pais['Pais']['modified']; ?>&nbsp;</td>
+		<td><?php echo $pais['Pais']['descricao']; ?>&nbsp;</td>		
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $pais['Pais']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar', true), array('action' => 'edit', $pais['Pais']['id'])); ?>

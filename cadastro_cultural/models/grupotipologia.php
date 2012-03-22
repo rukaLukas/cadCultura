@@ -46,7 +46,7 @@ class Grupotipologia extends AppModel {
 	//recupera id do grupotipologia se existir
 	function grupoTipologiaPf(){
 		$idGrupoTipologia = $this->find('first', array('fields' => array('Grupotipologia.id'),
-																					  'conditions' => array('Grupotipologia.nome' => 'PF')));
+													   'conditions' => array('Grupotipologia.nome' => 'PF')));
 		return $idGrupoTipologia;
 	}	
 

@@ -537,22 +537,22 @@ div.code-coverage-results span.result-good {
 
 
 /* FORMATAÇÕES ADICIONAIS */
-#listaCurriculos{
+#listaCurriculos, #listaElos{
 	width:90%;
 	border:1px solid #ededed;
 }
 
-.listaCurriculos table
+.listaCurriculos table, #listaElos table
 {
 	border-collapse:collapse;
 	border:1px solid #ededed;
 	width:100%;
 } 
-.listaCurriculos td
+.listaCurriculos td, #listaElos td
 {
 	border:1px solid #000;
 }
-.listaCurriculos th
+.listaCurriculos th, #listaElos th
 {
 	background:#ededed;
 }
@@ -560,5 +560,34 @@ div.code-coverage-results span.result-good {
 	background: #c73e14;
 	color:#fff;
 	font-size: 14px;
+}
+
+
+#PfComboCboForm div.select,#PfComboCboForm div.input{	
+	width:200px;
+	float:left;	
+	clear: none;
+}
+
+#PfComboCboForm select[multiple=multiple]{
+	min-height: 80px;
+}
+
+#btnAddAtividade{
+	float:left;
+	margin-top:80px;
+}
+
+#btnAddAtividade, #btnRemoveAtividade{
+	width:100px;
+}
+
+#PfComboCboForm #btns, #PfComboCboForm #btns2, #PfComboCboForm #divComboElo{
+	float:left;
+	clear:none;
+}
+
+#PfComboCboForm #divComboElo{
+	margin-top:-5px;
 }
 /* FORMATAÇÕES ADICIONAIS */

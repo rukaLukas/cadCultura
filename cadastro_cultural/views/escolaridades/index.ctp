@@ -3,9 +3,7 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('descricao');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
+			<th><?php echo $this->Paginator->sort('descricao');?></th>			
 			<th class="actions"><?php __('Ações');?></th>
 	</tr>
 	<?php
@@ -18,9 +16,7 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $escolaridade['Escolaridade']['id']; ?>&nbsp;</td>
-		<td><?php echo $escolaridade['Escolaridade']['descricao']; ?>&nbsp;</td>
-		<td><?php echo $escolaridade['Escolaridade']['created']; ?>&nbsp;</td>
-		<td><?php echo $escolaridade['Escolaridade']['modified']; ?>&nbsp;</td>
+		<td><?php echo $escolaridade['Escolaridade']['descricao']; ?>&nbsp;</td>		
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $escolaridade['Escolaridade']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar', true), array('action' => 'edit', $escolaridade['Escolaridade']['id'])); ?>

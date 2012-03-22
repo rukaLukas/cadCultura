@@ -1,12 +1,9 @@
 <div class="cidades index">
 	<h2><?php __('Cidades');?></h2>
 	<table cellpadding="0" cellspacing="0">
-	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
+	<tr>			
 			<th><?php echo $this->Paginator->sort('uf_id');?></th>
-			<th><?php echo $this->Paginator->sort('descricao');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
+			<th><?php echo $this->Paginator->sort('descricao');?></th>			
 			<th class="actions"><?php __('Ações');?></th>
 	</tr>
 	<?php
@@ -17,14 +14,11 @@
 			$class = ' class="altrow"';
 		}
 	?>
-	<tr<?php echo $class;?>>
-		<td><?php echo $cidade['Cidade']['id']; ?>&nbsp;</td>
+	<tr<?php echo $class;?>>		
 		<td>
 			<?php echo $this->Html->link($cidade['Uf']['descricao'], array('controller' => 'ufs', 'action' => 'view', $cidade['Uf']['id'])); ?>
 		</td>
-		<td><?php echo $cidade['Cidade']['descricao']; ?>&nbsp;</td>
-		<td><?php echo $cidade['Cidade']['created']; ?>&nbsp;</td>
-		<td><?php echo $cidade['Cidade']['modified']; ?>&nbsp;</td>
+		<td><?php echo $cidade['Cidade']['descricao']; ?>&nbsp;</td>		
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $cidade['Cidade']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar', true), array('action' => 'edit', $cidade['Cidade']['id'])); ?>

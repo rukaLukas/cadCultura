@@ -1,7 +1,7 @@
 <div class="paises form">
 <?php echo $this->Form->create('Pais');?>
 	<fieldset>
- 		<legend><?php printf(__('Incluir %s', true), __('Pais', true)); ?></legend>
+ 		<legend><?php printf(__('Incluir %s', true), __('País', true)); ?></legend>
 	<?php
 		echo $this->Form->input('descricao');
 	?>

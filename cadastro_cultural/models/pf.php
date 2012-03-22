@@ -122,6 +122,14 @@ class Pf extends AppModel {
 				//'last' => false, // Para a validação após esta regra
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
+			'cpfDuplicado' => array(			
+				'rule' => array('cpfDuplicado'),
+				'message' => 'esse CPF já está cadastrado',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations		
+			)
 		),
 		'rg' => array(
 			'notempty' => array(
@@ -297,6 +305,13 @@ class Pf extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'Visto' => array(
+			'className' => 'Visto',
+			'foreignKey' => 'visto_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 
@@ -328,5 +343,19 @@ class Pf extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+	
+	
+	
+	function cpfDuplicado(){
+		$codCbo = $this->data['Pf']['cpf'];
+		$total = $this->find('count', array('conditions' => array('Pf.cpf' => $codCbo)));				
+		
+		if($total > 0)
+			return false;	
+		else 
+			return true;	
+		
+	}
+	
 }
 ?>

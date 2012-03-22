@@ -57,7 +57,7 @@
  * Editing below this line should NOT be necessary.
  * Change at your own risk.
  *
- */
+ */	
 	if (!defined('WEBROOT_DIR')) {
 		define('WEBROOT_DIR', basename(dirname(__FILE__)));
 	}
@@ -72,7 +72,7 @@
 			define('APP_PATH', ROOT . DS . APP_DIR . DS);
 			define('CORE_PATH', CAKE_CORE_INCLUDE_PATH . DS);
 		}
-	}
+	}	
 	if (!include(CORE_PATH . 'cake' . DS . 'bootstrap.php')) {
 		echo dirname(dirname(dirname(__FILE__)));
 		trigger_error("CakePHP core could not be found.  Check the value of CAKE_CORE_INCLUDE_PATH in APP/webroot/index.php.  It should point to the directory containing your " . DS . "cake core directory and your " . DS . "vendors root directory.", E_USER_ERROR);

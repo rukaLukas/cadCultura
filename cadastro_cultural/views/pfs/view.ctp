@@ -33,10 +33,12 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Tipologia'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($pf['Tipologia']['id'], array('controller' => 'tipologias', 'action' => 'view', $pf['Tipologia']['id'])); ?>
+			<?php
+				$nomeTipologia = $tipologia['segmento']['nome'] . '-' . $tipologia['cbo']['nomcbo'] . '-' . $tipologia['elo']['nomelo'];  
+				echo $this->Html->link($nomeTipologia, array('controller' => 'tipologias', 'action' => 'view', $pf['Tipologia']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Pais'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('País'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $this->Html->link($pf['Pais']['descricao'], array('controller' => 'paises', 'action' => 'view', $pf['Pais']['id'])); ?>
 			&nbsp;
@@ -58,7 +60,7 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Data Naturalização'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $pf['Pf']['data_naturalizacao']; ?>
+			<?php echo $this->Formatacao->data($pf['Pf']['data_naturalizacao']); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Tipo Visto'); ?></dt>
@@ -68,12 +70,12 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Data Validade Visto'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $pf['Pf']['data_validade_visto']; ?>
+			<?php echo $this->Formatacao->data($pf['Pf']['data_validade_visto']); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Data Nascimento'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $pf['Pf']['data_nascimento']; ?>
+			<?php echo $this->Formatacao->data($pf['Pf']['data_nascimento']); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Sexo'); ?></dt>
@@ -93,7 +95,7 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Data Rg'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $pf['Pf']['data_rg']; ?>
+			<?php echo $this->Formatacao->data($pf['Pf']['data_rg']); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Ano Graduação'); ?></dt>
@@ -138,7 +140,13 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Comprovante'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $pf['Pf']['comprovante']; ?>
+			<?php 
+			echo $this->Html->link(
+								$this->Html->image('download.png', array('alt'=> __('comprovante', true), 'border' => '0', 'width' => '24')),
+								array('../../webroot/'.$pf['Pf']['comprovante']),
+								array('escape' => false, 'target' => 'blank')
+							);
+			?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Representante Oficial'); ?></dt>
@@ -196,14 +204,14 @@
 			<?php echo $pf['Pf']['deletado']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Criado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $pf['Pf']['created']; ?>
+			<?php echo $this->Formatacao->dataHora($pf['Pf']['created']); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $pf['Pf']['modified']; ?>
+			<?php echo $this->Formatacao->dataHora($pf['Pf']['modified']); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Email'); ?></dt>
@@ -242,7 +250,7 @@
 		<li><?php echo $this->Html->link(sprintf(__('Novo %s', true), __('Escolaridade', true)), array('controller' => 'escolaridades', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(sprintf(__('Listar %s', true), __('Tipologias', true)), array('controller' => 'tipologias', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(sprintf(__('Novo %s', true), __('Tipologia', true)), array('controller' => 'tipologias', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(sprintf(__('Listar %s', true), __('Paises', true)), array('controller' => 'paises', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(sprintf(__('Listar %s', true), __('Países', true)), array('controller' => 'paises', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(sprintf(__('Novo %s', true), __('Pais', true)), array('controller' => 'paises', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(sprintf(__('Listar %s', true), __('Curriculos', true)), array('controller' => 'curriculos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(sprintf(__('Novo %s', true), __('Curriculo', true)), array('controller' => 'curriculos', 'action' => 'add')); ?> </li>
