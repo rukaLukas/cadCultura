@@ -585,9 +585,42 @@ div.code-coverage-results span.result-good {
 #PfComboCboForm #btns, #PfComboCboForm #btns2, #PfComboCboForm #divComboElo{
 	float:left;
 	clear:none;
+	margin-top:-5px;
 }
 
 #PfComboCboForm #divComboElo{
 	margin-top:-5px;
+	width:90px;
 }
+
+#pop{
+    position: fixed;
+    min-width:200px;
+    width: auto; 
+    min-height: 112.4px; 
+    height: auto;    
+    z-index: 100000;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -18px;
+    display: inline;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #eeeeee;
+}
+
+#pop #titulo{
+ 	background: url("../img/bg_azul.png") repeat-x scroll 50% 50% #F6A828;
+    border: 1px solid #5B73B6;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding:3px;
+    margin:4px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
 /* FORMATAÇÕES ADICIONAIS */

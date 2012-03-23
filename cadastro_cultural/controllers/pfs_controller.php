@@ -104,8 +104,7 @@ class PfsController extends AppController {
 	}
 
 	function add() {
-		if (!empty($this->data)) {
-			exit;
+		if (!empty($this->data)) {			
 			$this->Pf->create();
 			$comprovante = $this->data["Pf"]["comprovante"];//guardo o comprovante
 			$curriculoAnexo = $this->data["Pf"]["curriculo_anexo"];//guardo o curriculo anexo 
@@ -113,6 +112,7 @@ class PfsController extends AppController {
 			$this->data["Pf"]["curriculo_anexo"] = "";
 			$elo = empty($this->data['Pf']['elo']) ? 0 : $this->data['Pf']['elo'];			
 			$naturalizado = $this->data['Pf']['naturalizado'];
+			$totalEloAtividade = $this->data['Pf']['contadorEloAtividade'];
 						
 			if($naturalizado == "N"){
 				unset($this->data['Pf']['data_naturalizacao']);
@@ -121,40 +121,39 @@ class PfsController extends AppController {
 			}
 			
 				
-			$existTipologia = false;	
+			$existTipologia = false;
+			//recupera id do grupotipologia	
 			$idGrupoTipologia = $this->Pf->Tipologia->Grupotipologia->grupoTipologiaPf();
-			
-			//recupera id do grupotipologia se existir
-			/*
-			$idGrupoTipologia = $this->Pf->Tipologia->Grupotipologia->find('first', array('fields' => array('Grupotipologia.id'),
-																							  'conditions' => array('Grupotipologia.nome' => 'PF')));
-			*/
-			
-			// array com condições a serem percorridas no loop
-			$conditions = array("Tipologia.elo_id = ".$elo. " AND Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",
-							    "Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",""
-								);
-								
-			for($i=0; $i<3; $i++){
 
-				$idTipologia = $this->Pf->Tipologia->idTipologia($this->data['Pf']['segmento_id'],$this->data['Pf']['cbo'],$conditions[$i]);			
-				/*
-				$idTipologia = $this->Pf->Tipologia->find('first', array('fields' => array('Tipologia.id','Tipologia.elo_id'), 
-																			'conditions' => array("Tipologia.segmentocultural_id = ".$this->data['Pf']['segmento_id']."", 
-																								  "Tipologia.cbo_id = ".$this->data['Pf']['cbo']."",
-																								  $conditions[$i])));
-				*/
-				//se existe tipologia																								  
-				if($idTipologia > 0){					
-					$existTipologia = true;					
-					break;			
-				}		
-			}
-			
+			for($i=0; $i<$totalEloAtividade; $i++){
+				$segmento = $_POST['segmento'][$i];
+				$cbo = $_POST['atividade'][$i];				
+				$ano = $_POST['ano'][$i];								
+				$elos = explode(",", $_POST['elo'][$i]);
+												
+				foreach ($elos as $elo) {						
+					if($existTipologia)
+						break;
+							
+					// array com condições a serem percorridas no loop
+					$conditions = array("Tipologia.elo_id = ".$elo. " AND Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",
+									    "Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",""
+										);
+										
+					for($i=0; $i<3; $i++){
+						$idTipologia = $this->Pf->Tipologia->idTipologia($segmento,$cbo,$conditions[$i]);			
+						//se existe tipologia																								  
+						if($idTipologia > 0){					
+							$existTipologia = true;					
+							break;			
+						}		
+					}
+			}			
 			// se ja existe esse padrão de tipologia recuperamos o ID desse padrão									
 			if($existTipologia){				
 				$this->data['Pf']['tipologia_id'] = $idTipologia['Tipologia']['id'];
 			}
+			/*
 			else{
 				// se não existe esse padrão de tipologia cadastramos esse padrão e recuperamos o id
 				// atualiza tabela tipologias, recupera id da tipologia
@@ -166,7 +165,7 @@ class PfsController extends AppController {
 				$this->Pf->Tipologia->save($this->data);
 				$this->data['Pf']['tipologia_id'] = $this->Pf->Tipologia->id;
 			}
-			
+			*/
 			
 			if ($this->Pf->save($this->data)) {				
 				$idPf = $this->Pf->id;				
@@ -304,13 +303,13 @@ class PfsController extends AppController {
 	
 	
 	function combo_elos($id = null) {										
-//			$this->layout = 'ajax';			
+			$this->layout = 'ajax';			
 			$grupoTipologia = $this->params['pass']['0'];
+			//verifica se esta vindo do cadastro de PF ou do cadastro de elos
 			$tipoForm = !empty($this->params['pass']['1']) ? $this->params['pass']['1'] : "";
-			//$tipoForm = $this->params['pass']['1'];
+			$cbo = $this->params['pass']['2'];
 			
-			
-			if(!empty($tipoForm)){
+			if(!empty($tipoForm) && $tipoForm != "nd"){
 				$elos = $this->Pf->Tipologia->Elo->find('list');
 			}			
 			else{ 
@@ -329,7 +328,8 @@ class PfsController extends AppController {
 																	                        'conditions' => array('elo.id = Tipologia.elo_id'),
 																	                    )
                     																  ),
-                    																  'conditions' => array('GP.nome' => 'PF'),
+                    																  'conditions' => array('GP.nome' => 'PF', 
+                    																  						'Tipologia.cbo_id' => $cbo),
                     																  'fields' => array('elo.id','elo.nomelo')	                    															                       															   	                      															  	  
                     														)                    														
                     												);		

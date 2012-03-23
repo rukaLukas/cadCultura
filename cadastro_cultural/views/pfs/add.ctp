@@ -100,6 +100,7 @@ $javascript->link(array('jquery','jquery.validate','jquery.maskedinput','scriptA
 		echo $this->Form->input('site');
 		echo $this->Form->input('fax');
 		echo $this->Form->input('contadorCurriculo', array('type' => 'hidden'));
+		echo $this->Form->input('contadorEloAtividade', array('type' => 'hidden'));
 		echo $this->Form->input('cbo', array('type' => 'hidden', 'id' => 'PfAtividade'));
 		echo $this->Form->input('elo', array('type' => 'hidden', 'id' => 'PfElo'));
 				

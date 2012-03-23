@@ -1118,3 +1118,8 @@
 2012-03-21 04:46:11 Debug: Notice (8): Undefined property: View::$formatacao in [C:\xampp\htdocs\cadastro_cultural\views\pfs\view.ctp, line 214]
 2012-03-21 06:19:58 Debug: Notice (8): Undefined index: cbo_id in [C:\xampp\htdocs\cadastro_cultural\models\tipologia.php, line 130]
 2012-03-21 21:39:51 Debug: Notice (8): Undefined variable: btnAddEloAtividade in [C:\xampp\htdocs\cadastro_cultural\views\pfs\combo_cbo.ctp, line 77]
+2012-03-22 13:53:41 Debug: Notice (8): Undefined index: 2 in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 310]
+2012-03-22 13:54:30 Debug: Notice (8): Undefined index: 2 in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 310]
+2012-03-22 13:55:42 Debug: Notice (8): Undefined index: 2 in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 310]
+2012-03-22 13:56:35 Debug: Notice (8): Undefined index: 2 in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 310]
+2012-03-22 13:58:48 Debug: Notice (8): Undefined index: 2 in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 310]
