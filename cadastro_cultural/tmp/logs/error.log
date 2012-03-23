@@ -1011,3 +1011,47 @@ LINE 1: ..."Curriculo"."pf_id" = "Pf"."id")  WHERE "pf_id" = 'webroot' ...
 2012-03-21 04:59:26 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "descricao" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
 2012-03-21 05:00:48 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;descricao&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
 2012-03-21 05:00:48 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "descricao" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-23 06:21:30 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  valor nulo na coluna &quot;tipologia_id&quot; viola a restrição não-nula in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-23 06:21:30 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  valor nulo na coluna "tipologia_id" viola a restrição não-nula</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-23 06:33:10 Warning: Warning (2): opendir(../webroot/files/comprovantes,../webroot/files/comprovantes) [<a href='http://php.net/function.opendir'>function.opendir</a>]: O sistema n�o pode encontrar o caminho especificado. (code: 3) in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 41]
+2012-03-23 06:33:10 Warning: Warning (2): opendir(../webroot/files/comprovantes) [<a href='http://php.net/function.opendir'>function.opendir</a>]: failed to open dir: No error in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 41]
+2012-03-23 06:33:10 Warning: Warning (2): chdir() [<a href='http://php.net/function.chdir'>function.chdir</a>]: No such file or directory (errno 2) in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 42]
+2012-03-23 06:33:10 Warning: Warning (2): readdir() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 43]
+2012-03-23 06:33:10 Warning: Warning (2): closedir() expects parameter 1 to be resource, boolean given in [C:\xampp\htdocs\cadastro_cultural\controllers\pfs_controller.php, line 52]
+2012-03-23 06:33:10 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cake\libs\debugger.php:673) in [C:\xampp\htdocs\cake\libs\controller\controller.php, line 746]
+2012-03-23 06:52:26 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...&quot; = 1 AND &quot;Tipologia&quot;.&quot;grupotipologia_id&quot; = Array    LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-23 06:52:26 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ..." = 1 AND "Tipologia"."grupotipologia_id" = Array    LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-23 06:52:26 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...&quot; = 2 AND &quot;Tipologia&quot;.&quot;grupotipologia_id&quot; = Array    LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-23 06:52:26 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ..." = 2 AND "Tipologia"."grupotipologia_id" = Array    LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-23 06:54:50 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...&quot; = 1 AND &quot;Tipologia&quot;.&quot;grupotipologia_id&quot; = Array    LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-23 06:54:50 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ..." = 1 AND "Tipologia"."grupotipologia_id" = Array    LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-23 06:54:50 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;LIMIT&quot;
+LINE 1: ...&quot; = 2 AND &quot;Tipologia&quot;.&quot;grupotipologia_id&quot; = Array    LIMIT 1
+                                                                ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-23 06:54:50 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a "LIMIT"
+LINE 1: ..." = 2 AND "Tipologia"."grupotipologia_id" = Array    LIMIT 1
+                                                                ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-23 07:31:20 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;)&quot;
+LINE 1: ... (&quot;pf_id&quot;, &quot;tipologia_id&quot;, &quot;ano&quot;) VALUES ('96', '15', Array)
+                                                                      ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-23 07:31:20 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a ")"
+LINE 1: ... ("pf_id", "tipologia_id", "ano") VALUES ('96', '15', Array)
+                                                                      ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
+2012-03-23 07:31:20 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  erro de sintaxe em ou próximo a &quot;)&quot;
+LINE 1: ... (&quot;pf_id&quot;, &quot;tipologia_id&quot;, &quot;ano&quot;) VALUES ('96', '48', Array)
+                                                                      ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
+2012-03-23 07:31:20 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  erro de sintaxe em ou próximo a ")"
+LINE 1: ... ("pf_id", "tipologia_id", "ano") VALUES ('96', '48', Array)
+                                                                      ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]

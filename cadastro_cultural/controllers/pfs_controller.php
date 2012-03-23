@@ -2,7 +2,7 @@
 class PfsController extends AppController {
 
 	var $name = 'Pfs';
-	var $uses = array('Pf','Curriculo','CurriculosProduto','TelefonePf','FuncaoExercida');
+	var $uses = array('Pf','Curriculo','CurriculosProduto','TelefonePf','FuncaoExercida', 'PfsTipologia');
 
 	
 	private function upload($arquivo, $w, $id, $tipo)
@@ -105,7 +105,8 @@ class PfsController extends AppController {
 
 	function add() {
 		if (!empty($this->data)) {			
-			$this->Pf->create();
+			$this->Pf->create();						
+			
 			$comprovante = $this->data["Pf"]["comprovante"];//guardo o comprovante
 			$curriculoAnexo = $this->data["Pf"]["curriculo_anexo"];//guardo o curriculo anexo 
 			$this->data["Pf"]["comprovante"] = "arquivo";			
@@ -123,54 +124,45 @@ class PfsController extends AppController {
 				
 			$existTipologia = false;
 			//recupera id do grupotipologia	
-			$idGrupoTipologia = $this->Pf->Tipologia->Grupotipologia->grupoTipologiaPf();
-
+			$idGrupoTipologia = $this->Pf->Tipologia->Grupotipologia->grupoTipologiaPf();			
 			for($i=0; $i<$totalEloAtividade; $i++){
-				$segmento = $_POST['segmento'][$i];
-				$cbo = $_POST['atividade'][$i];				
-				$ano = $_POST['ano'][$i];								
-				$elos = explode(",", $_POST['elo'][$i]);
+				$segmento = $_POST['inputSegmento'][$i];
+				$cbo = $_POST['inputAtividade'][$i];				
+				$ano = $_POST['inputAno'][$i];								
+				$elos = explode(",", $_POST['inputElo'][$i]);
+				$idGrupoTipologia = $idGrupoTipologia['Grupotipologia']['id'];
 												
-				foreach ($elos as $elo) {						
-					if($existTipologia)
-						break;
-							
-					// array com condições a serem percorridas no loop
-					$conditions = array("Tipologia.elo_id = ".$elo. " AND Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",
-									    "Tipologia.grupotipologia_id = ".$idGrupoTipologia['Grupotipologia']['id']."",""
-										);
-										
-					for($i=0; $i<3; $i++){
-						$idTipologia = $this->Pf->Tipologia->idTipologia($segmento,$cbo,$conditions[$i]);			
-						//se existe tipologia																								  
-						if($idTipologia > 0){					
-							$existTipologia = true;					
-							break;			
-						}		
-					}
-			}			
-			// se ja existe esse padrão de tipologia recuperamos o ID desse padrão									
-			if($existTipologia){				
-				$this->data['Pf']['tipologia_id'] = $idTipologia['Tipologia']['id'];
-			}
-			/*
-			else{
-				// se não existe esse padrão de tipologia cadastramos esse padrão e recuperamos o id
-				// atualiza tabela tipologias, recupera id da tipologia
-				$this->data['Tipologia']['cbo_id'] = $this->data['Pf']['cbo'];
-				$this->data['Tipologia']['elo_id'] = $this->data['Pf']['elo'];
-				$this->data['Tipologia']['segmentocultural_id'] = $this->data['Pf']['segmento_id'];
-				$this->data['Tipologia']['grupotipologia_id'] = $idGrupoTipologia['Grupotipologia']['id'];				
-				$this->data['Tipologia']['identificador'] = 'PF';
-				$this->Pf->Tipologia->save($this->data);
-				$this->data['Pf']['tipologia_id'] = $this->Pf->Tipologia->id;
-			}
-			*/
-			
+				foreach ($elos as $elo) {													
+					// array com condições a serem percorridas no loop									
+					$idTipologia['id'][] = $this->Pf->Tipologia->idTipologia($segmento,$cbo,$elo,$idGrupoTipologia);
+					$idTipologia['ano'][] = $ano;					
+				}
+			}						
+						
 			if ($this->Pf->save($this->data)) {				
-				$idPf = $this->Pf->id;				
+				$idPf = $this->Pf->id;			
+				//print_r($idTipologia);	
+				// atualiza a tabela pfs_tipologia com respectivos chaves estrangeiras
+				for($i=0; $i<count($idTipologia['id']); $i++){
+					$this->data['PfsTipologia']['pf_id'] = $idPf;
+					$this->data['PfsTipologia']['tipologia_id'] = $idTipologia['id'][$i]['Tipologia']['id'];
+					$this->data['PfsTipologia']['ano'] = $idTipologia['ano'][$i];
+					$this->PfsTipologia->save($this->data);
+					$this->data['PfsTipologia']['id'] = "";
+					
+				}
+				/*
+				foreach ($idTipologia['id'] as $tipologia){
+					echo $tipologia['ano'];										
+					$this->data['PfsTipologia']['pf_id'] = $idPf;
+					$this->data['PfsTipologia']['tipologia_id'] = $tipologia['Tipologia']['id'];
+					$this->data['PfsTipologia']['ano'] = $tipologia['ano'];
+					$this->PfsTipologia->save($this->data);	
+				}
+				*/				
+				
+				
 				$totalCurriculo = $this->data['Pf']['contadorCurriculo'];				
-				//exit;
 				
 				//pega os dados dos curriculos e salva no model curriculo
 				for($i = 0; $i<$totalCurriculo; $i++){						

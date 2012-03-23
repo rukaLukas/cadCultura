@@ -56,7 +56,20 @@ class Tipologia extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
+		),
+		'PfsTipologia' => array(
+			'className' => 'PfsTipologia',
+			'foreignKey' => 'tipologia_id',
+			'dependent' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 	);
 
 	/*
@@ -148,15 +161,13 @@ class Tipologia extends AppModel {
 	}
 
 	// recupera id da tipologia que tenha o padrão(segmentocultural,cbo,elo,grupotipologia) corrente
-	function idTipologia($segmentoCultural,$cbo,$condicao){
-		$segmentoCultural = empty($segmentoCultural) ? 0 : $segmentoCultural;
-		$cbo = empty($cbo) ? 0 : $cbo;						
-		$condicao = empty($condicao) ? 0 : $condicao;
-		return false;
+	function idTipologia($segmentoCultural,$cbo,$elo,$grupoTipologia){
+		
 		$idTipologia = $this->find('first', array('fields' => array('Tipologia.id','Tipologia.elo_id'), 
 									'conditions' => array("Tipologia.segmentocultural_id = ".$segmentoCultural."", 
 														  "Tipologia.cbo_id = ".$cbo."",
-														  $condicao
+														  "Tipologia.elo_id = ".$elo."",
+														  "Tipologia.grupotipologia_id = ".$grupoTipologia.""
 														  )
 								   )
 				    );

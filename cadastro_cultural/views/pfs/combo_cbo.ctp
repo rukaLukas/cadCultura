@@ -86,10 +86,10 @@ $javascript->codeBlock('
 		tabelaListaElos += "<td class=\"segmento\">" + segmento + "</td>";
 		tabelaListaElos += "<td class=\"atividade\">" + atividade + "</td>";
 		tabelaListaElos += "<td class=\"elo\">" + elo + "</td></tr>";						
-		tabelaListaElos += "<input type=\"hidden\" name=\"ano[]\" id=\"ano"+contadorElosAtividade+"\" value=\"" + ano + "\">";
-		tabelaListaElos += "<input type=\"hidden\" name=\"segmento[]\" id=\"segmentoId"+contadorElosAtividade+"\" value=\"" + segmentoId + "\">";
-		tabelaListaElos += "<input type=\"hidden\" name=\"atividade[]\" id=\"atividadeId"+contadorElosAtividade+"\" value=\"" + atividadeId + "\">";
-		tabelaListaElos += "<input type=\"hidden\" name=\"elo[]\" id=\"eloId"+contadorElosAtividade+"\" value=\"" + eloId + "\">";				
+		tabelaListaElos += "<tr><input type=\"hidden\" class=\"inputAno\" name=\"ano[]\" id=\"ano"+contadorElosAtividade+"\" value=\"" + ano + "\">";
+		tabelaListaElos += "<input type=\"hidden\" class=\"inputSegmento\" name=\"segmento[]\" id=\"segmentoId"+contadorElosAtividade+"\" value=\"" + segmentoId + "\">";
+		tabelaListaElos += "<input type=\"hidden\" class=\"inputAtividade\" name=\"atividade[]\" id=\"atividadeId"+contadorElosAtividade+"\" value=\"" + atividadeId + "\">";
+		tabelaListaElos += "<input type=\"hidden\" class=\"inputElo\" name=\"elo[]\" id=\"eloId"+contadorElosAtividade+"\" value=\"" + eloId + "\"></tr>";				
 		tabelaListaElos += "</table>";								
 		
 		$("#PfContadorEloAtividade").val(contadorElosAtividade);
@@ -220,15 +220,15 @@ $javascript->codeBlock('
 		});											
 		
 		var tabelaListaElos = "";				
-		tabelaListaElos += "<table id=\"tabelaElos" + contadorElosAtividade + "\">";
+		tabelaListaElos += "<table class=\"tabelaElos\" id=\"tabelaElos" + contadorElosAtividade + "\">";
 		tabelaListaElos += "<tr><th width=\"20\">Excluir</th><th>Segmento</th><th>Atividade</th><th>Elo</th></tr>";
 		tabelaListaElos += "<tr><td><span class=\"txtExcluir\"><input type=\"checkbox\" class=\"excluir\" value=\"" + contadorElosAtividade + "\" />&nbsp;</span></td>";
 		tabelaListaElos += "<td class=\"segmento\">" + segmento + "</td>";
 		tabelaListaElos += "<td class=\"atividade\">" + atividade + "</td>";
 		tabelaListaElos += "<td class=\"elo\">" + elo + "</td></tr>";						
-		tabelaListaElos += "<input type=\"hidden\" name=\"segmento[]\" id=\"segmentoId"+contadorElosAtividade+"\" value=\"" + segmentoId + "\">";
-		tabelaListaElos += "<input type=\"hidden\" name=\"atividade[]\" id=\"atividadeId"+contadorElosAtividade+"\" value=\"" + atividadeId + "\">";
-		tabelaListaElos += "<input type=\"hidden\" name=\"elo[]\" id=\"eloId"+contadorElosAtividade+"\" value=\"" + eloId + "\">";		
+		tabelaListaElos += "<input type=\"hidden\" class=\"segmento\" name=\"segmento[]\" id=\"segmentoId"+contadorElosAtividade+"\" value=\"" + segmentoId + "\">";
+		tabelaListaElos += "<input type=\"hidden\" class=\"atividade\" name=\"atividade[]\" id=\"atividadeId"+contadorElosAtividade+"\" value=\"" + atividadeId + "\">";
+		tabelaListaElos += "<input type=\"hidden\" class=\"elo\" name=\"elo[]\" id=\"eloId"+contadorElosAtividade+"\" value=\"" + eloId + "\">";		
 		tabelaListaElos += "</table>";								
 							
 		$("#listaElos").show();		

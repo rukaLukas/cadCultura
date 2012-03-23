@@ -53,7 +53,7 @@
 				checkElo++;
 			}																		
 		});		
-		if(checkElo > 1){
+		if(checkElo > 9){
 			alert("Cada ocupação só pode ter até 9 elos");
 			$("#PfEloId").focus();
 			return false;
@@ -68,8 +68,29 @@
 			return false;
 		}
 		
-		$("#PfAtividade").val($("#divComboCBO #PfAtividadeId").val());
-		$("#PfElo").val($("#divComboElo #PfEloId").val());		
+		//$("#PfAtividade").val($("#divComboCBO #PfAtividadeId").val());
+		//$("#PfElo").val($("#divComboElo #PfEloId").val());
+		
+		
+		//pega os campos que estão no ajax de area de atuação e joga pra pagina principal
+		$("#listaElos table").find("tr .inputAno").each(function(){						
+			inputAno = "<input type=\"hidden\" name=\"inputAno[]\" value=\"" + $(this).val() + "\">";
+			$("#listaCurriculos").append(inputAno);																				
+		});
+		$("#listaElos table").find("tr .inputSegmento").each(function(){			
+			inputSegmento = "<input type=\"hidden\" name=\"inputSegmento[]\" value=\"" + $(this).val() + "\">";
+			$("#listaCurriculos").append(inputSegmento);																				
+		});
+		$("#listaElos table").find("tr .inputAtividade").each(function(){																		
+			inputAtividade = "<input type=\"hidden\" name=\"inputAtividade[]\" value=\"" + $(this).val() + "\">";
+			$("#listaCurriculos").append(inputAtividade);																				
+		});
+		$("#listaElos table").find("tr .inputElo").each(function(){																		
+			inputElo = "<input type=\"hidden\" name=\"inputElo[]\" value=\"" + $(this).val() + "\">";
+			$("#listaCurriculos").append(inputElo);																				
+		});
+		
+		
 		
 		$(".telefones").find("input:text").each(function(){
 			okTel = 1;			
@@ -196,8 +217,8 @@
 	
 	
 	$("#PfEmail").blur(function(){
-		$("#PfAtividade").val($("#divComboCBO #PfAtividadeId").val());
-		$("#PfElo").val($("#divComboElo #PfEloId").val());
+		//$("#PfAtividade").val($("#divComboCBO #PfAtividadeId").val());
+		//$("#PfElo").val($("#divComboElo #PfEloId").val());
 		
 		$("#listaCurriculos table").find("tr .or").each(function(){																		
 			inputOr = "<input type=\"hidden\" name=\"or[]\" value=\"" + $(this).text() + "\">";
@@ -218,7 +239,9 @@
 		$("#listaCurriculos table").find("tr .descricao").each(function(){																		
 			inputDescricao = "<input type=\"hidden\" name=\"descricao[]\" value=\"" + $(this).text() + "\">";
 			$("#listaCurriculos").append(inputDescricao);													
-		});		
+		});
+		
+		
 	});
 	
 	
