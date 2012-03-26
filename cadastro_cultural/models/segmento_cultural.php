@@ -1,4 +1,5 @@
 <?php
+/*
 class SegmentoCultural extends AppModel {
 	var $name = 'SegmentoCultural';
 	var $displayField = 'descricao';
@@ -43,4 +44,5 @@ class SegmentoCultural extends AppModel {
 	);
 
 }
+*/
 ?>

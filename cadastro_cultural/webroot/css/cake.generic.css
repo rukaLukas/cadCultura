@@ -564,7 +564,7 @@ div.code-coverage-results span.result-good {
 
 
 #PfComboCboForm div.select,#PfComboCboForm div.input{	
-	width:200px;
+	width:150px;
 	float:left;	
 	clear: none;
 }
@@ -621,6 +621,23 @@ div.code-coverage-results span.result-good {
     margin:4px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+}
+
+table.busca tr td {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 0;
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+}
+table.busca tr:nth-child(2n) td {
+    background: none repeat scroll 0 0 #FFF;
+}
+
+
+table .busca .darker td{
+	background: #fff;
+	border-bottom: 0;
 }
 
 /* FORMATAÇÕES ADICIONAIS */

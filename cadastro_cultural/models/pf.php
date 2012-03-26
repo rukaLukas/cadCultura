@@ -371,5 +371,14 @@ class Pf extends AppModel {
 			return true;			
 	}
 	
+	
+	 /*
+	 * define padrões de busca com o plugin cakeDC search
+	 */
+    public $filterArgs = array(	    
+    	array('name' => 'nome', 'type' => 'like'),
+    	array('name' => 'cpf', 'type' => 'like')    	
+    );
+	
 }
 ?>

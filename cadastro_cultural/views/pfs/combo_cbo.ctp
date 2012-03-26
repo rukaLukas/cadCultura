@@ -271,32 +271,159 @@ else
   
 //echo $this->element('tiny_mce');
 ?>
+<style>
+#PfComboCboForm div.select, #PfComboCboForm div.input {
+    clear: none;
+    float: left;
+    width: 130px;    
+}
 
+select[multiple="multiple"] {
+    min-height: 120px;
+    width: 100%;
+}
+
+#PfComboCboForm #btns {
+    clear: none;
+    float: left;
+    margin-top: 10px;
+    width:80px;
+}
+
+ #PfComboCboForm #btns2, #PfComboCboForm #divComboElo {
+    clear: none;
+    float: left;
+    margin-top: -45px;
+}
+
+#PfComboCboForm #divComboElo {
+    clear: none;
+    float: left;
+    margin-top: -8px;
+}
+
+.botaoForm {
+    background-color: #D85F4E;
+    border: medium none !important;
+    color: #FFFFFF !important;
+    font: 12px Arial,sans-serif;
+    height: 22px;
+    margin: 3px;
+    padding: 3px 8px;
+    text-decoration: none;
+}
+.botaoForm:hover {
+    background-color: #999999;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+label, #listaElos table{
+ 	color: #666666;
+    font-style: normal;
+    text-align: right;
+    font-size:12px;
+}
+
+#listaElos table th{
+	font-weight:bold;
+	background: #519FBD;
+	color:#fff;	
+}
+
+#divComboElo{
+	margin-left:25px;
+}
+
+.atvAdicionadas{
+	margin:0 0 0 0;
+}
+
+#PfEloId{
+	margin-top:10px;
+}
+
+
+#pop{
+    position: fixed;
+    min-width:200px;
+    width: auto; 
+    min-height: 112.4px; 
+    height: auto;    
+    z-index: 100000;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -18px;
+    display: inline;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #eeeeee;
+}
+
+#pop #titulo{
+ 	background: url("../img/bg_azul.png") repeat-x scroll 50% 50% #F6A828;
+    border: 1px solid #5B73B6;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding:3px;
+    margin:4px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#listaCurriculos, #listaElos{
+	width:90%;
+	/*border:1px solid #ededed;*/
+}
+
+.listaCurriculos table, #listaElos table
+{
+	border-collapse:collapse;
+	/*border:1px solid #ededed;*/
+	width:100%;
+} 
+.listaCurriculos td, #listaElos td
+{
+	border:1px solid #000;
+}
+.listaCurriculos th, #listaElos th
+{
+	background:#cdcdcd;
+}
+#btnAddEloAtividade{
+	margin-top:60px;
+}
+
+
+</style>
 
 <?php echo $this->Form->create('Pf');?>
 	<!--<fieldset>--> 		
 	<?php		
 		//echo $this->Html->div('listaCurriculos', 'conteudo curriculo', array('id' => 'listaCurriculos'));
-			$btnAddAtividade = $this->Form->button('Adicionar >>', array('type'=>'button', 'id'=>'btnAddAtividade'));			
-			$btnRemoveAtividade = $this->Form->button('<< Retirar', array('type'=>'button', 'id'=>'btnRemoveAtividade'));
+			$btnAddAtividade = $this->Form->button('Add >>', array('type'=>'button', 'id'=>'btnAddAtividade', 'class' => 'botaoForm'));			
+			$btnRemoveAtividade = $this->Form->button('<< Del', array('type'=>'button', 'id'=>'btnRemoveAtividade', 'class' => 'botaoForm'));
 			$btns = $this->Html->div('', $btnAddAtividade . '<br>' . $btnRemoveAtividade, array('id' => 'btns'));
-			$cbElo = $this->Form->input('elo_id', array('multiple' => true, 'label' => 'Elos'));
+			$cbElo = $this->Form->input('elo_id', array('multiple' => true, 'label' => false));
 			$elos = $this->Html->div('', $cbElo, array('id' => 'divComboElo'));
-			$btnAddEloAtividade = $this->Form->button('+ Adicionar Elo', array('type'=>'button', 'id'=>'btnAddEloAtividade'));
+			$btnAddEloAtividade = $this->Form->button('+ Add', array('type'=>'button', 'id'=>'btnAddEloAtividade', 'class' => 'botaoForm'));
 			$btns2 = $this->Html->div('', $btnAddEloAtividade, array('id' => 'btns2'));
-			$btnExcluirElo = $this->Form->button('Excluir Elos Selecionados', array('type'=>'button', 'id'=>'btnRemoveElo'));
+			$btnExcluirElo = $this->Form->button('Excluir Elos Selecionados', array('type'=>'button', 'id'=>'btnRemoveElo', 'class' => 'botaoForm'));
 									
-			$cbAtividade = $this->Form->input('atividade_id', array('multiple' => true, 'tipo' => $tipo));			
-			$cbAtividade2 =  $this->Form->input('atividadeAdicionadas', array('label' => 'Atividades Adicionadas','multiple' => true, 'type' => 'select', 'tipo' => $tipo));
-			echo $this->Html->div('areaAtuacao', $cbAtividade . $btns . $cbAtividade2 . $elos . $btns2, array('id' => 'areaAtuacao'));
+			$cbAtividade = $this->Form->input('atividade_id', array('multiple' => true, 'tipo' => $tipo, 'label' => false));			
+			$cbAtividade2 =  $this->Form->input('atividadeAdicionadas', array('label' => 'Atividades Adicionadas','multiple' => true, 'type' => 'select', 'tipo' => $tipo, 'class' => 'atvAdicionadas', 'label' => false));
+			echo $this->Html->div('areaAtuacao', '<label for="cidade">Atividades</label><br>' . $cbAtividade . $btns . $cbAtividade2 . $elos . $btns2, array('id' => 'areaAtuacao'));
 						
 			$tabela = "<table><tr><th colspan=\"4\">Área de Atuação - Elo x Função</th></tr>";
 			
 			echo $this->Html->div('', $btnExcluirElo . $tabela, array('id' => 'listaElos'));
 			
-			$anoAreaAtuacao = $this->Form->input('ano',array('style' => 'width:65px'));			
-			$btnAno = $this->Form->button('Ok', array('type'=>'button', 'id'=>'btnAno', 'style' => 'float:left; margin:30px 0 0 5px'));
-			$eleFormAno = $this->Html->div('', $anoAreaAtuacao, array('style' => 'text-align:left; width:70px; float:left; margin-left:40px'));					
+			$anoAreaAtuacao = $this->Form->input('ano',array('style' => 'width:35px'));			
+			$btnAno = $this->Form->button('Ok', array('type'=>'button', 'id'=>'btnAno', 'style' => 'float:left; margin:0 0 0 25px', 'class' => 'botaoForm'));
+			$eleFormAno = $this->Html->div('', $anoAreaAtuacao, array('style' => 'text-align:left; width:45px; float:left; margin-left:40px'));					
 			$imgClose = $this->Html->link(
 								$this->Html->image('close.png', array('border' => '0', 'style' => 'float:right')),
 								array('#'),

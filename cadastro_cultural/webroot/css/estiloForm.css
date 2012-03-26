@@ -1,0 +1,203 @@
+@CHARSET "ISO-8859-1";
+
+/*RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big,
+cite, code, del, dfn, em, font, img,
+ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+center, u, b, i {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline
+}
+body {
+    line-height: 1
+}
+:focus {
+    outline: 0
+}
+ol, ul {
+    list-style: none
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: ""
+}
+blockquote, q {
+    quotes: "" ""
+}
+input, textarea {
+    margin: 0;
+    padding: 0
+}
+/*RESET*/
+
+
+#container {
+	background-color:#aaa;	
+	width:790px;
+	position: relative;
+	margin-left:10px;
+}
+
+
+/*ABAS*/
+#tabs li a, #tabs li.current a {
+    display: block;
+    float: left;
+    font: 12px/24px Arial,Helvetica,sans-serif normal;
+    height: 24px;
+    margin: 0 3px 0 0;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+#tabs li a:hover, #tabs li.current a:hover {
+	text-decoration: underline;
+}
+
+#tabs li a {
+	background-color: #D85F4D;
+    background-image: url("../img/bgAbaInativaFomento.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;	
+}
+
+
+#tabs li.current a{
+	font-weight:bold;	
+    background-color: #E4E4E4;
+    background-image: url("../img/bgAbaAtivaFomento.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    color: #3B3B3B;    
+	
+}
+/*ABAS*/
+
+
+
+
+/*CONTEUDO ABAS*/
+.formulario {	
+	background-color:#e4e4e4;
+	color:#fff;
+	float:left;
+	padding:10px;
+	visibility: hidden;
+	display:none;
+}
+
+.formulario.visivel{
+	visibility: visible;
+	display: inline;
+	width:790px;
+}
+
+.gridLayou1, .gridLayou2, .gridLayou3, .gridLayou4 {
+	display: block;
+	float: left;
+	margin: 0 5px;
+}
+.gridLayou1 a img, .gridLayou2 a img, .gridLayou3 a img, .gridLayou4 a img {
+	border:none;
+	text-decoration:none;
+}
+
+p.txtAbas {
+	display:inline;
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #3B3B3B;
+	margin: 0 10px 6px 0;
+	padding: 0;
+}
+.gridLayou1 {
+	width:185px;/*background-color:#CCCCCC;*/
+}
+.gridLayou2 {
+	width:380px;/*background-color:#999999;*/
+}
+.gridLayou3 {
+	width:575px;/*background-color:#666666;*/
+}
+.gridLayou4 {
+	width:770px;/*background-color:#000000;*/
+}
+.cont_1_3, .cont_1_1_2, .cont_2_1_1, .cont_3_1, .cont_2_2, .cont_1_2_1, .cont_1_1_1_1, .cont_4 {
+	width:790px;
+	display:block;
+	min-height: 50px;
+	clear:both;
+	margin:2px 5px;
+	padding:0;
+}
+.formAbas {
+	display:block;
+	font: 10px Arial, Helvetica, sans-serif normal;
+	color: #3B3B3B;
+}
+.botaoAba {
+	background-color: #D85F4E;	
+	font: 12px Arial, sans-serif;
+	color: #FFFFFF;
+	border:none;
+	height:22px;
+	line-height: 22px;
+	padding: 0 10px;
+	margin:0 3px;
+	border: 1px solid #D85F4E;
+	float: right;
+	cursor:pointer;
+}
+.gridTabela{
+	border: 1px solid #999999;
+	font: 12px Arial, sans-serif;
+	border-collapse:collapse;
+	margin: 5px auto;
+	
+}
+.gridTabelaTitulo{
+	background-color: #ADADAD;
+	color: #FFFFFF;
+	font-weight:bold;
+	text-align:center;
+	line-height: 20px;	
+	border: 1px solid #999999;
+}
+.gridTabelaText1, .gridTabelaText2 {
+	color:  #666666;
+	font-weight:bold; 	
+	line-height: 20px;	
+	border: 1px solid #999999;
+	padding: 0 2px;
+}
+.gridTabelaText1{
+	background-color: #F0F0F0;
+}
+.gridTabelaText2{
+	background-color: #FFFFFF;
+}
+.gridTabelaText1 img, .gridTabelaText2 img {
+	padding: 2px 2px 0 2px;
+	border: none;
+}
+.gridTabelaText1 img a , .gridTabelaText2 img a {
+	padding: 2px 2px 0 2px;
+	border: none;
+	text-decoration:none;
+}
+/*CONTEUDO ABAS*/

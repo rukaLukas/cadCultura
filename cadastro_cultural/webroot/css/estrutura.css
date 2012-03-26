@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ESTRUTURA */
+html, body, form, #geral {
+	height: 100%;
+}
+body > #geral {
+	height: auto;
+	min-height: 100%;
+}
+body {
+	background-color: #4760A0;
+	background-image: url(../img/bg_body.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+	min-width: 990px; /*Hack IE*/
+}
+#geral {
+	min-height: 100%;
+	clear: both;
+	width: 990px;
+	margin-right: auto;
+	margin-left: auto;
+	background-image:url(../img/bg_container.png);
+	background-repeat: repeat-x;
+	background-position:top;
+	display:block;
+}
+#iframe {
+	width:990px;
+	height:25px;
+	display:block;
+	}
+#cabecalho {
+	width:990px;
+	height:130px;
+	display:block;
+	padding:17px 0px 0px 22px;
+}
+#container {
+	overflow:auto;
+	padding-bottom: 177px; /* mesmo valor da altura do rodape */	
+	background-color:#E4E4E4;
+}
+#rodape {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0px;
+	display:block;
+	padding: 0px;
+	background-color:#fff;
+	background-image:url(../img/bgRodape.png);
+	background-repeat:no-repeat;
+	background-position:top;
+	position: relative;
+	margin-top: -177px; /* negativo valor da altura do rodape */
+	height: 177px;
+	clear:both;
+}
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/* negate effect of float*/
+}
+/* FECHA ESTRUTURA */

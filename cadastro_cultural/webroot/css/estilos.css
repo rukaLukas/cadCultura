@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Folhas de Estilo |--------------------------------*/
+
+@import "reset.css"; /* CSS Reset */
+@import "estrutura.css"; /* Elementos globais, não referenciados por ID ou classe, como body, a, p, etc. */
+@import "layout.css"; /* Estrutura (pais, div's, class.) do site */
+/*---------------------------------------------------*/

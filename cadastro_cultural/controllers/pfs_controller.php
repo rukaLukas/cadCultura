@@ -4,7 +4,23 @@ class PfsController extends AppController {
 	var $name = 'Pfs';
 	var $uses = array('Pf','Curriculo','CurriculosProduto','TelefonePf','FuncaoExercida', 'PfsTipologia');
 
+	public $presetVars = array(
+        array('field' => 'nome', 'type' => 'value'),                
+        array('field' => 'cpf', 'type' => 'value')
+                
+    );
 	
+    
+	
+	public function find() {							
+	        $this->Prg->commonProcess();
+	        $this->paginate['conditions'] = $this->Pf->parseCriteria($this->passedArgs); 
+	        $this->Pf->recursive = 0;       
+	        $this->set('pfs', $this->paginate());	              
+	        
+	}
+	
+    
 	private function upload($arquivo, $w, $id, $tipo)
 	{		
 		//echo "->>>".$tipo."<<<-"; 
@@ -37,7 +53,7 @@ class PfsController extends AppController {
 	
 	private function varreDir($dir,$id)
 	{				
-		$qtdCaractere = strlen($id);
+		$qtdCaractere = strlen($id);		
 		$diraberto = opendir($dir); // Abre o diretorio especificado
 	    chdir($dir); // Muda o diretorio atual p/ o especificado
 	    while($arq = readdir($diraberto)) { // Le o conteudo do arquivo
@@ -48,7 +64,7 @@ class PfsController extends AppController {
 	            		unlink($arq);	            		  
 	            }          		    	        
 	    }    
-	    chdir(".."); // Volta um diretorio
+	    chdir("../../"); // Volta um diretorio
 	    closedir($diraberto); // Fecha o diretorio atual
 	}
 	
@@ -260,11 +276,11 @@ class PfsController extends AppController {
 		if (!$id) {
 			$this->Session->setFlash(sprintf(__('ID inválido para %s.', true), 'pf'));
 			$this->redirect(array('action'=>'index'));
-		}
+		}				
 		if ($this->Pf->delete($id, $cascade = true)) {
 			
-			$this->varreDir("../webroot/files/curriculos",$id);
-			$this->varreDir("../webroot/files/comprovantes",$id);			
+			$this->varreDir("../".WEBROOT_DIR."/files/curriculos",$id);
+			$this->varreDir("../".WEBROOT_DIR."/files/comprovantes",$id);			
 			
 			$this->Session->setFlash(sprintf(__('%s excluído.', true), 'Pf'));
 			$this->redirect(array('action'=>'index'));

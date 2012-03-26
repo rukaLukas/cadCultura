@@ -21,14 +21,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php __('SIIC: Cadastro Cultural'); ?>
+	<title>		
 		<?php echo ' :: ' . $title_for_layout; ?>
 	</title>
 	<?php
 		//echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
+		// echo $this->Html->css('estilos.css');  
+		 //echo $this->Html->css('estrutura.css'); 
+		 //echo $this->Html->css('layout.css');  
+		 //echo $this->Html->css('reset.css');
+		 //echo $this->Html->css('cake.generic.css');  
 
 		echo $scripts_for_layout;
 	?>	

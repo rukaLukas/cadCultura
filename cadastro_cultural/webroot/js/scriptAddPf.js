@@ -15,14 +15,13 @@
 	}
 	
 
-  $(document).ready(function(){	
-	
+  $(document).ready(function(){			  	  	  
+	  
 	$("#loading").hide();
 	$("#btnRemoveTelefone").hide();
 	$("#btnSalvarCurriculo").hide();
 	$("#btnCancelarCurriculo").hide();
-	$("#btnExcluirCurriculo").hide();
-	$("#divNaturalizacao").hide();
+	$("#btnExcluirCurriculo").hide();	
 	$("#PfCpf").mask("999.999.999-99");
 	$("#PfRepresentanteCpf").mask("999.999.999-99");
 	$("#PfRepresentanteRg").mask("9999999999");	
@@ -36,6 +35,107 @@
 	$("#PfAnoGraduacao").mask("9999");
 	$("#PfPassaporte").mask("999999999");
 	var contadorCurriculos = 0;
+    
+	
+	
+	
+	$("#form1").validate({		            	            			            		
+		rules: {				
+			"data[Pf][nacionalidade_id]": { required: true },
+			"data[Pf][naturalidade_id]": { required: true },
+			"data[Pf][expedidor_rg_id]": { required: true },				
+			"data[Pf][nome]": { required: true },			
+			"data[Pf][nome_artistico]": { required: true },							
+			"data[Pf][sexo]": { required: true },
+			"data[Pf][cpf]": { required: true, cpf: true },
+			"data[Pf][rg]": { required: true }
+		}		
+	});
+	
+	$("#form3").validate({		            	            			            		
+		rules: {				
+			"data[Pf][profissao]": { required: true }
+		}		
+	});		
+	
+	
+	var containerId = '#tabs-container';
+    var tabsId = '#tabs';    	
+	    
+    
+    $(".botaoAba1").click(function(){    	
+		if($("#form1").valid()){
+			$("#tabs #2").click();
+			return false;
+		}
+	});
+    
+    $(".botaoAba2").click(function(){    	
+		if($("#form2").valid()){
+			$("#tabs #3").click();
+			return false;
+		}
+	});
+    
+    $(".botaoAba3").click(function(){    
+		if($("#form3").valid()){
+			$("#tabs #4").click();
+			return false;
+		}
+	});    
+    
+    $(".botaoAba4").click(function(){    	
+		$("#PfAddForm").valid();		
+	});
+    
+    
+    
+    mudarTab = function(numeroTab) {
+		$("#tabs-container"+numeroTab).addClass('visivel');
+		return false;
+    };        
+
+	// carrega aba no evento onload da pagina
+	if($(tabsId + ' LI.abaAtiva A').length > 0){		
+		ID = $(tabsId + ' LI.abaAtiva A').attr('id');
+		mudarTab(ID);
+	}
+
+    $(tabsId + ' A').click(function(){    	
+    	if($(this).parent().hasClass('abaAtiva')){
+        	return false;
+        }
+    	else{    		
+            //if($("#PfAddForm").valid()){
+	    		// pricura a div que estiver visivel e deixa invisivel    			
+	    		$("#conteudo").find(".visivel").each(function(){
+	    			$(this).removeClass('visivel');
+				});
+	
+	            $(tabsId + ' LI.abaAtiva').addClass('abaInativa');
+	        	$(tabsId + ' LI.abaAtiva').removeClass('abaAtiva');
+	
+	            $(this).parent().addClass('abaAtiva');
+	            $(this).parent().removeClass('abaInativa');        	
+	
+	        	ID = $(this).attr('id');
+	    		mudarTab(ID);
+            //}
+            return false;
+        }
+    });
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	$("#PfNaturalizado").change(function(){

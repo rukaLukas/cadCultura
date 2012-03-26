@@ -1,0 +1,19 @@
+
+
+/*CONTEUDO ABAS*/
+.abaConteudo {	
+	/*background-color:#e4e4e4;
+	color:#fff;
+	float:left;
+	padding:10px;
+	*/
+	visibility: hidden;
+	display:none;
+}
+
+.abaConteudo.visivel{
+	visibility: visible;
+	display: inline;
+	/*width:790px;*/
+}
+
