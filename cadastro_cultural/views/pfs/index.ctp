@@ -47,7 +47,7 @@
             <?php
 				$i = 0;
 				foreach ($pfs as $pf):
-					$class = "linazul";
+					$class = ' class="linazul"';
 					if ($i++ % 2 == 0) {
 						$class = ' class="linbranca"';
 					}
@@ -60,18 +60,8 @@
 								array('action' => 'edit', $pf['Pf']['id']),
 								array('escape' => false)
 							);
-				echo $this->Html->link(
-								$this->Html->image('../icones/trash_16x16.png', array('alt'=> 'Excluir', 'title' => 'Excluir', 'border' => '0', 'height' => '15')),
-								array('action' => 'delete', $pf['Pf']['id']),
-								array('escape' => false)
-							);
-				/*
-				echo $this->Html->link(
-								$this->Html->image('../icones/document_16x16.png', array('alt'=> 'Editar', 'border' => '0', 'height' => '15')),
-								array('action' => 'edit', $pf['Pf']['id']),
-								array('escape' => false)
-							);
-				*/										 
+				$delete_img = $this->Html->image('../icones/trash_16x16.png', array('alt'=> 'Excluir', 'title' => 'Excluir', 'border' => '0', 'height' => '15'));							
+				echo $this->Html->link($delete_img, array('action' => 'delete', $pf['Pf']['id']), array('escape' => false), sprintf(__('Você tem certeza que deseja excluir a pessoa física - %s?', true), $pf['Pf']['nome']));				
 				?>				
 				</th>
                 <td><?php echo $pf['Pf']['nome']; ?>&nbsp;</td>

@@ -3,6 +3,7 @@ class Pf extends AppModel {
 	var $name = 'Pf';
 	var $displayField = 'nome_artistico';
 	var $validate = array(
+		/*
 		'nacionalidade_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -12,7 +13,7 @@ class Pf extends AppModel {
 				//'last' => false, // Para a validação após esta regra
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
-		),
+		),		
 		'naturalidade_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -22,7 +23,7 @@ class Pf extends AppModel {
 				//'last' => false, // Para a validação após esta regra
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
-		),
+		),		
 		'expedidor_rg_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -32,7 +33,7 @@ class Pf extends AppModel {
 				//'last' => false, // Para a validação após esta regra
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
-		),
+		),		
 		'cidade_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -52,7 +53,7 @@ class Pf extends AppModel {
 				//'last' => false, // Para a validação após esta regra
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
-		),
+		),		
 		'tipologia_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -63,10 +64,11 @@ class Pf extends AppModel {
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
 		),
+		*/
 		'pais_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Inform o País',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -76,7 +78,7 @@ class Pf extends AppModel {
 		'nome' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o nome',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -86,7 +88,7 @@ class Pf extends AppModel {
 		'nome_artistico' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o nome artístico',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -96,7 +98,7 @@ class Pf extends AppModel {
 		'data_nascimento' => array(
 			'date' => array(
 				'rule' => array('date'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Data inválida',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -106,7 +108,7 @@ class Pf extends AppModel {
 		'sexo' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o sexo',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -116,7 +118,7 @@ class Pf extends AppModel {
 		'cpf' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o CPF',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -134,7 +136,7 @@ class Pf extends AppModel {
 		'rg' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o RG',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -144,7 +146,7 @@ class Pf extends AppModel {
 		'profissao' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe a profissão',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -154,7 +156,7 @@ class Pf extends AppModel {
 		'logradouro' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o Logradouro',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -164,13 +166,24 @@ class Pf extends AppModel {
 		'numero' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o número',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
 		),
+		'cidade' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Informe a cidade',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Para a validação após esta regra
+				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
+			),
+		),
+		/*
 		'complemento' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -181,10 +194,11 @@ class Pf extends AppModel {
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
 		),
+		*/
 		'bairro' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o bairro',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
@@ -194,23 +208,35 @@ class Pf extends AppModel {
 		'cep' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o CEP',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
-		),		
-		'email' => array(
+		),	
+		'email[]' => array(
 			'email' => array(
 				'rule' => array('email'),
-				//'message' => 'Sua mensagem de validação aqui',
+				'message' => 'Informe o email',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Para a validação após esta regra
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
 		),
+		'telefone[]' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Informe o telefone',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Para a validação após esta regra
+				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
+			),
+		),		
+		
+		/*
 		'comprovante' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -220,7 +246,9 @@ class Pf extends AppModel {
 				//'last' => false, // Para a validação após esta regra
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
+			
 		),
+		*/
 		/*
 		'segmento_id' => array(
 			'notempty' => array(
@@ -331,6 +359,32 @@ class Pf extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		'ContatoPf' => array(
+			'className' => 'ContatoPf',
+			'foreignKey' => 'pf_id',
+			'dependent' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Graduacao' => array(
+			'className' => 'Graduacao',
+			'foreignKey' => 'pf_id',
+			'dependent' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 		'PfsTipologia' => array(
 			'className' => 'PfsTipologia',
 			'foreignKey' => 'pf_id',
@@ -376,8 +430,8 @@ class Pf extends AppModel {
 	 * define padrões de busca com o plugin cakeDC search
 	 */
     public $filterArgs = array(	    
-    	array('name' => 'nome', 'type' => 'like'),
-    	array('name' => 'cpf', 'type' => 'like')    	
+    	array('name' => 'nome', 'type' => 'UPPER(like)', 'field' => 'UPPER(Pf.nome)'),
+    	array('name' => 'cpf', 'type' => 'value')    	
     );
 	
 }

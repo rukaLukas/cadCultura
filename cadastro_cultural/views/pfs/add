@@ -2,372 +2,166 @@
 // Incluir o jQuery ao projeto
 // Neste exemplo estou importando a jquery.tablesorter tamb�m
 // O segundo par�metro (false) � para indicar que vai no <head> e n�o no local onde est� sendo executado
-$javascript->link(array('scriptAddPf','jquery.maskedinput','jquery.validate'), false);
-// Aqui vou definir alguns comandos de jQuery
-$javascript->codeBlock('
-
-	
-	function formatTelefone(element, e){
-	  if (e.keyCode != 8){
-	    length = element.value.length;
-	    if (length == 2){
-	      if (element.value.charAt(0)!="(")
-	        element.value = "(" + element.value + ")";
-	    }
-	    if (length == 3)
-	      if (element.value.charAt(0)=="(")
-	        element.value += ")";
-	    if (length == 8)
-	      element.value += "-";
-	  }
-	}
-	
-
-  $(document).ready(function(){	
-	
-	$("#loading").hide();
-	$("#btnRemoveTelefone").hide();
-	$("#btnSalvarCurriculo").hide();
-	$("#btnExcluirCurriculo").hide();	
-	$("#PfCpf").mask("999.999.999-99");
-	$("#PfRg").mask("99999999-99");
-	$("#PfCep").mask("99999-999");
-	var contadorCurriculos = 0;
-		
-		
-	$("#PfAddForm").validate({		            	            			            		
-			rules: {
-				"data[Pf][nacionalidade_id]": { required: true },
-				"data[Pf][naturalidade_id]": { required: true },
-				"data[Pf][expedidor_rg_id]": { required: true },
-				"data[Pf][cidade_id]": { required: true },				
-				"data[Pf][escolaridade_id]": { required: true },
-				"data[Pf][pais_id]": { required: true },
-				"data[Pf][segmento_id]": { required: true },
-				"data[Pf][atividade_id]": { required: true },
-				"data[Pf][elo_id]": { required: true },
-				"data[Pf][nome]": { required: true, minlenght: 2 },									        		
-				"data[Pf][nome_artistico]": { required: true, minlenght: 2 },
-				"data[Pf][sexo]": { required: true },
-				"data[Pf][cpf]": { required: true, cpf: true },
-				"data[Pf][rg]": { required: true, minlenght: 2 },
-				"data[Pf][profissao]": { required: true, minlenght: 2 },
-				"data[Pf][logradouro]": { required: true, minlenght: 2 },
-				"data[Pf][numero]": { required: true, minlenght: 2 },
-				"data[Pf][complemento]": { required: true, minlenght: 2 },
-				"data[Pf][bairro]": { required: true, minlenght: 2 },
-				"data[Pf][cep]": { required: true, minlenght: 2 },
-				"data[Pf][comprovante]": { required: true, minlenght: 2 },
-				"data[Pf][email]" :	{ required: true, email: true }							
-			}	        				        		
-	});  
-	
-	/*
-	var pf_rules = {                                                                    
-            rules: {
-                "data[Pf][nacionalidade_id]": { required: true },
-                "data[Pf][naturalidade_id]": { required: true },
-                "data[Pf][expedidor_rg_id]": { required: true },
-                "data[Pf][cidade_id]": { required: true },                
-                "data[Pf][escolaridade_id]": { required: true },
-                "data[Pf][pais_id]": { required: true },
-                "data[Pf][nome]": { required: true, minlenght: 2 },                                                    
-                "data[Pf][nome_artistico]": { required: true, minlenght: 2 },
-                "data[Pf][sexo]": { required: true },
-                "data[Pf][cpf]": { required: true, cpf: true },
-                "data[Pf][rg]": { required: true, minlenght: 2 },
-                "data[Pf][profissao]": { required: true, minlenght: 2 },
-                "data[Pf][logradouro]": { required: true, minlenght: 2 },
-                "data[Pf][numero]": { required: true, minlenght: 2 },
-                "data[Pf][complemento]": { required: true, minlenght: 2 },
-                "data[Pf][bairro]": { required: true, minlenght: 2 },
-                "data[Pf][cep]": { required: true, minlenght: 2 },
-                "data[Pf][comprovante]": { required: true, minlenght: 2 },
-                "data[Pf][email]" :    { required: true, email: true }            
-            }                                            
-    };
-    $("#PfAddForm").validate(pf_rules); 	
-	*/
-	/*
-	var curriculo_rules = {     
-          rules: {
-                "data[Curriculo][descricao]": { required: true },
-                "data[Curriculo][organizacao_responsavel]": { required: true }                            
-          }
-      };
-      */
-      
-      function validaCurriculo(){
-	      //var retorno = 1;      	
-	      	if($("#CurriculoDescricao").val() == ""){
-	      		alert("Inform a descrição");
-	      		$("#CurriculoDescricao").focus();	      			      	
-	      		return false;
-	      	}	      	
-	      	if($("#CurriculoOrganizacaoResponsavel").val() == ""){
-	      		alert("Inform o organizador responsável");
-	      		$("#CurriculoOrganizacaoResponsavel").focus();	      		
-	      		return false;
-	      	}
-	      	checkProduto = false;
-	      	$("#ProdutoProduto").find("option").each(function(){															
-				if(this.selected){				
-					checkProduto = true;
-				}																		
-			});
-			checkFuncao = false;
-			$("#CurriculoFuncaoExercidaId").find("option").each(function(){															
-				if(this.selected){				
-					checkFuncao = true;
-				}																		
-			});		
-			if(!checkProduto){
-				alert("Selecione os Produtos");
-				$("#ProdutoProduto").focus();						
-				return false;			
-			}
-			if(!checkFuncao){
-				alert("Selecione a função");
-				$("#CurriculoFuncaoExercidaId").focus();				
-				return false;			
-			}			
-			//return retorno;     			
-      }
-	
-							
-	
-	/*
-	$(".curriculos #CurriculoAddForm").validate({				        	            			            				
-			rules: {
-				"data[Curriculo][descricao]": { required: true },
-				"data[Curriculo][organizacao_responsavel]": { required: true }							
-			}				        				        		
-		}); 
-	*/
-	
-	
-	$("#PfEmail").blur(function(){
-		$("#PfAtividade").val($("#divComboCBO #PfAtividadeId").val());
-		$("#PfElo").val($("#divComboElo #PfEloId").val());
-		
-		$("#listaCurriculos table").find("tr .or").each(function(){																		
-			inputOr = "<input type=\"text\" name=\"or[]\" value=\"" + $(this).text() + "\">";
-			$("#listaCurriculos").append(inputOr);																				
-		});
-		$("#listaCurriculos table").find("tr .dt").each(function(){																		
-			inputDt = "<input type=\"text\" name=\"dt[]\" value=\"" + $(this).text() + "\">";
-			$("#listaCurriculos").append(inputDt);													
-		});
-		$("#listaCurriculos table").find("tr .funcaoId").each(function(){																		
-			inputFuncao = "<input type=\"text\" name=\"funcao[]\" value=\"" + $(this).text() + "\">";
-			$("#listaCurriculos").append(inputFuncao);													
-		});
-		$("#listaCurriculos table").find("tr .produtoId").each(function(){																		
-			inputProdutos = "<input type=\"text\" name=\"produtos[]\" value=\"" + $(this).val() + "\">";
-			$("#listaCurriculos").append(inputProdutos);													
-		});
-		$("#listaCurriculos table").find("tr .descricao").each(function(){																		
-			inputDescricao = "<input type=\"text\" name=\"descricao[]\" value=\"" + $(this).text() + "\">";
-			$("#listaCurriculos").append(inputDescricao);													
-		});		
-	});
-	
-	// antes de submeter formulario verifica se o telefone foi informado	
-	$("#PfAddForm").submit(function(){
-		okTel = 0;
-		
-		$("#PfAtividade").val($("#divComboCBO #PfAtividadeId").val());
-		$("#PfElo").val($("#divComboElo #PfEloId").val());		
-		
-		$(".telefones").find("input:text").each(function(){
-			okTel = 1;			
-		});
-		if(okTel != 1){
-			alert("informe o telefone");
-			return false;
-		}									
-	});			
-	
-	
-	
-	//carrega combobox atividade
-	$("#PfSegmentoId").change(function(){		
-		var segmento = $(this).val();					
-		$.get("/cadastro_cultural/pfs/combo_cbo/"+segmento+"", {		    
-		    }, function(resposta){
-		        //Tratamento dos dados de retorno
-    			$("#divComboCBO").html(resposta); 	   
-		   }
-		);	        									
-	});		
-	
-	
-	
-	//adiciona campos de telefones adicionais
-	var qtdTel = 0;
-	$("#btnAddTelefone").click(function(){
-		qtdTel++;		
-		var inputTelefone = "";
-		if(qtdTel == 1)
-			$("#btnRemoveTelefone").show();
-							
-		inputTelefone += "<span style=\"margin:8px; display:block;\"><input type=\"checkbox\" name=\"removerTelefone\" value=\"\"><input type=\"text\" id=\"\" maxlength=\"13\" name=\"data[Pf][telefone][]\" class=\"inputTelefone\"  onkeydown=\"formatTelefone(this, event)\" style=\"width:110px;\" /></span>";
-		$(".telefones").append(inputTelefone);	
-		$(".telefones input:text:last").attr("id","tel"+qtdTel);
-		$(".telefones input:checkbox:last").attr("value",qtdTel);
-		
-	});
-	
-	// eventos ao clicar em salvar currículo
-	$("#btnSalvarCurriculo").click(function(){		
-		// verifica se todos os campos do form de curriculo foram preenchidos
-		a = validaCurriculo();
-		if(a == false)
-			return false;		
-			
-		
-		contadorCurriculos++;
-		
-		descricao = $(".curriculos #CurriculoDescricao").val();
-		organizacao = $(".curriculos #CurriculoOrganizacaoResponsavel").val();
-		data = $(".curriculos #CurriculoDataDay").val() + "/" + $(".curriculos #CurriculoDataMonth").val() + "/" + $(".curriculos #CurriculoDataYear").val();
-		dataFormatada = $(".curriculos #CurriculoDataYear").val() + "-" + $(".curriculos #CurriculoDataDay").val() + "/" + $(".curriculos #CurriculoDataMonth").val();		
-		produtoId = $(".curriculos #ProdutoProduto").val();
-		$("#PfContadorCurriculo").val(contadorCurriculos);
-		
-		produtos = "";		
-		contador = 0;
-		//pega os produtos selecionados
-		$(".curriculos #ProdutoProduto").find("option").each(function(){															
-			if(this.selected){				
-				if(contador == 0)			
-					produtos += this.text;
-				else		
-					produtos += " ," + this.text;												
-				
-				contador++; 									
-			}																		
-		});
-		
-		//pega função exercida		
-		funcao = "";
-		funcaoId = "";
-		$(".curriculos #CurriculoFuncaoExercidaId").find("option").each(function(){														
-			if(this.selected){											
-				funcao += this.text;
-				funcaoId += this.value;				
-			}																		
-		});						
-		
-				
-		var tabelaListaCurriculos = "";		
-		tabelaListaCurriculos += "<span class=\"txtExcluir\"><br><input type=\"checkbox\" value=\"" + contadorCurriculos + "\" />&nbsp;</span><br>";
-		tabelaListaCurriculos += "<table id=\"tabelaCurriculo" + contadorCurriculos + "\">";
-		tabelaListaCurriculos += "<tr><th>Organizaçõa Responsável</th><th>Data</th><th>Função Exercida</th><th>Produtos</th></tr>";
-		tabelaListaCurriculos += "<tr><td class=\"or\">" + organizacao + "</td><td class=\"dt\">" + data + "</td><td class=\"funcao\">" + funcao + "</td><td class=\"produtos\">" + produtos + "</td></tr>";
-		tabelaListaCurriculos += "<tr><th colspan=\"4\" align=\"center\" class=\"descricao\">Descrição</th></tr><tr><td colspan=\"4\">" + descricao + "</td></tr>";
-		tabelaListaCurriculos += "<input type=\"hidden\" name=\"funcaoId[]\" class=\"funcaoId\" value=\"" + funcaoId + "\">";
-		tabelaListaCurriculos += "<input type=\"hidden\" name=\"ProdutoId[]\" class=\"produtoId\" value=\"" + produtoId + "\">";				
-		//tabelaListaCurriculos += "<input type=\"hidden\" name=\"dataFormatada[]\" value=\"" + dataFormatada + "\">";
-		tabelaListaCurriculos += "</table>";		
-		
-		
-		// limpa formulário do curriculo		
-		 $(".curriculos #CurriculoAddForm").find(":input").each(function() {
-		        switch(this.type) {
-		            case "password":
-		            case "select-multiple":
-		            case "select-one":
-		            case "text":
-		            case "textarea":
-		                $(this).val("");
-		                break;
-		            case "checkbox":
-		            case "radio":
-		                this.checked = false;
-		        }
-		 });		
-		
-		
-		$(".curriculos #divFormCurriculo").hide();
-		$(".curriculos #listaCurriculos").append(tabelaListaCurriculos);
-		$(this).hide();	
-		$("#btnAddCurriculo").show();		
-		$("#btnExcluirCurriculo").show();		
-		$("input:checkbox").focus();
-	});
-	
-		
-	//remove curriculos
-	$("#btnExcluirCurriculo").click(function(){
-		if(confirm("Deseja realmente excluir os currículos selecionados?")) {		 			
-			$(".curriculos #listaCurriculos").find("input:checkbox").each(function(){											
-				if(this.checked){				
-					idCurriculo = $(this).attr("value");
-					$(this).remove();
-					$("#tabelaCurriculo"+idCurriculo).remove();				
-				}																
-			});
-		}
-		
-	});	
-		
-	
-	//remove campos de telefone
-	$("#btnRemoveTelefone").click(function(){
-		$(".telefones").find("input:checkbox").each(function(){											
-			if(this.checked){				
-				linha = $(this).attr("value");
-				$(".txtExcluir").remove();
-				//$(this).remove();
-				$("#tel"+linha).remove();				
-			}																
-		});
-	});
-	
-	
-	// adiciona formulario de cadastro de curriculo	
-	$("#btnAddCurriculo").click(function(){
-		$(".curriculos #divFormCurriculo").show();
-		$("#loading").show();	
-		$("#btnAddCurriculo").hide();		
-		$.get("/cadastro_cultural/curriculos/add", {           		   
-     		    }, function(resposta){
-   		        //Tratamento dos dados de retorno
-					$("#loading").hide();   		        	
-           			$(".curriculos #divFormCurriculo").html(resposta); 
-           			//$(".curriculos #divFormCurriculo").html(resposta).find($(".curriculos #CurriculoAddForm")).validate(curriculo_rules); 
-       		   }
-       	);	       	
-       	$("#btnSalvarCurriculo").show();
-	});			
-	
-		
-  });', array('inline' => false));
-  
-//echo $this->element('tiny_mce');
+//$javascript->link(array('jquery','jquery.validate','jquery.maskedinput','scriptAddPf'), false);
 ?>
+<?php echo $html->script('jquery.js'); ?>
+<?php echo $html->script('jquery-ui-1.8.18.custom_datepicker/js/jquery-1.7.1.min.js'); ?>
+<?php echo $html->script('scriptAddPf.js'); ?>
+<?php echo $html->script('jquery.validate.js'); ?>
+<?php echo $html->script('jquery.maskedinput.js'); ?>
+<?php echo $html->script('jquery-ui-1.8.18.custom_datepicker/js/jquery-ui-1.8.18.custom.min.js'); ?>
+<?php echo $html->script('jquery.ui.datepicker-pt-BR.js'); ?>
+<?php echo $this->Html->css('jquery-ui-1.8.18.custom_datepicker/css/ui-lightness/jquery-ui-1.8.18.custom.css'); ?>
+<script>
+$(document).ready(function(){
+	$(".data").datepicker($.datepicker.regional['pt-BR']);
+	$(".data").datepicker({});
+	$("#divNaturalizacao").hide();	
+});
+</script>
 
+<style>
+#ui-datepicker-div{
+	font-size:11px;
+}
+</style>
 
-
-<div class="pfs form">
+<!--<div class="pfs form">-->
 <?php echo $this->Form->create('Pf', array('type'=>'file'));?>
-	<fieldset>
- 		<legend><?php printf(__('Incluir %s', true), __('Pf', true)); ?></legend>
-	<?php				
-		//echo "<a href='#' id='teste' class='btnRemoveTelefone'>hjhj</a>";
-		$sexo = array('M' => 'Masculino', 'F' => 'Feminino');
-		echo $this->Form->input('nacionalidade_id');
-		echo $this->Form->input('naturalidade_id');
-		echo $this->Form->input('expedidor_rg_id');
-		echo $this->Form->input('cidade_id');
-		echo $this->Form->input('escolaridade_id');
-		//echo $this->Form->input('tipologia_id');
-		echo $this->Form->input('pais_id');
-		
-		$opcoesAtividade = array('0'=>'Selecione um Segmento');
+
+      <div id="breadcrumb">
+        <ul>
+          <li><a href="#">Inicial</a></li>
+          <li><a href="#">Inscrições</a></li>
+          <li>Pessoa Física</li>
+        </ul>
+      </div>
+      <!-- / #breadcrumb -->
+      
+      <ul id="tabs">
+        <li class="abaAtiva"><a id="1" href="#" title="Identificação">Identificação</a></li>
+        <!--<li class="abaInativa"><a href="#" id="2" title="Área de Atuaçao">Área de atuação</a></li>-->
+        <li class="abaInativa"><a href="#" id="3" title="Dados Profissionais">Dados Profissionais</a></li>
+        <li class="abaInativa"><a href="#" id="4" title="Contato Localização">Contato/localização</a></li>                
+        <li class="abaInativa"><a href="#" id="5" title="Contato Localização">Anexos</a></li>
+      </ul>
+      
+      <!-- Identificação -->
+      <div id="tabs-container1" class="abaConteudo">
+      <div class="formulario">
+      <div class="formularioDestaque">
+      <?php
+      	$sexo = array('M' => 'Masculino', 'F' => 'Feminino');
+		$naturalizado = array('S' => 'Sim', 'N' => 'Não');		
+      ?>
+	      	<table style="width:98%" class="formulario">
+	      	<!--<form id="form1" action="#">-->
+	            <tbody><tr>
+	              <td colspan="3"><label for="lblRsocial">1.Nome Completo</label>
+	                <br>
+	                <?php echo $this->Form->input('nome', array('label' => false, 'size' => 70)); ?>
+	              <td colspan="3" class="celula2"><label for="lblNmFantasia">2.Nome Artístico</label>
+	                <br>
+	                <?php echo $this->Form->input('nome_artistico', array('label' => false, 'size' => 50)); ?>
+	            </tr>
+	            <tr>
+	              <td><label for="lblCnpj">3.País</label>
+	                <br>
+	              <?php echo $this->Form->input('pais_id', array('label' => false, 'empty' => true)); ?>  
+				  </td>
+	              <td class="paisVisible"><label for="lblCnpj">4.Naturalidade</label>
+	                <br>
+	               <?php echo $this->Form->input('naturalidade', array('label' => false)); ?> 
+				   </td>
+	              <td class="paisVisible"><label for="lblCnpj">5.Estado</label>
+	                <br>
+	              <?php echo $this->Form->input('estado_id', array('empty' => true, 'label' => false)); ?>  
+				  </td>
+				  <td class="paisHidden"><label for="lblCnpj">5.Cidade</label>
+	                <br>
+	              <?php echo $this->Form->input('cidade', array('empty' => true, 'label' => false)); ?>  
+				  </td>
+	              <td class="celula2"><label for="lblNatJuridica">6.Data de Nascimento</label>
+	                <br>
+	                <?php echo $form->input('data_nascimento',array('class'=>'data', 'label'=> false, 'size'=>'20', 'type' => 'text'));?></td>
+	              <td><label for="lblCnpj">7.Sexo</label>
+	                <br>
+	                <?php echo $this->Form->input('sexo', array('type' => 'select', 'options' => $sexo, 'empty' => true, 'label' => false)); ?>  
+				  </td>
+	            </tr>
+	            <tr>
+	              <td class="celula2"><label for="lblNatJuridica">8.CPF</label>
+	                <br>
+	                <?php echo $this->Form->input('cpf', array('label' => false)); ?>
+					</td>
+	              <td class="celula2"><label for="lblNatJuridica">9.RG</label>
+	                <br>
+	            <?php echo $this->Form->input('rg', array('label' => false)); ?>    
+				</td>
+	              <td class="celula2"><label for="lblNatJuridica">10.Data Expedição</label>
+	                <br>
+	                <?php echo $this->Form->input('rg_dataexpedicao', array('label' => false, 'type' => 'text', 'class' => 'data')); ?>
+	                </td>
+	              <td class="celula2"><label for="lblNatJuridica">11.Órgão Expedidor</label>
+	                <br>
+	                <?php echo $this->Form->input('rg_expedidor', array('label' => false)); ?>
+					</td>
+	                 <td class="celula2"><label for="lblNatJuridica">12.Naturalizado Brasileiro</label>
+	                <br>
+	                <?php echo $this->Form->input('naturalizado', array('type' => 'select', 'options' => $naturalizado, 'label' => false, 'selected' => 'N')); ?>
+	               <!--<input type="radio" style="border:none !important;" checked="checked" value="1" id="pradio1" name="UPradio">
+	                <label for="pradio1">Sim</label>
+	                <input type="radio" style="border:none !important;" value="2" id="pradio2" name="UPradio">
+	                <label for="pradio2">Não</label>
+	                --></td>
+	            </tr>
+	            
+	            <tr>
+            <td colspan="4">
+            <div id="divNaturalizacao">
+              <fieldset class="fieldset">
+              <legend class="legend">Informações Naturalizado</legend>
+              <table width="97%"  style="margin:0 auto;">              
+	              <tr>	             
+		              <td class="celula2"><label for="lblNatJuridica">13.Data Naturalização</label>
+		                <br>
+		                <?php echo $this->Form->input('data_naturalizacao', array('class' => 'data', 'label' => false, 'type' => 'text')); ?></td>
+		              <td class="celula2"><label for="lblNatJuridica">14.Tipo Visto</label>
+		                <br>
+		                <?php echo $this->Form->input('visto', array('label' => false)); ?>    
+					</td>
+		              <td class="celula2"><label for="lblNatJuridica">11.Data Limite Validade</label>
+		                <br>
+		            	<?php echo $this->Form->input('data_validade_visto', array('type' => 'text', 'label' => false, 'class' => 'data')); ?>    
+					</td>
+	            </tr>
+              
+              </table>              
+          	</div>          	          	
+          	</td>
+          	</tr>
+  	          </tbody></table>
+  			<div class="alinhaBotao">
+                	<br><input type="submit" class="botaoAba1 botaoForm" value="Prosseguir">
+            	</div>    	
+      	<!--</form>-->
+      	
+      	
+          </div>
+          </div>
+      </div>
+      <!-- Identificação -->
+      
+      
+
+	  <!-- Área de Atuação -->	  	  
+      <div id="tabs-container2" class="abaConteudo">
+      <div class="formulario">
+            <div class="formularioDestaque">
+		<?php
+	  	$opcoesAtividade = array('0'=>'Selecione um Segmento');
 		$opcoesElo = array('0'=>'Selecione uma Atividade');
-		echo $this->Form->input('segmento_id', array('empty' => true));
+		//echo $this->Form->input('segmento_id', array('empty' => true));
 		$atividade = $this->Form->input('atividade', array('type' => 'select', 
 													'label' => 'Atividade', 
 													'options' => $opcoesAtividade
@@ -376,37 +170,262 @@ $javascript->codeBlock('
 													'label' => 'Elo', 
 													'options' => $opcoesElo
 													));																								
-		echo $this->Html->div('', $atividade, array('id' => 'divComboCBO'));
-		echo $this->Html->div('', $elo, array('id' => 'divComboElo'));
+		//echo $this->Html->div('', $atividade, array('id' => 'divComboCBO'));	  
+	  ?>
+		<table class="formulario" style="width:97%" >
+		<!--<form id="form2" action="#">-->
+            <tr>
+              <td><label for="cidade">Segmento Cultural</label><br>                
+                <?php echo $this->Form->input('segmento_id', array('empty' => true, 'label' => false)); ?>
+              </td>
+            </tr>
+            </table>            
+            
+            <fieldset class="fieldset">
+              <legend class="legend">Áre de Atuação</legend>
+            	<div id="divComboCBO">
+            </fieldset>
+            <div class="alinhaBotao">
+          		<input type="submit" value="Prosseguir" class="botaoForm botaoForm2"/>          
+        	</div>     
+        	<!--</form>-->                                       
+           </div>
+           </div>
+      </div>
+      <!-- Área de Atuação -->
+      
+      <!-- Dados Profissionais -->
+      <div id="tabs-container3" class="abaConteudo">
+				
+          <div class="formulario">
+            <div class="formularioDestaque">
+              <table width="98%" style="margin:0 auto;" id="tableDadosProfissionais">
+              <!--<form id="form3" action="#">-->
+                 <tr>
+                  <td colspan="2" class="celula1" width="60px"><label for="lblRsocia">Profissão</label>
+                    <br/>
+                    <?php echo $this->Form->input('profissao', array('label' => false, 'size' => 90)); ?>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="celula1"><label for="lblRsocial">Ano Graduação</label><br>
+                  	<?php echo $this->Form->input('ano_graducao', array('maxlength' => '4', 'label' => false, 'size' => 5, 'name' => 'data[Pf][ano_graducao][]', 'class' => 'ano'));?>
+                    </td>
+                    <td><label for="lblRsocial">Curso</label>
+                   	 <?php echo $this->Form->input('curso', array('maxlength' => '100', 'label' => false, 'size' => 72, 'name' => 'data[Pf][curso][]'));?>                   	 
+                  </td>
+                </tr>                                               
+                </table>
+                <table id="tableAddGraduacao" width="98%" style="margin-left:8px;">
+                </table>
+                <div style="margin-left:10px;" class="Add">
+                <?php echo $this->Form->input('contadorDP', array('type' => 'hidden')); ?>
+                	<a href="#" class="icoForm" id="addGraducao" style="font-size:11px; color:blue; text-decoration:none">
+                		<img width="14" height="14" title="Novo Registro" alt="Novo" src="/cadastro_cultural/img/../icones/round_add_verde_16x16.png">Adicionar Nova graduação
+                	</a>
+                	<?php                			
+				$delete_img = $this->Html->image('../icones/round_remove_16x16.png', array('alt'=> 'Excluir Graduações', 'title' => 'Excluir Graduações', 'border' => '0', 'height' => '15', 'id' => 'removeGraduacao', 'style' => 'font-size:11px; color:blue; text-decoration:none'));							
+				echo $this->Html->link($delete_img . ' Remover Graduações Selecionadas', '#', array('escape' => false, 'style'=>'font-size:11px; color:blue; text-decoration:none', 'id' => 'removeGraduacao'));		
+					?>                  	
+                </div>
+                <div class="alinhaBotao">
+                	<input type="submit" value="Prosseguir" class="botaoAba3 botaoForm"/>
+            	</div>
+          </div>
+      </div>
+	</div>
+      <!-- Dados Profissionais -->
+      
+      
+      <!-- Contato/localização -->
+      <div id="tabs-container4" class="abaConteudo">      
+          <div class="formulario">
+            <div class="formularioDestaque">
+              <table width="98%" style="margin:0 auto;">
+                <tr>
+                  <td colspan="3" class="celula1">
+                      <?php echo $form->label('logradouro','Logradouro');?>
+                    <br/>
+                    <?php echo $form->input('logradouro',array('label'=> '','size'=>'65'));?>
+                  </td>
+                  <td class="celula1" width="60px"><label for="lblRsocial">Número</label>
+                    <br/>
+                    <?php echo $form->input('numero',array('label'=> '','size'=>'10'));?>
+                    </td>
+                  <td colspan="2"><label for="lblRsocial">Complemento</label>
+                    <br/>
+                    <?php echo $form->input('complemento',array('label'=> '','size'=>'30'));?>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="140px"><label for="lblCnpj">Bairro</label>
+                    <br/>
+                    <?php echo $form->input('bairro',array('label'=> '','size'=>'20'));?>
+                  </td>
+                  <td width="100px" class="celula2"><label for="lblDtFundacao">Cidade</label>
+                    <br/>
+                    <?php echo $this->Form->input('cidade', array('empty' => true, 'label' => false)); ?>
+					</td>
+                  <td width="100px"><label for="lblDtFormalizacao">CEP</label>
+                    <br/>
+                    <?php echo $form->input('cep',array('label'=> '','size'=>'12'));?>
+                  </td>
+                  <td colspan="2" width="100px" class="celula2"><label for="lblDtFundacao">Estado</label>
+                    <br/>
+                    <?php echo $this->Form->input('estado_id', array('empty' => true, 'label' => false)); ?>
+                    </td>
+                  <!--<td><label for="lblCelular">País</label>
+                    <br/>
+                    <?php echo $this->Form->input('pais_id', array('empty' => true, 'label' => false)); ?>
+                    </td>-->
+                </tr>
+                <tr>
+                  <td colspan="3" class="celula1"><label for="lblNome">Referências</label>
+                    <br/>
+                    <?php echo $form->input('referencias',array('label'=> '','size'=>'65'));?>
+                  </td>
+                  <td colspan="2" class="celula1" width="120px"><label for="lblRsocial">Fax</label>
+                    <br/>
+                    <?php echo $form->input('fax',array('label'=> '','size'=>'15'));?>
+                    </td>                  
+                </tr>
+                <tr>   
+                  <td class="celula1" colspan="3"><label for="lblRsocial">Site</label>
+                    <br/>
+                    <?php echo $form->input('site',array('label'=> '','size'=>'65', 'name' => 'data[Pf][site][]'));?>
+                    <div id="sites"></div>
+                    <a href="#" class="icoForm" id="addSite" style="font-size:11px; color:blue; text-decoration:none">
+                		<img width="14" height="14" title="Novo Registro" alt="Novo" src="/cadastro_cultural/img/../icones/round_add_verde_16x16.png" style="float:left">Adicionar Site
+                	</a>
+                	<?php                			
+					$delete_img = $this->Html->image('../icones/round_remove_16x16.png', array('alt'=> 'Excluir Site', 'title' => 'Excluir Graduações', 'border' => '0', 'height' => '15', 'id' => 'removeSite', 'style' => 'font-size:11px; color:blue; text-decoration:none'));							
+					echo $this->Html->link($delete_img . ' Remover Sites Selecionados', '#', array('escape' => false, 'style'=>'font-size:11px; color:blue; text-decoration:none', 'id' => 'removeSite'));		
+					?>
+                    </td>
+                </tr>
+                <tr>   
+                  <td class="celula1" colspan="3"><label for="lblRsocial">Telefone</label>
+                    <br/>
+                    <?php echo $form->input('telefone',array('label'=> '','size'=>'15', 'name' => 'data[Pf][telefone][]'));?>
+                    <div id="telefones"></div>
+                    <a href="#" class="icoForm" id="addTelefone" style="font-size:11px; color:blue; text-decoration:none">
+                		<img width="14" height="14" title="Novo Registro" alt="Novo" src="/cadastro_cultural/img/../icones/round_add_verde_16x16.png" style="float:left">Adicionar Telefone
+                	</a>
+                	<?php                			
+					$delete_img = $this->Html->image('../icones/round_remove_16x16.png', array('alt'=> 'Excluir Telefone', 'title' => 'Excluir Graduações', 'border' => '0', 'height' => '15', 'id' => 'removeTelefone', 'style' => 'font-size:11px; color:blue; text-decoration:none'));							
+					echo $this->Html->link($delete_img . ' Remover Telefones Selecionados', '#', array('escape' => false, 'style'=>'font-size:11px; color:blue; text-decoration:none', 'id' => 'removeTelefone'));		
+					?>                	
+                    </td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="celula1"><label for="lblNome">E-mail</label>
+                    <br/>
+                    <?php echo $form->input('email',array('label'=> '','size'=>'60', 'name' => 'data[Pf][email][]'));?>
+                    <div id="emails"></div>
+                    <a href="#" class="icoForm" id="addEmail" style="font-size:11px; color:blue; text-decoration:none">
+                		<img width="14" height="14" title="Novo Registro" alt="Novo" src="/cadastro_cultural/img/../icones/round_add_verde_16x16.png" style="float:left">Adicionar Email
+                	</a>
+                	<?php                			
+					$delete_img = $this->Html->image('../icones/round_remove_16x16.png', array('alt'=> 'Excluir Email', 'title' => 'Excluir Graduações', 'border' => '0', 'height' => '15', 'id' => 'removeEmail', 'style' => 'font-size:11px; color:blue; text-decoration:none'));							
+					echo $this->Html->link($delete_img . ' Remover Email Selecionados', '#', array('escape' => false, 'style'=>'font-size:11px; color:blue; text-decoration:none', 'id' => 'removeEmail'));		
+					?>                    
+                    </td>
+                 </tr>                                  
+              </table>
+            </div>
+            <div class="alinhaBotao">
+                <input type="submit" value="Prosseguir" class="botaoAba4 botaoForm"/>
+
+            </div>
+          </div>
+      </div>    <!--</div>-->
+      <!-- Contato/localização -->
+      
+
+
+      <!-- Anexos -->
+      <div id="tabs-container5" class="abaConteudo">
+				
+          <div class="formulario">
+            <div class="formularioDestaque">
+              <table width="98%" style="margin:0 auto;" id="tableDadosProfissionais">              
+                 <tr>
+                  <td colspan="2" class="celula1" width="60px"><label for="lblRsocia">RG/CPF</label>
+                    <br/>
+                    <?php echo $this->Form->input('documento_anexo', array('type'=>'file', 'label' => false)); ?>
+                    </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="celula1" width="60px"><label for="lblRsocia">Currículo</label>
+                    <br/>
+                    <?php echo $this->Form->input('curriculo_anexo', array('type'=>'file', 'label' => false)); ?>
+                    </td>
+                </tr>
+               </table>
+                <div class="alinhaBotao">
+                	<?php echo $form->end('Salvar Pessoa Física',array('class'=>'botaoForm'));?>
+            	</div>
+          </div>
+      </div>
+	</div>
+      <!-- Anexos -->
+
+
+
+
+      
+      
+      <!-- Área de Atuação -->
+            </div>    <!--</div>-->
+      <!-- Área de Atuação -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<fieldset> 		
+	<?php				
+		//echo "<a href='#' id='teste' class='btnRemoveTelefone'>hjhj</a>";
+		
+		//echo $this->Form->input('tipologia_id');
+		
+		//echo $this->Html->div('', $elo, array('id' => 'divComboElo'));		
 				
 		
-		echo $this->Form->input('nome');
-		echo $this->Form->input('nome_artistico');
-		echo $this->Form->input('naturalizado');
-		echo $this->Form->input('data_naturalizacao', array('dateFormat' => 'DMY'));
-		echo $this->Form->input('tipo_visto');
-		echo $this->Form->input('data_validade_visto', array('dateFormat' => 'DMY'));
-		echo $this->Form->input('data_nascimento', array('dateFormat' => 'DMY'));
-		echo $this->Form->input('sexo', array('type' => 'select', 'options' => $sexo, 'empty' => true));
-		echo $this->Form->input('cpf');
-		echo $this->Form->input('rg');
-		echo $this->Form->input('data_rg', array('dateFormat' => 'DMY'));
-		echo $this->Form->input('ano_graduacao');
-		echo $this->Form->input('curso');
-		echo $this->Form->input('profissao');
+		
+		
+		
+		
+		/*
 		echo $this->Form->input('logradouro');
-		echo $this->Form->input('numero');
+		echo $this->Form->input('numero', array('label' => 'Número'));
 		echo $this->Form->input('complemento');
 		echo $this->Form->input('bairro');
 		echo $this->Form->input('cep');
 		//echo $this->Form->input('comprovante');
 		echo $this->Form->input('comprovante', array('type'=>'file'));
+		echo $this->Form->input('curriculo_anexo', array('type'=>'file', 'label' => 'Curriculos Anexo'));		
 				
 		$btnAddTel = $form->button('Adicionar telefone', array('id' => 'btnAddTelefone', 'style'=>'margin:0 0 10px 0', 'type'=>'button'));	
 		$btnRemoveTel = $form->button('Remover telefone', array('id' => 'btnRemoveTelefone', 'style'=>'margin:0 0 10px 0', 'type'=>'button'));				
 		$divFormCurriculo = $this->Html->div('', '', array('id' => 'divFormCurriculo'));		
 		$btnAddCurriculo = $form->button('Adicionar currículo', array('id' => 'btnAddCurriculo', 'style'=>'margin:0 0 10px 0', 'type'=>'button'));
 		$btnSalvarCurriculo = $this->Form->button('Salvar Curriculo', array('type'=>'button', 'id'=>'btnSalvarCurriculo'));		
+		$btnCancelarCurriculo = $this->Form->button('Cancelar', array('type'=>'button', 'id'=>'btnCancelarCurriculo'));
 		$focusCurriculo = $this->Form->input('focusCurriculo', array('type' => 'hidden', 'id' => 'focusCurriculo'));
 		$listaCurriculos = $this->Html->div('listaCurriculos', $focusCurriculo, array('id' => 'listaCurriculos'));		
 		$btnExcluirCurriculo = $this->Form->button('Excluir Curriculos', array('type'=>'button', 'id'=>'btnExcluirCurriculo'));				
@@ -414,33 +433,34 @@ $javascript->codeBlock('
 		echo $this->Html->tag('fieldset', '<legend>Telefones</legend>' . $btnAddTel . $btnRemoveTel . '<br>', array('class' => 'telefones'));			
 		echo $this->Html->tag('br', '');
 		
-		echo $this->Html->tag('fieldset', '<legend>Currículo</legend>' . $this->Html->div('', 'Aguarde carregando...', array('id' => 'loading')) . $listaCurriculos . '<br>' . $btnAddCurriculo . $btnExcluirCurriculo . $divFormCurriculo . $btnSalvarCurriculo, array('class' => 'curriculos'));		
+		echo $this->Html->tag('fieldset', '<legend>Currículo</legend>' . $this->Html->div('', 'Aguarde carregando...', array('id' => 'loading')) . $listaCurriculos . '<br>' . $btnAddCurriculo . $btnExcluirCurriculo . $divFormCurriculo . $btnSalvarCurriculo . $btnCancelarCurriculo, array('class' => 'curriculos'));		
 		
 										
 		
-		echo $this->Form->input('representante_oficial');
-		echo $this->Form->input('representante_nome');
+		//echo $this->Form->input('representante_oficial');
+		echo $this->Form->input('representante_nome', array('maxlength' => '100'));
 		echo $this->Form->input('representante_cpf');
 		echo $this->Form->input('representante_rg');
-		echo $this->Form->input('representante_dataexpedicao_rg');
-		echo $this->Form->input('representante_expedidor_rg');
+		echo $this->Form->input('representante_dataexpedicao_rg', array('label' => 'Representante - Data Expedição'));
+		echo $this->Form->input('representante_expedidor_rg', array('label' => 'Representante - Expedidor Rg'));
 		echo $this->Form->input('representante_telefone');
 		echo $this->Form->input('representante_celular');
 		echo $this->Form->input('representante_email');
-		echo $this->Form->input('representante_delegacao');
-		echo $this->Form->input('deletado');
+		echo $this->Form->input('representante_delegacao', array('label' => 'Representante Delegação'));
+		//echo $this->Form->input('deletado');
 		echo $this->Form->input('email');
 		echo $this->Form->input('site');
 		echo $this->Form->input('fax');
 		echo $this->Form->input('contadorCurriculo', array('type' => 'hidden'));
-		echo $this->Form->input('cbo', array('type' => 'hidden', 'id' => 'PfAtividade'));
-		echo $this->Form->input('elo', array('type' => 'hidden', 'id' => 'PfElo'));
-				
+		echo $this->Form->input('contadorEloAtividade', array('type' => 'hidden'));
+		//echo $this->Form->input('cbo', array('type' => 'hidden', 'id' => 'PfAtividade'));
+		//echo $this->Form->input('elo', array('type' => 'hidden', 'id' => 'PfElo'));
+		*/		
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Enviar', true));?>
+<?php //echo $this->Form->end(__('Enviar', true));?>
 </div>
-<div class="actions">
+<!--<div class="actions">
 	<h3><?php __('Ações'); ?></h3>
 	<ul>
 
@@ -462,4 +482,4 @@ $javascript->codeBlock('
 		<li><?php echo $this->Html->link(sprintf(__('Listar %s', true), __('Curriculos', true)), array('controller' => 'curriculos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(sprintf(__('Novo %s', true), __('Curriculo', true)), array('controller' => 'curriculos', 'action' => 'add')); ?> </li>
 	</ul>
-</div>
+</div>-->

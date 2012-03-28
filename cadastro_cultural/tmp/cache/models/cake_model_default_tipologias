@@ -1,2 +1,2 @@
-1332599731
+1332901208
 a:7:{s:2:"id";a:5:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:11;s:3:"key";s:7:"primary";}s:17:"grupotipologia_id";a:4:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";s:0:"";s:6:"length";N;}s:19:"segmentocultural_id";a:4:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";s:0:"";s:6:"length";N;}s:7:"cnae_id";a:4:{s:4:"type";s:7:"integer";s:4:"null";b:1;s:7:"default";s:0:"";s:6:"length";N;}s:6:"cbo_id";a:4:{s:4:"type";s:7:"integer";s:4:"null";b:1;s:7:"default";s:0:"";s:6:"length";N;}s:6:"elo_id";a:4:{s:4:"type";s:7:"integer";s:4:"null";b:1;s:7:"default";s:0:"";s:6:"length";N;}s:11:"stsdeletado";a:4:{s:4:"type";s:7:"boolean";s:4:"null";b:1;s:7:"default";s:0:"";s:6:"length";N;}}

@@ -2,7 +2,7 @@
 class PfsController extends AppController {
 
 	var $name = 'Pfs';
-	var $uses = array('Pf','Curriculo','CurriculosProduto','TelefonePf','FuncaoExercida', 'PfsTipologia');
+	var $uses = array('Pf','Curriculo','CurriculosProduto','TelefonePf','FuncaoExercida', 'PfsTipologia', 'Estado');
 
 	public $presetVars = array(
         array('field' => 'nome', 'type' => 'value'),                
@@ -36,9 +36,15 @@ class PfsController extends AppController {
 		
 		if($tipo == 1){// se for comprovante		
 			$this->Upload->process("../webroot/files/comprovantes");
+			$endereco = 'files/comprovantes/'.$arqName.".".$this->Upload->file_src_name_ext;
 		}
 		if($tipo == 2){// se for curriculo anexo
 			$this->Upload->process("../webroot/files/curriculos");
+			$endereco = 'files/curriculos/'.$arqName.".".$this->Upload->file_src_name_ext;
+		}
+		if($tipo == 3){// se for documento(RG/CPF)
+			$this->Upload->process("../webroot/files/documentos");
+			$endereco = 'files/documentos/'.$arqName.".".$this->Upload->file_src_name_ext;
 		}
 			
 		if ($this->Upload->processed) {			
@@ -46,7 +52,7 @@ class PfsController extends AppController {
 		} else {
 			$this->erro = $this->Upload->error;
 		}
-		return 'files/comprovantes/'.$arqName.".".$this->Upload->file_src_name_ext;		
+		return $endereco;		
 	}		
 	
 	
@@ -123,127 +129,131 @@ class PfsController extends AppController {
 		if (!empty($this->data)) {			
 			$this->Pf->create();						
 			
-			$comprovante = $this->data["Pf"]["comprovante"];//guardo o comprovante
 			$curriculoAnexo = $this->data["Pf"]["curriculo_anexo"];//guardo o curriculo anexo 
-			$this->data["Pf"]["comprovante"] = "arquivo";			
-			$this->data["Pf"]["curriculo_anexo"] = "";
-			$elo = empty($this->data['Pf']['elo']) ? 0 : $this->data['Pf']['elo'];			
+			$documentoAnexo = $this->data["Pf"]["documento_anexo"];//guardo o curriculo anexo					
+			unset($this->data["Pf"]["curriculo_anexo"]);	
+			unset($this->data["Pf"]["documento_anexo"]);			
 			$naturalizado = $this->data['Pf']['naturalizado'];
-			$totalEloAtividade = $this->data['Pf']['contadorEloAtividade'];
 						
 			if($naturalizado == "N"){
 				unset($this->data['Pf']['data_naturalizacao']);
-				unset($this->data['Pf']['visto_id']);
+				unset($this->data['Pf']['visto']);
 				unset($this->data['Pf']['data_validade_visto']);
 			}
 			
-				
-			$existTipologia = false;
-			//recupera id do grupotipologia	
-			$idGrupoTipologia = $this->Pf->Tipologia->Grupotipologia->grupoTipologiaPf();			
-			for($i=0; $i<$totalEloAtividade; $i++){
-				$segmento = $_POST['inputSegmento'][$i];
-				$cbo = $_POST['inputAtividade'][$i];				
-				$ano = $_POST['inputAno'][$i];								
-				$elos = explode(",", $_POST['inputElo'][$i]);
-				$idGrupoTipologia = $idGrupoTipologia['Grupotipologia']['id'];
-												
-				foreach ($elos as $elo) {													
-					// array com condições a serem percorridas no loop									
-					$idTipologia['id'][] = $this->Pf->Tipologia->idTipologia($segmento,$cbo,$elo,$idGrupoTipologia);
-					$idTipologia['ano'][] = $ano;					
-				}
-			}						
-						
+			/*
+			 * monta os arrays
+			 */
+			$anosGraducao = array();
+			$cursosGraducao = array();
+			$telefones = array();
+			$emails = array();
+			$sites = array();
+			
+			foreach ($this->data['Pf']['ano_graduacao'] as $value) {
+				$anosGraducao[] = $value;							
+			}
+			foreach ($this->data['Pf']['curso'] as $value) {
+				$cursosGraducao[] = $value;							
+			}
+			foreach ($this->data['Pf']['telefone'] as $value) {
+				$telefones[] = $value;							
+			}
+			foreach ($this->data['Pf']['email'] as $value) {
+				$emails[] = $value;							
+			}
+			foreach ($this->data['Pf']['site'] as $value) {
+				$sites[] = $value;							
+			}			
+			
+			$this->data['Pf']['nacionalidade_id'] = 1;
+			$this->data['Pf']['naturalidade_id'] = 1;
+			$this->data['Pf']['expedidor_rg_id'] = 1;
+			$this->data['Pf']['cidade_id'] = 1;
+			$this->data['Pf']['escolaridade_id'] = 1;
+			$this->data['Pf']['comprovante'] = "";
+			$this->data['Pf']['curso'] = "";
+			$this->data['Pf']['site'] = "";
+			$this->data['Pf']['telefone'] = "";
+			$this->data['Pf']['email'] = "";			
+			$this->data['Pf']['ano_graduacao'] = "";
+			
+					
 			if ($this->Pf->save($this->data)) {				
-				$idPf = $this->Pf->id;			
-				//print_r($idTipologia);	
-				// atualiza a tabela pfs_tipologia com respectivos chaves estrangeiras
-				for($i=0; $i<count($idTipologia['id']); $i++){
-					$this->data['PfsTipologia']['pf_id'] = $idPf;
-					$this->data['PfsTipologia']['tipologia_id'] = $idTipologia['id'][$i]['Tipologia']['id'];
-					$this->data['PfsTipologia']['ano'] = $idTipologia['ano'][$i];
-					$this->PfsTipologia->save($this->data);
-					$this->data['PfsTipologia']['id'] = "";
-					
-				}
-				/*
-				foreach ($idTipologia['id'] as $tipologia){
-					echo $tipologia['ano'];										
-					$this->data['PfsTipologia']['pf_id'] = $idPf;
-					$this->data['PfsTipologia']['tipologia_id'] = $tipologia['Tipologia']['id'];
-					$this->data['PfsTipologia']['ano'] = $tipologia['ano'];
-					$this->PfsTipologia->save($this->data);	
-				}
-				*/				
+				$idPf = $this->Pf->id;
 				
 				
-				$totalCurriculo = $this->data['Pf']['contadorCurriculo'];				
+				// ordena em ordem decrescente
+				$maiorArray = array();
+				$maiorArray[] = count($emails);
+				$maiorArray[] = count($sites);
+				$maiorArray[] = count($telefones);
+				rsort($maiorArray);
 				
-				//pega os dados dos curriculos e salva no model curriculo
-				for($i = 0; $i<$totalCurriculo; $i++){						
-					$this->data['Curriculo']['organizacao_responsavel'] = $_POST['or'][$i];
-					$this->data['Curriculo']['data'] = $_POST['dt'][$i];
-					$this->data['Curriculo']['descricao'] = $_POST['descricao'][$i];
-					$this->data['Curriculo']['funcao_exercida_id'] = $_POST['funcaoId'][$i];
-					$this->data['Curriculo']['pf_id'] = $idPf;
-					$this->Curriculo->save($this->data);					
-
+				//percorre os arrays com base no de maior indice
+				for($i=0; $i<$maiorArray[0]; $i++){
+					$telefone = array_key_exists($i,$telefones) ? $telefones[$i] : "";
+					$email = array_key_exists($i,$emails) ? $emails[$i] : "";
+					$site = array_key_exists($i,$sites) ? $sites[$i] : "";
 					
-					//salva os produtos do curriculo					
-					$produtoId = explode(",", $_POST['ProdutoId'][$i]);								
-					foreach ($produtoId as $value) {						
-						$this->data['CurriculosProduto']['produto_id'] = $value;
-						$this->data['CurriculosProduto']['curriculo_id'] = $this->Curriculo->id;
-						$this->CurriculosProduto->save($this->data);						
-						$this->data['CurriculosProduto']['id'] = "";						
-					}
-					
-					$this->data['Curriculo']['id'] = "";					
+					$this->data['ContatoPf']['telefone'] = $telefone;
+					$this->data['ContatoPf']['email'] = $email;
+					$this->data['ContatoPf']['site'] = $site;
+					$this->data['ContatoPf']['pf_id'] = $idPf;
+					$this->Pf->ContatoPf->save($this->data);
+					$this->data['ContatoPf']['id'] = "";
 				}				
+				//ordena em ordem decrescente pra salvar graduações									
+				$maiorArray = array();
+				$maiorArray[] = count($anosGraducao);
+				$maiorArray[] = count($cursosGraducao);			
+				rsort($maiorArray);
+			
+				//percorre os arrays com base no de maior indice
+				for($i=0; $i<$maiorArray[0]; $i++){
+					//verifica se existe valor nos indices corrente
+					$anoGraduacao = array_key_exists($i,$anosGraducao) ? $anosGraducao[$i] : "";
+					$curso = array_key_exists($i,$cursosGraducao) ? $cursosGraducao[$i] : "";				
+					
+					$this->data['Graduacao']['ano_graduacao'] = $anoGraduacao;
+					$this->data['Graduacao']['curso'] = $curso;
+					$this->data['Graduacao']['pf_id'] = $idPf;
+					$this->Pf->Graduacao->save($this->data);	
+					$this->data['Graduacao']['id'] = "";			
+				}												
 				
-				//salva os telefones
-				foreach ($this->data['Pf']['telefone'] as $value) {
-					$this->data['TelefonePf']['telefone'] = $value;
-					$this->data['TelefonePf']['pf_id'] = $idPf;					
-					$this->TelefonePf->save($this->data);
-					$this->data['TelefonePf']['id'] = "";				
-				}				
-				
-				// faz upload do arquivo do comprovante														
-				$this->data["Pf"]["id"] = $idPf;
-				if(!empty($comprovante["tmp_name"])){
-						//se largura da imagem maior que 300 é redimensionado para 300
-						$larguraImg = getimagesize($comprovante["tmp_name"]);
-						if($larguraImg[0] > 300)				
-							$this->data["Pf"]["comprovante"] = $this->upload($comprovante,300,$idPf,1);
-						else
-							$this->data["Pf"]["comprovante"] = $this->upload($comprovante,$larguraImg[0],$idPf,1);					
-				}
-
 				// faz upload do arquivo do curriculo anexo																		
 				if(!empty($curriculoAnexo["tmp_name"])){																
 						$this->data["Pf"]["curriculo_anexo"] = $this->upload($curriculoAnexo,"",$idPf,2);
 						//echo "aki"; exit;					
 				}
-				
+				// faz upload do arquivo do CPF/RG																		
+				if(!empty($documentoAnexo["tmp_name"])){																
+						$this->data["Pf"]["documento_anexo"] = $this->upload($documentoAnexo,"",$idPf,3);
+						//echo "aki"; exit;					
+				}												
 				$this->Pf->save($this->data);																
-				$this->Session->setFlash(sprintf(__('O %s foi salvo.', true), 'pf'));
+				$this->Session->setFlash(sprintf(__('A %s foi cadastrado.', true), 'Pessoa Física'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(sprintf(__('O %s não pode ser salvo. Por favor, tente novamente.', true), 'pf'));
 			}
 		}
 		$nacionalidades = $this->Pf->Nacionalidade->find('list');
-		$naturalidades = $this->Pf->Naturalidade->find('list');
+		//$naturalidades = $this->Pf->Naturalidade->find('list');
 		$expedidorRgs = $this->Pf->ExpedidorRg->find('list');
-		$cidades = $this->Pf->Cidade->find('list');
+		//$cidades = $this->Pf->Cidade->find('list');
 		$escolaridades = $this->Pf->Escolaridade->find('list');
 		$tipologias = $this->Pf->Tipologia->find('list');
 		$paises = $this->Pf->Pais->find('list');
 		$segmentos = $this->Pf->Tipologia->Segmentocultural->find('list');
-		$vistos = $this->Pf->Visto->find('list');
-		$this->set(compact('nacionalidades', 'naturalidades', 'expedidorRgs', 'cidades', 'escolaridades', 'tipologias', 'paises', 'segmentos', 'vistos'));
+		//$vistos = $this->Pf->Visto->find('list');
+		$estados = $this->Estado->find('list', array('conditions' => array('pais_id' => 1)));
+		//$anoAtual = 		
+		for($i = 1940; $i < date("Y")+1; $i++){
+			$anos_graduacao[$i] = $i;
+		}			
+		$this->set(compact('nacionalidades', 'expedidorRgs', 'escolaridades', 'tipologias', 'paises', 'segmentos', 'estados', 'anos_graduacao'));
 	}
 
 	function edit($id = null) {
@@ -252,8 +262,108 @@ class PfsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
-			if ($this->Pf->save($this->data)) {
-				$this->Session->setFlash(sprintf(__('O %s foi salvo.', true), 'pf'));
+			$this->data['Pf']['id'] = $id;
+			$curriculoAnexo = $this->data["Pf"]["curriculo_anexo"];//guardo o curriculo anexo 
+			$documentoAnexo = $this->data["Pf"]["documento_anexo"];//guardo o curriculo anexo					
+			unset($this->data["Pf"]["curriculo_anexo"]);	
+			unset($this->data["Pf"]["documento_anexo"]);			
+			$naturalizado = $this->data['Pf']['naturalizado'];
+
+						
+			if($naturalizado == "N"){
+				unset($this->data['Pf']['data_naturalizacao']);
+				unset($this->data['Pf']['visto']);
+				unset($this->data['Pf']['data_validade_visto']);
+			}
+			
+			/*
+			 * monta os arrays
+			 */
+			$anosGraducao = array();
+			$cursosGraducao = array();
+			$telefones = array();
+			$emails = array();
+			$sites = array();
+			
+			foreach ($this->data['Pf']['ano_graduacao'] as $value) {
+				$anosGraducao[] = $value;							
+			}
+			foreach ($this->data['Pf']['curso'] as $value) {
+				$cursosGraducao[] = $value;							
+			}
+			foreach ($this->data['Pf']['telefone'] as $value) {
+				$telefones[] = $value;							
+			}
+			foreach ($this->data['Pf']['email'] as $value) {
+				$emails[] = $value;							
+			}
+			foreach ($this->data['Pf']['site'] as $value) {
+				$sites[] = $value;							
+			}			
+			
+			$this->data['Pf']['nacionalidade_id'] = 1;
+			$this->data['Pf']['naturalidade_id'] = 1;
+			$this->data['Pf']['expedidor_rg_id'] = 1;
+			$this->data['Pf']['cidade_id'] = 1;
+			$this->data['Pf']['escolaridade_id'] = 1;
+			$this->data['Pf']['comprovante'] = "";
+			$this->data['Pf']['curso'] = "";
+			$this->data['Pf']['site'] = "";
+			$this->data['Pf']['telefone'] = "";
+			$this->data['Pf']['email'] = "";			
+			$this->data['Pf']['ano_graduacao'] = "";
+				
+			// ordena em ordem decrescente
+			$maiorArray = array();
+			$maiorArray[] = count($emails);
+			$maiorArray[] = count($sites);
+			$maiorArray[] = count($telefones);
+			rsort($maiorArray);
+			
+			//percorre os arrays com base no de maior indice
+			for($i=0; $i<$maiorArray[0]; $i++){
+				$telefone = array_key_exists($i,$telefones) ? $telefones[$i] : "";
+				$email = array_key_exists($i,$emails) ? $emails[$i] : "";
+				$site = array_key_exists($i,$sites) ? $sites[$i] : "";
+				
+				$this->data['ContatoPf']['telefone'] = $telefone;
+				$this->data['ContatoPf']['email'] = $email;
+				$this->data['ContatoPf']['site'] = $site;
+				$this->data['ContatoPf']['pf_id'] = $id;
+				$this->Pf->ContatoPf->save($this->data);	
+				$this->data['ContatoPf']['id'] = "";			
+			}
+			
+			//ordena em ordem decrescente pra salvar graduações									
+			$maiorArray = array();
+			$maiorArray[] = count($anosGraducao);
+			$maiorArray[] = count($cursosGraducao);			
+			rsort($maiorArray);
+		
+			//percorre os arrays com base no de maior indice
+			for($i=0; $i<$maiorArray[0]; $i++){
+				//verifica se existe valor nos indices corrente
+				$anoGraduacao = array_key_exists($i,$anosGraducao) ? $anosGraducao[$i] : "";
+				$curso = array_key_exists($i,$cursosGraducao) ? $cursosGraducao[$i] : "";				
+				
+				$this->data['Graduacao']['ano_graduacao'] = $anoGraduacao;
+				$this->data['Graduacao']['curso'] = $curso;
+				$this->data['Graduacao']['pf_id'] = $id;
+				$this->Pf->Graduacao->save($this->data);	
+				$this->data['Graduacao']['id'] = "";			
+			}												
+			
+			// faz upload do arquivo do curriculo anexo																		
+			if(!empty($curriculoAnexo["tmp_name"])){																
+					$this->data["Pf"]["curriculo_anexo"] = $this->upload($curriculoAnexo,"",$id,2);
+			}
+			// faz upload do arquivo do CPF/RG																		
+			if(!empty($documentoAnexo["tmp_name"])){																
+					$this->data["Pf"]["documento_anexo"] = $this->upload($documentoAnexo,"",$id,3);								
+			}
+			
+			if($this->Pf->save($this->data)){												
+				$this->Session->setFlash(sprintf(__('O %s foi atualizado.', true), 'pf'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(sprintf(__('O %s não pode ser salvo. Por favor, tente novamente.', true), 'pf'));
@@ -262,14 +372,13 @@ class PfsController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Pf->read(null, $id);
 		}
-		$nacionalidades = $this->Pf->Nacionalidade->find('list');
-		$naturalidades = $this->Pf->Naturalidade->find('list');
-		$expedidorRgs = $this->Pf->ExpedidorRg->find('list');
-		$cidades = $this->Pf->Cidade->find('list');
-		$escolaridades = $this->Pf->Escolaridade->find('list');
-		$tipologias = $this->Pf->Tipologia->find('list');
-		$paises = $this->Pf->Pai->find('list');
-		$this->set(compact('nacionalidades', 'naturalidades', 'expedidorRgs', 'cidades', 'escolaridades', 'tipologias', 'paises'));
+		$nacionalidades = $this->Pf->Nacionalidade->find('list');						
+		$paises = $this->Pf->Pais->find('list');		
+		$estados = $this->Estado->find('list', array('conditions' => array('pais_id' => 1)));		
+		for($i = 1940; $i < date("Y")+1; $i++){
+			$anos_graduacao[$i] = $i;
+		}			
+		$this->set(compact('nacionalidades', 'paises', 'estados', 'anos_graduacao'));
 	}
 
 	function delete($id = null) {
@@ -280,9 +389,9 @@ class PfsController extends AppController {
 		if ($this->Pf->delete($id, $cascade = true)) {
 			
 			$this->varreDir("../".WEBROOT_DIR."/files/curriculos",$id);
-			$this->varreDir("../".WEBROOT_DIR."/files/comprovantes",$id);			
+			$this->varreDir("../".WEBROOT_DIR."/files/documentos",$id);			
 			
-			$this->Session->setFlash(sprintf(__('%s excluído.', true), 'Pf'));
+			$this->Session->setFlash(sprintf(__('%s excluído.', true), 'Pessoa Física'));
 			$this->redirect(array('action'=>'index'));
 		}
 		$this->Session->setFlash(sprintf(__('%s não pode ser excluído.', true), 'Pf'));
@@ -344,7 +453,6 @@ class PfsController extends AppController {
 				}				
 			}			
 		    $this->set(compact('elos'));					
-	}
-			
+	}			
 }
 ?>
