@@ -1,9 +1,9 @@
 <?php
 class Cidade extends AppModel {
 	var $name = 'Cidade';
-	var $displayField = 'descricao';
+	var $displayField = 'nome';
 	var $validate = array(
-		'uf_id' => array(
+		'estado_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Sua mensagem de validação aqui',
@@ -13,7 +13,7 @@ class Cidade extends AppModel {
 				//'on' => 'create', // Limitar a validação para as operações 'create' ou 'update'
 			),
 		),
-		'descricao' => array(
+		'nome' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Sua mensagem de validação aqui',
@@ -27,9 +27,9 @@ class Cidade extends AppModel {
 	// As associações abaixo foram criadas com todas as chaves possíveis, então é possível remover as que não são necessárias
 
 	var $belongsTo = array(
-		'Uf' => array(
-			'className' => 'Uf',
-			'foreignKey' => 'uf_id',
+		'Estado' => array(
+			'className' => 'estado',
+			'foreignKey' => 'estado_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -51,6 +51,5 @@ class Cidade extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
 }
 ?>

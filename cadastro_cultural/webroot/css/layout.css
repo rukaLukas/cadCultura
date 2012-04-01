@@ -1081,3 +1081,7 @@ div.paging span a {
     background-color: #FFCCBA;
 
 }
+
+.error-message{
+	font-size: 11px;
+}

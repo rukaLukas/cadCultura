@@ -1,5 +1,5 @@
 <?php
-/* Contatos Test cases generated on: 2012-02-07 00:02:50 : 1328571350*/
+/* Contatos Test cases generated on: 2012-03-30 16:03:18 : 1333118418*/
 App::import('Controller', 'Contatos');
 
 class TestContatosController extends ContatosController {
@@ -11,7 +11,7 @@ class TestContatosController extends ContatosController {
 }
 
 class ContatosControllerTestCase extends CakeTestCase {
-	var $fixtures = array('app.contato');
+	var $fixtures = array('app.contato', 'app.testes');
 
 	function startTest() {
 		$this->Contatos =& new TestContatosController();
@@ -21,6 +21,26 @@ class ContatosControllerTestCase extends CakeTestCase {
 	function endTest() {
 		unset($this->Contatos);
 		ClassRegistry::flush();
+	}
+
+	function testIndex() {
+
+	}
+
+	function testView() {
+
+	}
+
+	function testAdd() {
+
+	}
+
+	function testEdit() {
+
+	}
+
+	function testDelete() {
+
 	}
 
 }

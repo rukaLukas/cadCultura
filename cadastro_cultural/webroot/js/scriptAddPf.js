@@ -26,30 +26,42 @@
 	$("#PfRepresentanteCelular").mask("(99)9999-9999");
 	$("#PfRg").mask("99999999-99");
 	$("#PfCep").mask("99999-999");		
-	$("#PfTelefone").mask("(99)9999-9999");	
-	$("#PfFax").mask("(99)9999-9999");	
+	$(".telefone").mask("(99)9999-9999");		
 	$(".ano").mask("9999");
 	$(".data").mask("99/99/9999");
 	$("#divNaturalizacao").hide();
-	//$("#PfPassaporte").mask("999999999");
-	//$("#listaErros").hide();
 	var contadorCurriculos = 0;    	
 
+	$("#PfEstadoId").change(function(){
+		id = $(this).val();
+		$.get("/cadastro_cultural/pfs/combo_cidade/"+id, {           		   
+		    }, function(resposta){
+	        //Tratamento dos dados de retorno
+			$("#loading").hide();   		        	
+   			$("#tdCidade").html(resposta);    		
+		   }
+		);
+	});
 	
-	$("#PfPaisId").change(function(){		
+	$("#PfNacionalidadeId").change(function(){		
 		if($(this).val() != 1){
 			$(".paisVisible").hide();
 			$(".paisHidden").show();
+			$("#CPF label").html("10.CPF<span class='obrigatorio'>*</span>");
+			$("#RG label").html("11.Rg ou RNE<span class='obrigatorio'>*</span>");
+			$("#DTExpedicao label").html("12.Data Expedição<span class='obrigatorio'>*</span>");			
+			$("#OrgaoExpedidor label").html("13.Orgão Expedidor<span class='obrigatorio'>*</span>");			
 		}
 		else{
 			$(".paisVisible").show();
 			$(".paisHidden").hide();
 		}
-	});
+	});			
+	
 	
 	//usado na tela de edição pra buscar ao carregar a pagina se o país ñ é brasil
 	// carrega os outros campos referntes a estrangeiro
-	if($("#PfPaisId").val() != 1){
+	if($("#PfNacionalidadeId").val() != 1){
 		$(".paisVisible").hide();
 		$(".paisHidden").show();
 	}	
@@ -61,12 +73,17 @@
 			$("#divNaturalizacao").hide();
 	});		
 	
+	
 	//usado na tela de edição pra buscar ao carregar a pagina se PF naturalizado brasileiro
 	// carrega os outros campos referntes a estrangeiro	
 	if($("#PfNaturalizado").val() == "S"){				
 		$("#divNaturalizacao").show();
 	}	
 	
+	
+	/*
+	 *  função responsável por adicionar campos de graduação(dados profissionais)
+	 */	
 	contadorDP = 0;
 	$("#addGraducao").click(function(){	
 		contadorDP++;		
@@ -81,16 +98,13 @@
 				selectAno += "<option value=\"" + i + "\">" + i + "</option>";
 		}
 		
-		linhaGraduacao = "";		
-		//linhaGraduacao += "<tr><td class=\"celula1\"><br><input type=\"checkbox\" name=\"removerGraduacao\" value=\""+contadorDP+"\"></td>";
+		linhaGraduacao = "";			
 		linhaGraduacao += "<tr id=\"graduacao1\"><td width=\"80px\" class=\"celula1\"><label for=\"lblRsocial\">Ano Graduação</label><br>";		
-		//linhaGraduacao += "<div class=\"input select\"><input type=\"text\" id=\"PfAnoGraducao"+	contadorDP + "\" class=\"ano\" size=\"5\" maxlength=\"4\" name=\"data[Pf][ano_graducao][]\"></div></td>";
-		linhaGraduacao += "<div class=\"input select\"><select id=\"PfAnoGraduacao"+ contadorDP + "\" name=\"data[Pf][ano_graduacao][]\"><option value=\"\"></option>";
+		linhaGraduacao += "<div class=\"input select\"><select id=\"PfAnoGraduacao"+ contadorDP + "\" name=\"data[Graducao]["+contadorDP+"][ano_graduacao]\"><option value=\"\"></option>";
 		linhaGraduacao += selectAno;
 		linhaGraduacao += "</select></div></td>";
         linhaGraduacao += "<td align=\"left\"><label for=\"lblRsocial\">Curso</label>";
-        linhaGraduacao += "<div class=\"input text\"><input type=\"text\" id=\"PfCurso"+ contadorDP + "\" size=\"72\" maxlength=\"100\" name=\"data[Pf][curso][]\"><input type=\"checkbox\" name=\"removerGraduacao\" value=\""+contadorDP+"\"></div></td></tr>";
-        //linhaGraduacao += "<td class=\"celula1\" align=\"left\"><br><input type=\"checkbox\" name=\"removerGraduacao\" value=\""+contadorDP+"\"></td></tr>";
+        linhaGraduacao += "<div class=\"input text\"><input type=\"text\" id=\"Graduacao"+contadorDP+"Curso\" size=\"72\" maxlength=\"100\" name=\"data[Graduacao]["+contadorDP+"][curso]\"><input type=\"checkbox\" name=\"removerGraduacao\" value=\""+contadorDP+"\"></div></td></tr>";
 		$("#tableAddGraduacao").append(linhaGraduacao);
 		$("#contadorDP").val(contadorDP);
 		return false;
@@ -105,13 +119,21 @@
 		});
 		return false;
 	});
+	/*
+	 * fim funções graduação
+	 */
 	
+	
+	
+	/*
+	 * funções adiciona campos contatos/localização
+	 */
 	contadorEmail = 0;
 	$("#addEmail").click(function(){
 		contadorEmail++;
 		linhaEmail = "";
 		linhaEmail += "<tr id=\"email"+contadorEmail+"\"><td colspan=\"3\" class=\"celula1\"><label for=\"lblRsocial\">Email Adicional</label><br>";
-		linhaEmail += "<div class=\"input text required\"><label for=\"PfEmail\"></label><input type=\"text\" id=\"PfEmail\" maxlength=\"255\" size=\"60\" name=\"data[Pf][email][]\"><input type=\"checkbox\" name=\"removerEmail\" value=\""+contadorEmail+"\"></div><tr></td>";
+		linhaEmail += "<div class=\"input text required\"><label for=\"PfEmail\"></label><input type=\"text\" id=\"ContatoPf"+contadorEmail+"Email\" maxlength=\"255\" size=\"60\" name=\"data[ContatoPf]["+contadorEmail+"][email]\"><input type=\"checkbox\" name=\"removerEmail\" value=\""+contadorEmail+"\"></div><tr></td>";
 		$("#emails").append(linhaEmail);
 		$("#removeEmail").show();
 		return false;
@@ -126,15 +148,14 @@
 			}			
 		});		
 		return false;
-	});
-	
+	});	
 	
 	contadorSite = 0;
 	$("#addSite").click(function(){
-		contadorEmail++;
+		contadorSite++;
 		linhaSite = "";
 		linhaSite += "<tr id=\"site"+contadorSite+"\"><td colspan=\"3\" class=\"celula1\"><label for=\"lblRsocial\">Site Adicional</label><br>";
-		linhaSite += "<div class=\"input text required\"><label for=\"PfSite\"></label><input type=\"text\" maxlength=\"255\" size=\"60\" name=\"data[Pf][site][]\"><input type=\"checkbox\" name=\"removerSite\" value=\""+contadorSite+"\"></div><tr></td>";
+		linhaSite += "<div class=\"input text required\"><label for=\"PfSite\"></label><input type=\"text\" maxlength=\"255\" size=\"60\" name=\"data[ContatoPf]["+contadorSite+"][site]\"><input type=\"checkbox\" name=\"removerSite\" value=\""+contadorSite+"\"></div><tr></td>";
 		$("#sites").append(linhaSite);
 		$("#removeSite").show();
 		return false;
@@ -148,7 +169,6 @@
 				//return false;
 			}			
 		});		
-		return false;
 	});
 	
 	
@@ -157,7 +177,7 @@
 		contadorTelefone++;
 		linhaTelefone = "";
 		linhaTelefone +="<tr id=\"telefone"+contadorTelefone+"\"><td colspan=\"3\" class=\"celula1\"><label for=\"lblRsocial\">Telefone Adicional</label><br>";
-		linhaTelefone += "<div class=\"input text\"><label for=\"PfTelefone\"></label><input type=\"text\" id=\"PfTelefone\" size=\"15\" name=\"data[Pf][telefone][]\" onkeydown=\"formatTelefone(this, event)\" maxlength=\"13\"><input type=\"checkbox\" name=\"removerTelefone\" value=\""+contadorTelefone+"\"></div></tr></td>";                    		
+		linhaTelefone += "<div class=\"input text\"><label for=\"PfTelefone\"></label><input type=\"text\" size=\"15\" name=\"data[ContatoPf]["+contadorTelefone+"][telefone]\" onkeydown=\"formatTelefone(this, event)\" maxlength=\"13\"><input type=\"checkbox\" name=\"removerTelefone\" value=\""+contadorTelefone+"\"></div></tr></td>";                    		
 		$("#telefones").append(linhaTelefone);
 		return false;
 	});
@@ -170,11 +190,17 @@
 			}																
 		});
 		return false;
-	});
+	});	
+	/*
+	 * funções adiciona campos contatos/localização
+	 */
 	
 	
 	
 	
+	/*
+	 * funções de validação dos campos
+	 */
 	function validaCPF(value) {
 		   value = jQuery.trim(value);
 			
@@ -207,8 +233,8 @@
 	  		listaErros.push("Informe o campo Nome");	  
 		if($("#PfNomeArtistico").val().length < 2)
 	  		listaErros.push("Informe o campo Nome Artistico");
-		if($("#PfPaisId").val() == "")
-			listaErros.push("Informe o País");
+		if($("#PfNacionalidadeId").val() == "")
+			listaErros.push("Informe a Nacionalidade");
 		if($("#PfSexo").val() == "")
 			listaErros.push("Informe o sexo");
 		if($("#PfCpf").val() == "")
@@ -272,14 +298,15 @@
 	  		listaErros.push("Informe o Número");
 		if($("#PfBairro").val().length < 4)
 	  		listaErros.push("Informe o Bairro");
-		if($("#PfCidade").val().length < 4)
+		if($("#tdCidade #PfCidadeId").val() == "")
 	  		listaErros.push("Informe a cidade");
 		if($("#PfCep").val() == "")
-	  		listaErros.push("Informe o CEP");		
-		if($("#PfTelefone").val().length < 13)
+	  		listaErros.push("Informe o CEP");	
+		if($("#ContatoPf0Telefone").val().length < 13)
 			listaErros.push("Informe o Telefone");
-		if($("#PfEmail").val().length < 7)
+		if($("#ContatoPf0Email").val().length < 7)
 			listaErros.push("Informe o email");
+
 		
 		if(listaErros.length > 0){
 			erros = "";
@@ -302,6 +329,8 @@
 
 	
 	function validaForm(){
+		
+		$("#valCidade").val($("#tdCidade #PfCidadeId").val());		
 		validado = 0;
 		if(validaAba1()){			
 			if(validaAba2()){				
@@ -313,25 +342,30 @@
 		if(validado == 1)
 			return true;		
 		else
-			return false;
+			return false;			
 	}
-	
-	
-	
-	
-	var containerId = '#tabs-container';
-    var tabsId = '#tabs';    		    
+	/*
+	 * fim funções valida campos
+	 */				    		  
     
-    $("#botaoAba1").click(function(){    							
+    
+    
+    
+    
+    
+    /*
+     * controle das abas
+     */
+	$("#botaoAba1").click(function(){    							
     	if(validaAba1()){
-			$("#tabs #3").click();
+			$("#tabs #2").click();
 			return false;
 		}		    	
 	});
     
     $("#botaoAba2").click(function(){    	
     	if(validaAba2()){
-			$("#tabs #4").click();
+			$("#tabs #3").click();
 			return false;
 		}
 	});
@@ -343,15 +377,17 @@
 		}
 	});
     
-    $("#botaoAba4").click(function(){      	
+    $("#botaoAba3").click(function(){      	
 		if(validaForm()){
 			$("#PfAddForm").submit();			
 		}
 		else
 			return false;
 	});
-    
-    
+	
+	
+    var containerId = '#tabs-container';
+    var tabsId = '#tabs';
     mudarTab = function(numeroTab) {
 		$("#tabs-container"+numeroTab).addClass('visivel');
 		return false;
@@ -386,18 +422,8 @@
             return false;
         }
     });
-	
-	function validaSubmit(){
-		okTel = 0;				
-		$(".telefones").find("input:text").each(function(){
-			okTel = 1;			
-		});
-		if(okTel != 1){
-			alert("informe o telefone");
-			$("#PfTelefone").focus();
-			return false;
-		}
-		return true;
-	}	
+    /*
+     * fim controle das abas
+     */
 	
   });

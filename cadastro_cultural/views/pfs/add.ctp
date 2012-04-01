@@ -1,15 +1,18 @@
-<?php echo $html->script('jquery.js'); ?>
-<?php echo $html->script('jquery-ui-1.8.18.custom_datepicker/js/jquery-1.7.1.min.js'); ?>
+<?php echo $html->script('jquery-1.3.2.min.js'); ?>
 <?php echo $html->script('scriptAddPf.js'); ?>
-<?php echo $html->script('jquery.validate.js'); ?>
-<?php echo $html->script('jquery.maskedinput.js'); ?>
-<?php echo $html->script('jquery-ui-1.8.18.custom_datepicker/js/jquery-ui-1.8.18.custom.min.js'); ?>
+<?php echo $html->script('jquery.maskedinput-1.3.js'); ?>
+<?php echo $html->script('jquery-ui-1.7.3.custom.min.js'); ?>
 <?php echo $html->script('jquery.ui.datepicker-pt-BR.js'); ?>
-<?php echo $this->Html->css('jquery-ui-1.8.18.custom_datepicker/css/ui-lightness/jquery-ui-1.8.18.custom.css'); ?>
+<?php echo $this->Html->css('jquery-ui/jquery-ui-1.7.3.custom.css'); ?>
+
+
 <script>
 $(document).ready(function(){
 	$(".data").datepicker($.datepicker.regional['pt-BR']);
-	$(".data").datepicker({});	
+	$(".data").datepicker({});
+	$("#divNaturalizacao").hide();
+	$(".paisVisible").show();
+	$(".paisHidden").hide();	
 });
 </script>
 
@@ -50,9 +53,9 @@ $(document).ready(function(){
       <ul id="tabs">
         <li class="abaAtiva"><a id="1" href="#" title="Identificação">Identificação</a></li>
         <!--<li class="abaInativa"><a href="#" id="2" title="Área de Atuaçao">Área de atuação</a></li>-->
-        <li class="abaInativa"><a href="#" id="3" title="Dados Profissionais">Dados Profissionais</a></li>
-        <li class="abaInativa"><a href="#" id="4" title="Contato Localização">Contato/localização</a></li>                
-        <li class="abaInativa"><a href="#" id="5" title="Contato Localização">Anexos</a></li>
+        <!--<li class="abaInativa"><a href="#" id="3" title="Dados Profissionais">Dados Profissionais</a></li>-->
+        <li class="abaInativa"><a href="#" id="2" title="Contato Localização">Contato/localização</a></li>                
+        <li class="abaInativa"><a href="#" id="3" title="Contato Localização">Anexos</a></li>
       </ul>
       
       <!-- Identificação -->
@@ -65,36 +68,39 @@ $(document).ready(function(){
       ?>
 	      	<table style="width:98%" class="formulario">
 	      	<!--<form id="form1" action="#">-->
-	            <tbody><tr>
-	              <td colspan="3"><label for="lblRsocial">1.Nome Completo<span class="obrigatorio">*</span></label>
+	            <tbody>
+	            <tr>
+	              <td colspan="6"><label for="lblRsocial">1.Nome Completo<span class="obrigatorio">*</span></label>
 	                <br>
-	                <?php echo $this->Form->input('nome', array('label' => false, 'size' => 70)); ?>
-	              <td colspan="3" class="celula2"><label for="lblNmFantasia">2.Nome Artístico<span class="obrigatorio">*</span></label>
-	                <br>
-	                <?php echo $this->Form->input('nome_artistico', array('label' => false, 'size' => 50)); ?>
+	                <?php echo $this->Form->input('nome', array('label' => false, 'size' => 100)); ?>
+	               </td>
 	            </tr>
 	            <tr>
-	              <td><label for="lblCnpj">3.País<span class="obrigatorio">*</span></label>
+	              <td colspan="6" class="celula2"><label for="lblNmFantasia">2.Nome Artístico<span class="obrigatorio">*</span></label>
 	                <br>
-	              <?php echo $this->Form->input('pais_id', array('label' => false, 'empty' => true)); ?>  
+	                <?php echo $this->Form->input('nome_artistico', array('label' => false, 'size' => 100)); ?>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td><label for="lblCnpj">3.Nacionalidade<span class="obrigatorio">*</span></label>
+	                <br>
+	              <?php echo $this->Form->input('nacionalidade_id', array('label' => false, 'empty' => true)); ?>  
 				  </td>
-	              <td class="paisVisible"><label for="lblCnpj">4.Naturalidade</label>
+	              <!--<td class="paisVisible"><label for="lblCnpj">4.Naturalidade</label>
 	                <br>
 	               <?php echo $this->Form->input('naturalidade', array('label' => false)); ?> 
-				   </td>
-	              <td class="paisVisible"><label for="lblCnpj">5.Estado</label>
+				   </td>-->
+	              <td width="140px"><label for="lblCnpj">4.Estado<span class="obrigatorio">*</span></label>
 	                <br>
 	              <?php echo $this->Form->input('estado_id', array('empty' => true, 'label' => false)); ?>  
 				  </td>
-				  <td class="paisHidden"><label for="lblCnpj">4.Cidade</label>
-	                <br>
-	              <?php echo $this->Form->input('cidade', array('empty' => true, 'label' => false)); ?>  
-				  </td>
-				  <td class="paisHidden"><label for="lblCnpj">5.Passaporte</label>
-	                <br>
-	              <?php echo $this->Form->input('passaporte', array('empty' => true, 'label' => false)); ?>  
-				  </td>
-	              <td class="celula2"><label for="lblNatJuridica">6.Data de Nascimento</label>
+                  <td id="tdCidade" width="100px" class="celula2"><label for="lblDtFundacao">5.Municipio<span class="obrigatorio">*</span></label>
+                    <br/>
+                    <select>
+                    	<option value="">selecione Estado</option>
+                    </select>
+					</td>				
+	              <td class="celula2"><label for="lblNatJuridica">6.Data de Nascimento<span class="obrigatorio">*</span></label>
 	                <br>
 	                <?php echo $form->input('data_nascimento',array('class'=>'data', 'label'=> false, 'size'=>'20', 'type' => 'text'));?>
 	              </td>
@@ -103,27 +109,39 @@ $(document).ready(function(){
 	                <?php echo $this->Form->input('sexo', array('type' => 'select', 'options' => $sexo, 'empty' => true, 'label' => false)); ?>  
 				  </td>
 	            </tr>
+	            <tr class="paisHidden">	
+				  <td><label for="lblCnpj">8.País Origem<span class="obrigatorio">*</span></label>
+	                <br>
+	              <?php echo $this->Form->input('pais_origem', array('empty' => true, 'label' => false)); ?>  
+				  </td>
+				  <td colspan="4"><label for="lblCnpj">9.Passaporte</label>
+	                <br>
+	              <?php echo $this->Form->input('passaporte', array('empty' => true, 'label' => false)); ?>  
+				  </td>
+			    </tr>
 	            <tr>
-	              <td class="celula2"><label for="lblNatJuridica">8.CPF<span class="obrigatorio">*</span></label>
+	              <td class="celula2" id="CPF"><label for="lblNatJuridica">8.CPF<span class="obrigatorio">*</span></label>
 	                <br>
 	                <?php echo $this->Form->input('cpf', array('label' => false)); ?>
 					</td>
-	              <td class="celula2"><label for="lblNatJuridica">9.RG<span class="obrigatorio">*</span></label>
+	              <td class="celula2" id="RG"><label for="lblNatJuridica">9.RG<span class="obrigatorio">*</span></label>
 	                <br>
 	            <?php echo $this->Form->input('rg', array('label' => false)); ?>    
 				</td>
-	              <td class="celula2"><label for="lblNatJuridica">10.Data Expedição</label>
+	              <td class="celula2" id="DTExpedicao"><label for="lblNatJuridica">10.Data Expedição<span class="obrigatorio">*</span></label>
 	                <br>
 	                <?php echo $this->Form->input('rg_dataexpedicao', array('label' => false, 'type' => 'text', 'class' => 'data')); ?>
 	                </td>
-	              <td class="celula2"><label for="lblNatJuridica">11.Órgão Expedidor</label>
+	              <td class="celula2" id="OrgaoExpedidor"><label for="lblNatJuridica">11.Órgão Expedidor<span class="obrigatorio">*</span></label>
 	                <br>
 	                <?php echo $this->Form->input('rg_expedidor', array('label' => false)); ?>
 					</td>
-	                 <td class="celula2"><label for="lblNatJuridica">12.Naturalizado Brasileiro</label>
+				</tr>
+				<tr>
+	              <td class="celula2 paisHidden" colspan="4"><label for="lblNatJuridica">14.Naturalizado Brasileiro</label>
 	                <br>
 	                <?php echo $this->Form->input('naturalizado', array('type' => 'select', 'options' => $naturalizado, 'label' => false, 'selected' => 'N')); ?>
-				</td>
+				  </td>
 	            </tr>
 	            
 	            <tr>
@@ -133,14 +151,14 @@ $(document).ready(function(){
               <legend class="legend">Informações Naturalizado</legend>
               <table width="97%"  style="margin:0 auto;">              
 	              <tr>	             
-		              <td class="celula2"><label for="lblNatJuridica">13.Data Naturalização</label>
+		              <td class="celula2"><label for="lblNatJuridica">15.Data Naturalização</label>
 		                <br>
 		                <?php echo $this->Form->input('data_naturalizacao', array('class' => 'data', 'label' => false, 'type' => 'text')); ?></td>
-		              <td class="celula2"><label for="lblNatJuridica">14.Tipo Visto</label>
+		              <td class="celula2"><label for="lblNatJuridica">16.Tipo Visto</label>
 		                <br>
 		                <?php echo $this->Form->input('visto', array('label' => false)); ?>    
 					</td>
-		              <td class="celula2"><label for="lblNatJuridica">11.Data Limite Validade</label>
+		              <td class="celula2"><label for="lblNatJuridica">17.Data Limite Validade</label>
 		                <br>
 		            	<?php echo $this->Form->input('data_validade_visto', array('type' => 'text', 'label' => false, 'class' => 'data')); ?>    
 					</td>
@@ -178,10 +196,11 @@ $(document).ready(function(){
                 </tr>
                 <tr>
                   <td class="celula1"><label for="lblRsocial">Ano Graduação</label><br>                  
-                  	<?php echo $this->Form->input('ano_graduacao', array('type' => 'select', 'options' => $anos_graduacao, 'empty' => true, 'label' => false, 'name' => 'data[Pf][ano_graduacao][]', 'selected' => date("Y"))); ?>
+                  	<?php echo $this->Form->input('Graducao.0.ano_graduacao', array('type' => 'select', 'options' => $anos_graduacao, 'empty' => true, 'label' => false, 'selected' => date("Y"))); ?>
                     </td>
                     <td><label for="lblRsocial">Curso</label>
-                   	 <?php echo $this->Form->input('curso', array('maxlength' => '100', 'label' => false, 'size' => 72, 'name' => 'data[Pf][curso][]'));?>                   	 
+                    <?php echo $this->Form->input('Graduacao.0.curso', array('maxlength' => '100', 'label' => false, 'size' => 72, 'type' => 'text')); ?>
+                   	<?php //echo $this->Form->input('curso', array('maxlength' => '100', 'label' => false, 'size' => 72, 'name' => 'data[Pf][curso][]'));?>                   	 
                   </td>
                 </tr>                                               
                 </table>
@@ -210,7 +229,7 @@ $(document).ready(function(){
       
       
       <!-- Contato/localização -->
-      <div id="tabs-container4" class="abaConteudo">      
+      <div id="tabs-container2" class="abaConteudo">      
           <div class="formulario">
             <div class="formularioDestaque">
               <table width="98%" style="margin:0 auto;">
@@ -227,18 +246,23 @@ $(document).ready(function(){
                   <td colspan="2"><label for="lblRsocial">Complemento</label>
                     <br/>
                     <?php echo $form->input('complemento',array('label'=> '','size'=>'30'));?>
-                  </td>
                 </tr>
                 <tr>
                   <td width="140px"><label for="lblCnpj">Bairro<span class="obrigatorio">*</span></label>
                     <br/>
                     <?php echo $form->input('bairro',array('label'=> '','size'=>'20'));?>
                   </td>
-                  <td width="100px" class="celula2"><label for="lblDtFundacao">Cidade<span class="obrigatorio">*</span></label>
+                  <td width="140px"><label for="lblCnpj">5.Estado<span class="obrigatorio">*</span></label>
+	                <br>
+	              <?php echo $this->Form->input('estado_id', array('empty' => true, 'label' => false)); ?>  
+				  </td>
+                  <td id="tdCidade" width="100px" class="celula2"><label for="lblDtFundacao">Cidade<span class="obrigatorio">*</span></label>
                     <br/>
-                    <?php echo $this->Form->input('cidade', array('empty' => true, 'label' => false)); ?>
+                    <select>
+                    	<option value="">selecione Estado</option>
+                    </select>
 					</td>
-                  <td width="100px"><label for="lblDtFormalizacao">CEP</label>
+                  <td width="100px"><label for="lblDtFormalizacao">CEP<span class="obrigatorio">*</span></label>
                     <br/>
                     <?php echo $form->input('cep',array('label'=> '','size'=>'12'));?>
                   </td>
@@ -254,13 +278,14 @@ $(document).ready(function(){
                   </td>
                   <td colspan="2" class="celula1" width="120px"><label for="lblRsocial">Fax</label>
                     <br/>
-                    <?php echo $form->input('fax',array('label'=> '','size'=>'15'));?>
+                    <?php echo $form->input('fax',array('label'=> '','size'=>'15', 'class' => 'telefone'));?>
                     </td>                  
                 </tr>
                 <tr>   
                   <td class="celula1" colspan="3"><label for="lblRsocial">Site</label>
                     <br/>
-                    <?php echo $form->input('site',array('label'=> '','size'=>'65', 'name' => 'data[Pf][site][]'));?>
+                    <?php echo $form->input('ContatoPf.0.site', array('label'=> '','size'=>'65', 'type' => 'text'));?>
+                    <?php //echo $form->input('site',array('label'=> '','size'=>'65', 'name' => 'data[Pf][site][]'));?>
                     <div id="sites"></div>
                     <a href="#" class="icoForm" id="addSite" style="font-size:11px; color:blue; text-decoration:none">
                 		<img width="14" height="14" title="Novo Registro" alt="Novo" src="/cadastro_cultural/img/../icones/round_add_verde_16x16.png" style="float:left">Adicionar Site
@@ -274,7 +299,8 @@ $(document).ready(function(){
                 <tr>   
                   <td class="celula1" colspan="3"><label for="lblRsocial">Telefone<span class="obrigatorio">*</span></label>
                     <br/>
-                    <?php echo $form->input('telefone',array('label'=> '','size'=>'15', 'name' => 'data[Pf][telefone][]'));?>
+                    <?php echo $form->input('ContatoPf.0.telefone', array('label'=> '','size'=>'15', 'type' => 'text', 'class' => 'telefone'));?>
+                    <?php //echo $form->input('telefone',array('label'=> '','size'=>'15', 'name' => 'data[Pf][telefone][]'));?>
                     <div id="telefones"></div>
                     <a href="#" class="icoForm" id="addTelefone" style="font-size:11px; color:blue; text-decoration:none">
                 		<img width="14" height="14" title="Novo Registro" alt="Novo" src="/cadastro_cultural/img/../icones/round_add_verde_16x16.png" style="float:left">Adicionar Telefone
@@ -288,7 +314,8 @@ $(document).ready(function(){
                 <tr>
                   <td colspan="3" class="celula1"><label for="lblNome">E-mail<span class="obrigatorio">*</span></label>
                     <br/>
-                    <?php echo $form->input('email',array('label'=> '','size'=>'60', 'name' => 'data[Pf][email][]'));?>
+                    <?php echo $form->input('ContatoPf.0.email', array('label'=> '', 'size'=>'60', 'type' => 'text'));?>
+                    <?php //echo $form->input('email',array('label'=> '','size'=>'60', 'name' => 'data[Pf][email][]'));?>
                     <div id="emails"></div>
                     <a href="#" class="icoForm" id="addEmail" style="font-size:11px; color:blue; text-decoration:none">
                 		<img width="14" height="14" title="Novo Registro" alt="Novo" src="/cadastro_cultural/img/../icones/round_add_verde_16x16.png" style="float:left">Adicionar Email
@@ -302,7 +329,7 @@ $(document).ready(function(){
               </table>              
             </div>
             <div class="alinhaBotao">
-                <input type="button" value="Prosseguir" id="botaoAba3" class="botaoForm"/>
+                <input type="button" value="Prosseguir" id="botaoAba2" class="botaoForm"/>
             </div>
           </div>
       </div>    
@@ -311,8 +338,7 @@ $(document).ready(function(){
 
 
       <!-- Anexos -->
-      <div id="tabs-container5" class="abaConteudo">
-				
+      <div id="tabs-container3" class="abaConteudo">				
           <div class="formulario">
             <div class="formularioDestaque">
               <table width="98%" style="margin:0 auto;" id="tableDadosProfissionais">              
@@ -326,13 +352,14 @@ $(document).ready(function(){
                   <td colspan="2" class="celula1" width="60px"><label for="lblRsocia">Currículo</label>
                     <br/>
                     <?php echo $this->Form->input('curriculo_anexo', array('type'=>'file', 'label' => false)); ?>
+                    <input type="hidden" id="valCidade" value="" name="data[Pf][cidade_id]">                    
                     </td>
                 </tr>
                </table>
                 <div class="alinhaBotao">
                 	<?php //echo $form->button('Salvar Pessoa Física', array('id' => 'botaoAba4', 'type'=>'submit')); ?>
                 	<?php //echo $form->end('Salvar Pessoasss Física',array('class'=>'botaoForm', 'id' => 'botaoAba4'));?>
-                	<div class="submit"><input type="button" id="botaoAba4" value="Salvar Pessoa Física"></div>
+                	<div class="submit"><input type="button" id="botaoAba3" value="Salvar Pessoa Física"></div>
             	</div>
           </div>
       </div>

@@ -1,4 +1,4 @@
-<?php echo $html->script('jquery-1.3.2.min.js'); ?>
+<?php echo $html->script('jquery-1.7.1.min.js'); ?>
 <?php echo $html->script('scriptAddPf.js'); ?>
 <?php echo $html->script('jquery.maskedinput-1.3.js'); ?>
 <?php echo $html->script('jquery-ui-1.7.3.custom.min.js'); ?>
@@ -109,10 +109,7 @@ $(document).ready(function(){
 				</td>
 	              <td class="celula2"><label for="lblNatJuridica">10.Data Expedição</label>
 	                <br>
-	                <?php
-	                	$expedicao = $this->Formatacao->data($this->Form->data['Pf']['rg_dataexpedicao']); 
-	                	echo $this->Form->input('rg_dataexpedicao', array('label' => false, 'type' => 'text', 'class' => 'data', 'value' => $expedicao));
-	                 ?>
+	                <?php echo $this->Form->input('rg_dataexpedicao', array('label' => false, 'type' => 'text', 'class' => 'data')); ?>
 	                </td>
 	              <td class="celula2"><label for="lblNatJuridica">11.Órgão Expedidor</label>
 	                <br>
@@ -133,20 +130,14 @@ $(document).ready(function(){
 	              <tr>	             
 		              <td class="celula2"><label for="lblNatJuridica">13.Data Naturalização</label>
 		                <br>
-		                <?php
-		                	$naturalizacao = $this->Formatacao->data($this->Form->data['Pf']['data_naturalizacao']);
-		                	echo $this->Form->input('data_naturalizacao', array('class' => 'data', 'label' => false, 'type' => 'text', 'value' => $naturalizacao)); 
-		                ?></td>
+		                <?php echo $this->Form->input('data_naturalizacao', array('class' => 'data', 'label' => false, 'type' => 'text')); ?></td>
 		              <td class="celula2"><label for="lblNatJuridica">14.Tipo Visto</label>
 		                <br>
 		                <?php echo $this->Form->input('visto', array('label' => false)); ?>    
 					</td>
 		              <td class="celula2"><label for="lblNatJuridica">11.Data Limite Validade</label>
 		                <br>
-		            	<?php
-		            		$dataVisto = $this->Formatacao->data($this->Form->data['Pf']['data_validade_visto']); 
-		            		echo $this->Form->input('data_validade_visto', array('type' => 'text', 'label' => false, 'class' => 'data', 'value' => $dataVisto));
-		            	 ?>    
+		            	<?php echo $this->Form->input('data_validade_visto', array('type' => 'text', 'label' => false, 'class' => 'data')); ?>    
 					</td>
 	            </tr>              
               </table>
@@ -200,12 +191,11 @@ $(document).ready(function(){
                 		$contadorGraduacao++;                	
                 		echo '<tr id="graduacao'.$contadorGraduacao.'"><td width="80px" class="celula1">
                 		<label for="lblRsocial">Ano Graduação</label><br>'.
-                		$this->Form->input('ano_graduacao', array('type' => 'select', 'options' => $anos_graduacao, 'empty' => true, 'label' => false, 'name' => 'data[Graduacao]['.$contadorGraduacao.'][ano_graduacao]', 'selected' => $value['ano_graduacao'])).' 
+                		$this->Form->input('ano_graduacao', array('type' => 'select', 'options' => $anos_graduacao, 'empty' => true, 'label' => false, 'name' => 'data[Pf][ano_graduacao][]', 'selected' => $value['ano_graduacao'])).' 
                 		</td>
                 		<td align="left"><label for="lblRsocial">Curso</label>
-                		<div class="input text">
-                			<input type="text" value="'.$value['curso'].'" id="Graduacao"'.$contadorGraduacao.'"Curso" size="72" maxlength="100" name="data[Graduacao]['.$contadorGraduacao.'][curso]">                			                			
-	                		<input type="checkbox" value="'.$contadorGraduacao.'" name="removerGraduacao"></div></td></tr>';                               	
+                		<div class="input text"><input type="text" value="'.$value['curso'].'" name="data[Pf][curso][]" maxlength="100" size="72" id="PfCurso'.$contadorGraduacao.'">
+                		<input type="checkbox" value="'.$contadorGraduacao.'" name="removerGraduacao"></div></td></tr>';                               	
                 	}
                 ?>                
                 </table>
@@ -299,7 +289,7 @@ $(document).ready(function(){
 	                    		echo '<tr id="site'.$contadorSite.'">
 	                    		<td class="celula1" colspan="3"><label for="lblRsocial">Site</label><br>
 	                    		<div class="input text required"><label for="PfSite"></label>
-	                    		<input type="text" value="'.$value['site'].'" name="data[ContatoPf]['.$contadorSite.'][site]" size="60" maxlength="255">
+	                    		<input type="text" value="'.$value['site'].'" name="data[Pf][site][]" size="60" maxlength="255">
 	                    		<input type="checkbox" value="'.$contadorSite.'" name="removerSite">
 	                    		</div>
 	                    		</td></tr>';
@@ -330,7 +320,7 @@ $(document).ready(function(){
 							echo '<tr id="telefone'.$contadorTelefone.'"><td class="celula1" colspan="3">
 								<label for="lblRsocial">Telefone</label><br>
 								<div class="input text"><label for="PfTelefone"></label>
-									<input type="text" value="'.$value['telefone'].'" maxlength="13" onkeydown="formatTelefone(this, event)" name="data[ContatoPf]['.$contadorTelefone.'][telefone]" size="15">
+									<input type="text" value="'.$value['telefone'].'" maxlength="13" onkeydown="formatTelefone(this, event)" name="data[Pf][telefone][]" size="15" id="PfTelefone">
 									<input type="checkbox" value="'.$contadorTelefone.'" name="removerTelefone">
 								</div></td>
 							</tr>';							                    		
@@ -360,7 +350,7 @@ $(document).ready(function(){
 								<td class="celula1" colspan="3">
 									<label for="lblRsocial">Email</label><br>
 									<div class="input text required"><label for="PfEmail"></label>
-										<input type="text" value="'.$value['email'].'" name="data[ContatoPf]['.$contadorEmail.'][email]" size="60" maxlength="255">
+										<input type="text" value="'.$value['email'].'" name="data[Pf][email][]" size="60" maxlength="255" id="PfEmail">
 										<input type="checkbox" value="'.$contadorEmail.'" name="removerEmail">
 									</div>
 								</td>

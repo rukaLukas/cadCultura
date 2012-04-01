@@ -1,390 +1,116 @@
-2012-03-28 03:57:19 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:45:30 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:45:30 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:45:30 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:45:30 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:45:31 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:45:31 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:45:31 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:45:31 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:45:31 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:45:31 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:45:31 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:45:31 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:45:32 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:45:32 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:45:32 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:45:32 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:46:07 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 03:57:19 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:46:07 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 03:57:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 187]
-2012-03-28 03:57:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 279]
-2012-03-28 03:57:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 311]
-2012-03-28 03:57:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 340]
-2012-03-28 03:57:46 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:46:07 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:46:07 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:46:07 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:46:07 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:46:07 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 03:57:46 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:46:07 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 03:57:46 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 187]
-2012-03-28 03:57:46 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 279]
-2012-03-28 03:57:46 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 311]
-2012-03-28 03:57:46 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 340]
-2012-03-28 04:01:34 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:46:08 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:46:08 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:46:08 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:46:08 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:48:09 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:01:34 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:48:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:01:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 187]
-2012-03-28 04:01:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 279]
-2012-03-28 04:01:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 311]
-2012-03-28 04:01:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 340]
-2012-03-28 04:01:34 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:48:10 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:01:34 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:48:10 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:01:35 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 187]
-2012-03-28 04:01:35 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 279]
-2012-03-28 04:01:35 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 311]
-2012-03-28 04:01:35 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 340]
-2012-03-28 04:03:56 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:48:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:48:51 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:03:56 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:48:51 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:03:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 187]
-2012-03-28 04:03:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 279]
-2012-03-28 04:03:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 311]
-2012-03-28 04:03:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 340]
-2012-03-28 04:04:27 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:48:51 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:48:51 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:48:51 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:48:51 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:48:52 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:04:27 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:48:52 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:04:27 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:04:27 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:04:27 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:04:27 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:04:28 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:48:52 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:48:52 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:48:52 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:48:52 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:50:41 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:04:28 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:50:41 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:04:28 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:04:28 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:04:28 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:04:28 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:06:10 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:50:42 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:50:42 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:50:42 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:50:42 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:50:42 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:06:10 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:50:42 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:06:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:06:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:06:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:06:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:06:11 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:50:42 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:50:42 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:50:42 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:50:42 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:52:08 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:06:11 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:52:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:06:11 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:06:11 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:06:11 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:06:11 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:06:45 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
+2012-03-31 02:52:09 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:52:09 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:52:09 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:52:09 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]
+2012-03-31 02:52:09 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
+LINE 1: ...&quot;.&quot;cidade_id&quot; = &quot;Cidade&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
                                                              ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:06:45 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
+2012-03-31 02:52:09 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
+LINE 1: ..."."cidade_id" = "Cidade"."id")  WHERE "Pf"."id" = 'img'    L...
                                                              ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:06:45 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:06:45 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:06:45 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:06:45 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:06:45 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:06:45 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:06:45 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:06:45 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:06:45 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:06:45 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:07:25 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:07:25 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:07:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:07:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:07:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:07:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:07:26 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:07:26 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:07:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:07:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:07:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:07:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:08:19 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:08:19 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:08:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:08:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:08:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:08:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:08:20 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:08:20 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:08:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:08:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:08:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:08:20 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:08:43 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:08:43 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:08:43 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:08:43 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:08:43 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:08:43 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:08:44 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:08:44 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:08:44 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:08:44 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:08:44 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:08:44 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:09:29 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:09:29 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:09:29 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:09:29 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:09:29 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:09:29 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:09:30 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:09:30 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:09:30 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:09:30 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:09:30 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:09:30 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:09:48 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:09:48 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:09:48 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:09:48 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:09:48 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:09:48 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:09:48 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:09:48 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:09:49 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:09:49 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:09:49 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:09:49 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:10:21 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:10:21 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:10:21 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:10:21 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:10:21 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:10:21 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:10:22 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:10:22 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:11:56 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:11:56 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:11:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:11:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:11:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:11:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:11:57 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:11:57 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:11:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:11:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:11:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:11:57 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:14:24 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:14:24 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:14:24 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:14:24 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:14:24 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:14:24 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:14:25 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:14:25 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:14:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:14:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:14:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:14:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:15:10 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:15:10 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:15:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:15:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:15:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:15:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:15:11 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:15:11 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:15:11 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:15:11 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:15:11 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:15:11 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:15:33 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:15:33 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:15:33 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:15:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:15:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:15:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:15:34 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:15:34 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:15:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:15:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:15:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:15:34 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:17:03 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:17:03 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:17:03 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:17:03 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:17:03 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:17:03 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:17:03 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:17:04 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:17:04 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:17:04 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:17:04 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:17:04 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:18:15 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:18:15 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:18:15 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:18:15 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:18:15 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:18:15 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:18:15 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:18:15 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:18:15 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:18:16 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:18:16 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:18:16 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:19:00 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:19:00 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:19:00 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:19:00 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:19:00 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:19:00 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:19:01 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:19:01 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:19:01 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:19:01 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:19:01 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:19:01 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:19:25 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:19:25 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:19:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:19:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:19:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:19:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
-2012-03-28 04:19:36 Warning: Warning (2): pg_query() [<a href='http://php.net/function.pg-query'>function.pg-query</a>]: Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;img&quot;
-LINE 1: ...Pf&quot;.&quot;visto_id&quot; = &quot;Visto&quot;.&quot;id&quot;)  WHERE &quot;Pf&quot;.&quot;id&quot; = 'img'    L...
-                                                             ^ in [C:\xampp\htdocs\cake\libs\model\datasources\dbo\dbo_postgres.php, line 167]
-2012-03-28 04:19:36 Warning: Warning (512): <span style="color:Red;text-align:left"><b>Erro:</b> ERRO:  sintaxe de entrada é inválida para integer: "img"
-LINE 1: ...Pf"."visto_id" = "Visto"."id")  WHERE "Pf"."id" = 'img'    L...
-                                                             ^</span> in [C:\xampp\htdocs\cake\libs\model\datasources\dbo_source.php, line 681]
-2012-03-28 04:19:36 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 191]
-2012-03-28 04:19:36 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 283]
-2012-03-28 04:19:36 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 315]
-2012-03-28 04:19:36 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 344]
+2012-03-31 02:52:09 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 199]
+2012-03-31 02:52:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 296]
+2012-03-31 02:52:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 328]
+2012-03-31 02:52:10 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\cadastro_cultural\views\pfs\edit.ctp, line 357]

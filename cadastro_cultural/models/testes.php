@@ -1,9 +1,9 @@
 <?php
-class Graduacao extends AppModel {
-	var $name = 'Graduacao';
-	var $displayField = 'curso';	
+class Teste extends AppModel {
+	var $name = 'Teste';
+	var $displayField = 'id';
 	var $validate = array(
-		'pf_id' => array(
+		'contato_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Sua mensagem de validação aqui',
@@ -17,9 +17,9 @@ class Graduacao extends AppModel {
 	// As associações abaixo foram criadas com todas as chaves possíveis, então é possível remover as que não são necessárias
 
 	var $belongsTo = array(
-		'Pf' => array(
-			'className' => 'Pf',
-			'foreignKey' => 'pf_id',
+		'Contato' => array(
+			'className' => 'Contato',
+			'foreignKey' => 'contato_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
